@@ -199,7 +199,6 @@ Supported platforms (as target):
 
 -------------------------------------------------------------------------
 
-This tool is only for educational purposes !
 
 Donate
 -
