@@ -162,8 +162,8 @@ color.red + """
     print()
     print()
     print()
-    print(color.white + "        +[ " + color.red + "sc_framework v1.6" + color.white + "                           ]+")
-    print("        -* 51 exploits - 20 cve exploits - 17 auxiliary *-")
+    print(color.white + "        +[ " + color.red + "sc_framework v1.7" + color.white + "                           ]+")
+    print("        -* 59 exploits - 24 auxiliary - 22 cve exploits *-")
     print("        -* 11 payloads *-")
     print()
     print("sc_framework tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
@@ -203,7 +203,7 @@ PLEASE CHOOSE AN EXPLOIT THEN TYPE THIS!
         print("""
 search [ exploits | exploit | windows | site | cve-exploits ]
        [ osx | linux | multi | server | dos | php           ]
-       [ auxiliary                                          ]
+       [ auxiliary | sniffer                                ]
 """)
     elif scconsole == "search exploits":
         print("""
@@ -259,6 +259,13 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """windows/reverse_tcp""" + color.white + """                                 25/02/28 04:49       send a payload to the target machine, if success, connect back to attacker machine.
 """ + color.red + """exploit/CVE-2025-0282-Ivanti-exploit/CVE_2025_0282_Ivanti""" + color.white + """ 25/01/02 05:25 This vulnerability enables attackers to upload malicious files (e.g., web shells) and execute commands on the target system with elevated privileges.
 """ + color.red + """site/Devika-v1-Path-Traversal""" + color.white + """                       24/08/04 12:08       Devika v1 - Path Traversal via 'snapshot_path' Parameter.
+""" + color.red + """sniffer/sniffer""" + color.white + """                                     25/03/13 12:33       This module captures network traffic and logs it to a file.
+""" + color.red + """php/POST-request""" + color.white + """                                    25/03/14 12:53       aims to upload a PHP file with a command execution payload to a vulnerable upload URL.
+""" + color.red + """sniffer/credential-collector""" + color.white + """                        25/03/14 01:23       This module collects cleartext credentials, such as passwords, from network traffic.
+""" + color.red + """sniffer/inspect_traffic""" + color.white + """                             25/03/16 11:10       This module analyzes network traffic and identifies potential vulnerabilities.
+""" + color.red + """sniffer/SSLstrip""" + color.white + """                                    25/03/17 08:54       This module performs SSL stripping, which modifies HTTPS traffic to remove encryption and capture cleartext credentials.
+""" + color.red + """sniffer/tcpdump-sniffer""" + color.white + """                             25/03/18 11:34       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+""" + color.red + """sniffer/ettercap-sniffer""" + color.white + """                            25/03/18 11:43       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
 """)
     elif scconsole == "search exploit":
         print("""
@@ -325,6 +332,8 @@ search [ exploits | exploit | windows | site | cve-exploits ]
         print(color.red + "tools/Slammer_cve-2007-5391" + color.white + "                            07/05/23 01:12       Slammer is a worm-like exploit that targets vulnerable systems running the Windows operating system.")
         print(color.red + "tools/cve-2022-24521" + color.white + "                                   22/04/12 10:43       CVE-2022-24521 is a stack-based buffer overflow vulnerability in the login.cgi script of the Cisco Small Business 7000 Series IP Phones, which allows an unauthenticated attacker to execute arbitrary commands on the device.")
         print(color.red + "tools/cve-2010-2730" + color.white + "                                    10/06/12 07:11       Buffer overflow in Microsoft Internet Information Services (IIS) 7.5, when FastCGI is enabled, allows remote attackers to execute arbitrary code via crafted headers in a request.")
+        print(color.red + "cve-2025-0001" + color.white + "                                          25/01/01 04:07       Remote Code Execution in Apache HTTP Server 2.4.54.")
+        print(color.red + "cve-2025-0006" + color.white + "                                          25/01/01 04:27       SQL Injection in MySQL 8.0.28.")
         print()
         print("You can't run these exploits from here, you need to run them from ",os.getcwd(),"/tools/cve-exploits/")
         print()
@@ -375,6 +384,7 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """php/RCE_via_PHP""" + color.white + """                                         25/02/18 12:53       This exploit exploits a vulnerability in a PHP application that allows arbitrary code execution on the server.
 """ + color.red + """php/SOPlanning_1-52-01_RCE""" + color.white + """                              24/11/15 08:29       SOPlanning 1.52.01 (Simple Online Planning Tool) - Remote Code Execution (RCE)(Authenticated).
 """ + color.red + """php/Wp2Fac""" + color.white + """                                              23/09/08 09:24       Wp2Fac - OS Command Injection.
+""" + color.red + """php/POST-request""" + color.white + """                                        25/03/14 12:53       aims to upload a PHP file with a command execution payload to a vulnerable upload URL.
 """)
     elif scconsole == "search auxiliary":
         print("""
@@ -396,6 +406,24 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """auxiliary/ping-mssql""" + color.white + """                                    25/02/27 02:54       This module attempts to determine if a Microsoft SQL Server is running on a host.
 """ + color.red + """auxiliary/webdav_scanner""" + color.white + """                                25/02/27 03:11       This module scans for WebDAV servers and their capabilities.
 """ + color.red + """auxiliary/sitemap-generator""" + color.white + """                             25/02/27 03:18       This module generates a sitemap by crawling the target website.
+""" + color.red + """auxiliary/password_cracking/crack-zip""" + color.white + """                   25/03/15 07:05       This module can crack password-protected ZIP files.
+""" + color.red + """auxiliary/password_cracking/crack-pdf""" + color.white + """                   25/03/15 07:16       This module can crack password-protected PDF files.
+""" + color.red + """auxiliary/password_cracking/crack-rar""" + color.white + """                   25/03/15 07:25       This module can crack password-protected RAR files.
+""" + color.red + """auxiliary/password_cracking/crack-office""" + color.white + """                25/03/16 10:56       This module can crack password-protected Microsoft Office documents.
+""" + color.red + """auxiliary/password_cracking/crack-windows-hash""" + color.white + """          25/03/17 06:20       This module can crack Windows password hashes using a dictionary attack or brute-force methods.
+""" + color.red + """auxiliary/pipe_auditor""" + color.white + """                                  25/03/18 12:06       This module audits named pipes on an SMB server. It can be used to identify potential vulnerabilities or access points.
+""" + color.red + """auxiliary/smb_enumshares""" + color.white + """                                25/03/18 12:16       This module enumerates shares on an SMB server. It can be used to identify potential vulnerabilities or access points.
+""")
+    elif scconsole == "search sniffer":
+        print("""
+    Exploits                                        When created?        Discrepstion 
+""" + color.red + """sniffer/sniffer""" + color.white + """                                         25/03/13 12:33       This module captures network traffic and logs it to a file.
+""" + color.red + """sniffer/credential-collector""" + color.white + """                            25/03/14 01:23       This module collects cleartext credentials, such as passwords, from network traffic.
+""" + color.red + """sniffer/inspect_traffic""" + color.white + """                                 25/03/16 11:10       This module analyzes network traffic and identifies potential vulnerabilities.
+""" + color.red + """sniffer/SSLstrip""" + color.white + """                                        25/03/17 08:54       This module performs SSL stripping, which modifies HTTPS traffic to remove encryption and capture cleartext credentials.
+""" + color.red + """sniffer/tcpdump-sniffer""" + color.white + """                                 25/03/18 11:34       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+""" + color.red + """sniffer/ettercap-sniffer""" + color.white + """                                25/03/18 11:43       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+""" + color.red + """sniffer/tshark-sniffer""" + color.white + """                                  25/03/18 11:55       This module starts a tshark sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
 """)
     elif scconsole == "show payloads":
         print("""
@@ -788,6 +816,62 @@ sudo reqired!!
         time.sleep(0.5)
         print("using site/Devika-v1-Path-Traversal.")
         tDevikav1PathTraversal()
+    elif scconsole == "use sniffer/sniffer":
+        time.sleep(0.5)
+        print("using sniffer/sniffer.")
+        sssniffersniffer()
+    elif scconsole == "use php/POST-request":
+        time.sleep(0.5)
+        print("using php/POST-request.")
+        pPOSTrequest()
+    elif scconsole == "use sniffer/credential-collector":
+        time.sleep(0.5)
+        print("using sniffer/credential-collector.")
+        sssniffercredentialcollector()
+    elif scconsole == "use auxiliary/password_cracking/crack-zip":
+        time.sleep(0.5)
+        print("using auxiliary/password_cracking/crack-zip.")
+        aauxiliarypasswordcrackingcrackzip()
+    elif scconsole == "use auxiliary/password_cracking/crack-pdf":
+        time.sleep(0.5)
+        print("using auxiliary/password_cracking/crack-pdf.")
+        aauxiliarypasswordcrackingcrackpdf()
+    elif scconsole == "use auxiliary/password_cracking/crack-rar":
+        time.sleep(0.5)
+        print("using auxiliary/password_cracking/crack-rar.")
+        aauxiliarypasswordcrackingcrackrar()
+    elif scconsole == "use auxiliary/password_cracking/crack-office":
+        time.sleep(0.5)
+        print("using auxiliary/password_cracking/crack-office.")
+        aauxiliarypasswordcrackingcrackoffice()
+    elif scconsole == "use sniffer/inspect_traffic":
+        time.sleep(0.5)
+        print("using sniffer/inspect_traffic.")
+        sssnifferinspecttraffic()
+    elif scconsole == "use auxiliary/password_cracking/crack-windows-hash":
+        time.sleep(0.5)
+        print("using auxiliary/password_cracking/crack-windows-hash.")
+        aauxiliarypasswordcrackingcrackwindowshash()
+    elif scconsole == "use sniffer/SSLstrip":
+        time.sleep(0.5)
+        print("using sniffer/SSLstrip.")
+        sssnifferSSLstrip()
+    elif scconsole == "use sniffer/tcpdump-sniffer":
+        time.sleep(0.5)
+        print("using sniffer/tcpdump-sniffer.")
+        sssniffertcpdumpsniffer()
+    elif scconsole == "use sniffer/ettercap-sniffer":
+        time.sleep(0.5)
+        print("using sniffer/ettercap-sniffer.")
+        sssnifferettercapsniffer()
+    elif scconsole == "use auxiliary/pipe_auditor":
+        time.sleep(0.5)
+        print("using auxiliary/pipe_auditor.")
+        aauxiliarypipeauditor()
+    elif scconsole == "use auxiliary/smb_enumshares":
+        time.sleep(0.5)
+        print("using auxiliary/smb_enumshares.")
+        aauxiliarysmbenumshares()
     elif scconsole == "use system commands":
             OSconsole()
             OSconsole()
@@ -3913,6 +3997,598 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole88 == "exit":
+        exit()
+
+def sssniffersniffer():
+    scconsole89 = input("sc~" + color.red + "(sniffer/sniffer)" + color.white + ">")
+    if scconsole89 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sssniffersniffer()
+    elif scconsole89 == "clear":
+        os.system('clear')
+        sssniffersniffer()
+    elif scconsole89 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+INTERFACE     | specify interface (eth0, etc).
+SAVE_FILE     | specify file name (example: sniffed.pcap)(specify the '.pcap' in the last of file name).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sssniffersniffer()
+    elif scconsole89 == "run":
+        os.system('sudo python exploits/sniffer/sniffer.py')
+        sssniffersniffer()
+    elif scconsole89 == "exploit":
+        os.system('sudo python exploits/sniffer/sniffer.py')
+        sssniffersniffer()
+    elif scconsole89 == "unuse":
+        print("unusing sniffer/sniffer.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole89 == "exit":
+        exit()
+
+def pPOSTrequest():
+    scconsole90 = input("sc~" + color.red + "(php/POST-request)" + color.white + ">")
+    if scconsole90 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        pPOSTrequest()
+    elif scconsole90 == "clear":
+        os.system('clear')
+        pPOSTrequest()
+    elif scconsole90 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify the taregt upload url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        pPOSTrequest()
+    elif scconsole90 == "run":
+        os.system('python exploits/php/POST-request.py')
+        pPOSTrequest()
+    elif scconsole90 == "exploit":
+        os.system('python exploits/php/POST-request.py')
+        pPOSTrequest()
+    elif scconsole90 == "unuse":
+        print("unusing php/POST-request.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole90 == "exit":
+        exit()
+
+def sssniffercredentialcollector():
+    scconsole91 = input("sc~" + color.red + "(sniffer/credential-collector)" + color.white + ">")
+    if scconsole91 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sssniffercredentialcollector()
+    elif scconsole91 == "clear":
+        os.system('clear')
+        sssniffercredentialcollector()
+    elif scconsole91 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+INTERFACE     | specify interface (eth0, etc).
+SAVE_FILE     | specify file name (example: sniffed.pcap)(specify the '.pcap' in the last of file name).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sssniffercredentialcollector()
+    elif scconsole91 == "run":
+        os.system('sudo python exploits/sniffer/credential-collector.py')
+        sssniffercredentialcollector()
+    elif scconsole91 == "exploit":
+        os.system('sudo python exploits/sniffer/credential-collector.py')
+        sssniffercredentialcollector()
+    elif scconsole91 == "unuse":
+        print("unusing sniffer/credential-collector.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole91 == "exit":
+        exit()
+
+def aauxiliarypasswordcrackingcrackzip():
+    scconsole92 = input("sc~" + color.red + "(auxiliary/password_cracking/crack-zip)" + color.white + ">")
+    if scconsole92 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarypasswordcrackingcrackzip()
+    elif scconsole92 == "clear":
+        os.system('clear')
+        aauxiliarypasswordcrackingcrackzip()
+    elif scconsole92 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+ZIP_FILE      | specify the zip file to crack (with exension!).
+WORDLIST      | specify the wordlist to crack with it.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarypasswordcrackingcrackzip()
+    elif scconsole92 == "run":
+        os.system('python exploits/auxiliary/password_cracking/crack-zip.py')
+        aauxiliarypasswordcrackingcrackzip()
+    elif scconsole92 == "exploit":
+        os.system('python exploits/auxiliary/password_cracking/crack-zip.py')
+        aauxiliarypasswordcrackingcrackzip()
+    elif scconsole92 == "unuse":
+        print("unusing auxiliary/password_cracking/crack-zip.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole92 == "exit":
+        exit()
+
+def aauxiliarypasswordcrackingcrackpdf():
+    scconsole93 = input("sc~" + color.red + "(auxiliary/password_cracking/crack-pdf)" + color.white + ">")
+    if scconsole93 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarypasswordcrackingcrackpdf()
+    elif scconsole93 == "clear":
+        os.system('clear')
+        aauxiliarypasswordcrackingcrackpdf()
+    elif scconsole93 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+PDF_FILE      | specify the pdf file to crack (with exension!).
+WORDLIST      | specify the wordlist to crack with it.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarypasswordcrackingcrackpdf()
+    elif scconsole93 == "run":
+        os.system('python exploits/auxiliary/password_cracking/crack-pdf.py')
+        aauxiliarypasswordcrackingcrackpdf()
+    elif scconsole93 == "exploit":
+        os.system('python exploits/auxiliary/password_cracking/crack-pdf.py')
+        aauxiliarypasswordcrackingcrackpdf()
+    elif scconsole93 == "unuse":
+        print("unusing auxiliary/password_cracking/crack-pdf.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole93 == "exit":
+        exit()
+
+def aauxiliarypasswordcrackingcrackrar():
+    scconsole94 = input("sc~" + color.red + "(auxiliary/password_cracking/crack-rar)" + color.white + ">")
+    if scconsole94 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarypasswordcrackingcrackrar()
+    elif scconsole94 == "clear":
+        os.system('clear')
+        aauxiliarypasswordcrackingcrackrar()
+    elif scconsole94 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RAR_FILE      | specify the rar file to crack (with exension!).
+WORDLIST      | specify the wordlist to crack with it.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarypasswordcrackingcrackrar()
+    elif scconsole94 == "run":
+        os.system('python exploits/auxiliary/password_cracking/crack-rar.py')
+        aauxiliarypasswordcrackingcrackrar()
+    elif scconsole94 == "exploit":
+        os.system('python exploits/auxiliary/password_cracking/crack-rar.py')
+        aauxiliarypasswordcrackingcrackrar()
+    elif scconsole94 == "unuse":
+        print("unusing auxiliary/password_cracking/crack-rar.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole94 == "exit":
+        exit()
+
+def aauxiliarypasswordcrackingcrackoffice():
+    scconsole95 = input("sc~" + color.red + "(auxiliary/password_cracking/crack-office)" + color.white + ">")
+    if scconsole95 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarypasswordcrackingcrackoffice()
+    elif scconsole95 == "clear":
+        os.system('clear')
+        aauxiliarypasswordcrackingcrackoffice()
+    elif scconsole95 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RAR_FILE      | specify the office file to crack (with exension!).
+WORDLIST      | specify the wordlist to crack with it.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarypasswordcrackingcrackoffice()
+    elif scconsole95 == "run":
+        officefilename = input("Enter Office file(with exension ---> .docx): ")
+        officewordlist = input("Enter path of your wordlist: ")
+        os.system(f'python exploits/auxiliary/password_cracking/crack-office.py {officefilename} {officewordlist}')
+        aauxiliarypasswordcrackingcrackoffice()
+    elif scconsole95 == "exploit":
+        officefilename2 = input("Enter Office file(with exension ---> .docx): ")
+        officewordlist2 = input("Enter path of your wordlist: ")
+        os.system(f'python exploits/auxiliary/password_cracking/crack-office.py {officefilename} {officewordlist}')
+        aauxiliarypasswordcrackingcrackoffice()
+    elif scconsole95 == "unuse":
+        print("unusing auxiliary/password_cracking/crack-rar.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole95 == "exit":
+        exit()
+
+def sssnifferinspecttraffic():
+    scconsole96 = input("sc~" + color.red + "(sniffer/inspect_traffic)" + color.white + ">")
+    if scconsole96 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sssnifferinspecttraffic()
+    elif scconsole96 == "clear":
+        os.system('clear')
+        sssnifferinspecttraffic()
+    elif scconsole96 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+INTERFACE     | specify interface (eth0, etc).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sssnifferinspecttraffic()
+    elif scconsole96 == "run":
+        os.system('sudo python exploits/sniffer/inspect_traffic.py')
+        sssnifferinspecttraffic()
+    elif scconsole96 == "exploit":
+        os.system('sudo python exploits/sniffer/inspect_traffic.py')
+        sssnifferinspecttraffic()
+    elif scconsole96 == "unuse":
+        print("unusing sniffer/inspect_traffic.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole96 == "exit":
+        exit()
+
+def aauxiliarypasswordcrackingcrackwindowshash():
+    scconsole97 = input("sc~" + color.red + "(auxiliary/password_cracking/crack-windows-hash)" + color.white + ">")
+    if scconsole97 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarypasswordcrackingcrackwindowshash()
+    elif scconsole97 == "clear":
+        os.system('clear')
+        aauxiliarypasswordcrackingcrackwindowshash()
+    elif scconsole97 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+HASH          | specify the windows hash.
+WORDLIST      | specify the wordlist to crack with it.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarypasswordcrackingcrackwindowshash()
+    elif scconsole97 == "run":
+        windowshash = input("Enter Windows Hash: ")
+        windowswordlist = input("Enter path of your wordlist: ")
+        os.system(f'python exploits/auxiliary/password_cracking/crack-windows-hash.py {windowshash} {windowswordlist}')
+        aauxiliarypasswordcrackingcrackwindowshash()
+    elif scconsole97 == "exploit":
+        windowshash2 = input("Enter Windows Hash: ")
+        windowswordlist2 = input("Enter path of your wordlist: ")
+        os.system(f'python exploits/auxiliary/password_cracking/crack-windows-hash.py {windowshash2} {windowswordlist2}')
+        aauxiliarypasswordcrackingcrackwindowshash()
+    elif scconsole97 == "unuse":
+        print("unusing auxiliary/password_cracking/crack-windows-hash.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole97 == "exit":
+        exit()
+
+def sssnifferSSLstrip():
+    scconsole98 = input("sc~" + color.red + "(sniffer/SSLstrip)" + color.white + ">")
+    if scconsole98 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sssnifferSSLstrip()
+    elif scconsole98 == "clear":
+        os.system('clear')
+        sssnifferSSLstrip()
+    elif scconsole98 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+INTERFACE     | specify interface (eth0, etc).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sssnifferSSLstrip()
+    elif scconsole98 == "run":
+        os.system('sudo python exploits/sniffer/SSLstrip.py')
+        sssnifferSSLstrip()
+    elif scconsole98 == "exploit":
+        os.system('sudo python exploits/sniffer/SSLstrip.py')
+        sssnifferSSLstrip()
+    elif scconsole98 == "unuse":
+        print("unusing sniffer/SSLstrip.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole98 == "exit":
+        exit()
+
+def sssniffertcpdumpsniffer():
+    scconsole99 = input("sc~" + color.red + "(sniffer/tcpdump-sniffer)" + color.white + ">")
+    if scconsole99 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sssniffertcpdumpsniffer()
+    elif scconsole99 == "clear":
+        os.system('clear')
+        sssniffertcpdumpsniffer()
+    elif scconsole99 == "show options":
+        print("""
+OPTIONS        | DISCREPTIONS
+---------------|----------------------
+INTERFACE      | specify interface (eth0, etc).
+FILE_NAME      | specify the file name to save.
+CAPTURE_FILTER | specify the capture filter.
+
+you will specifiy these options when you run or exploit it!
+""")
+        sssniffertcpdumpsniffer()
+    elif scconsole99 == "run":
+        os.system('sudo python exploits/sniffer/tcpdump-sniffer.py')
+        sssniffertcpdumpsniffer()
+    elif scconsole99 == "exploit":
+        os.system('sudo python exploits/sniffer/tcpdump-sniffer.py')
+        sssniffertcpdumpsniffer()
+    elif scconsole99 == "unuse":
+        print("unusing sniffer/tcpdump-sniffer.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole99 == "exit":
+        exit()
+
+def sssnifferettercapsniffer():
+    scconsole100 = input("sc~" + color.red + "(sniffer/ettercap-sniffer)" + color.white + ">")
+    if scconsole100 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sssnifferettercapsniffer()
+    elif scconsole100 == "clear":
+        os.system('clear')
+        sssnifferettercapsniffer()
+    elif scconsole100 == "show options":
+        print("""
+OPTIONS        | DISCREPTIONS
+---------------|----------------------
+RHOST          | specify target ip address.
+GATEWAY        | specify the gateway ip address.
+INTERFACE      | specify interface (eth0, etc).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sssnifferettercapsniffer()
+    elif scconsole100 == "run":
+        os.system('sudo python exploits/sniffer/ettercap-sniffer.py')
+        sssnifferettercapsniffer()
+    elif scconsole100 == "exploit":
+        os.system('sudo python exploits/sniffer/ettercap-sniffer.py')
+        sssnifferettercapsniffer()
+    elif scconsole100 == "unuse":
+        print("unusing sniffer/ettercap-sniffer.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole100 == "exit":
+        exit()
+
+def sssniffertsharksniffer():
+    scconsole101 = input("sc~" + color.red + "(sniffer/tshark-sniffer)" + color.white + ">")
+    if scconsole101 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sssniffertsharksniffer()
+    elif scconsole101 == "clear":
+        os.system('clear')
+        sssniffertsharksniffer()
+    elif scconsole101 == "show options":
+        print("""
+OPTIONS        | DISCREPTIONS
+---------------|----------------------
+INTERFACE      | specify interface (eth0, etc).
+FILE_NAME      | specify the file name to save.
+CAPTURE_FILTER | specify the capture filter.
+
+you will specifiy these options when you run or exploit it!
+""")
+        sssniffertsharksniffer()
+    elif scconsole101 == "run":
+        os.system('sudo python exploits/sniffer/tshark-sniffer.py')
+        sssniffertsharksniffer()
+    elif scconsole101 == "exploit":
+        os.system('sudo python exploits/sniffer/tshark-sniffer.py')
+        sssniffertsharksniffer()
+    elif scconsole101 == "unuse":
+        print("unusing sniffer/tshark-sniffer.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole101 == "exit":
+        exit()
+
+def aauxiliarypipeauditor():
+    scconsole102 = input("sc~" + color.red + "(auxiliary/pipe_auditor)" + color.white + ">")
+    if scconsole102 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarypipeauditor()
+    elif scconsole102 == "clear":
+        os.system('clear')
+        aauxiliarypipeauditor()
+    elif scconsole102 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+SERVER_IP     | specify the server ip address.
+SHARE         | specify the share name.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarypipeauditor()
+    elif scconsole102 == "run":
+        os.system('python exploits/auxiliary/pipe_auditor.py')
+        aauxiliarypipeauditor()
+    elif scconsole102 == "exploit":
+        os.system('python exploits/auxiliary/pipe_auditor.py')
+        aauxiliarypipeauditor()
+    elif scconsole102 == "unuse":
+        print("unusing exploits/auxiliary/pipe_auditor.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole102 == "exit":
+        exit()
+
+def aauxiliarysmbenumshares():
+    scconsole103 = input("sc~" + color.red + "(auxiliary/smb_enumshares)" + color.white + ">")
+    if scconsole103 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarysmbenumshares()
+    elif scconsole103 == "clear":
+        os.system('clear')
+        aauxiliarysmbenumshares()
+    elif scconsole103 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+SERVER_IP     | specify the server ip address.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarysmbenumshares()
+    elif scconsole103 == "run":
+        os.system('python exploits/auxiliary/smb_enumshares.py')
+        aauxiliarysmbenumshares()
+    elif scconsole103 == "exploit":
+        os.system('python exploits/auxiliary/smb_enumshares.py')
+        aauxiliarysmbenumshares()
+    elif scconsole103 == "unuse":
+        print("unusing exploits/auxiliary/smb_enumshares.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole103 == "exit":
         exit()
 
 def OSconsole():
