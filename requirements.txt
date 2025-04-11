@@ -1,3 +1,4 @@
+pygatt
 paramiko
 requests
 impacket

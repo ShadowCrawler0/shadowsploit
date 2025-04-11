@@ -133,7 +133,13 @@ class SCFrameworkGUI:
             "sc-gui/extract_table_db_column.py",
             "sc-gui/robots_txt.py",
             "sc-gui/wordpress-scan.py",
-            "sc-gui/title.py"
+            "sc-gui/title.py",
+            "sc-gui/apache_mod_status.py",
+            "sc-gui/vnc-none-auth.py",
+            "sc-gui/web-spider.py",
+            "sc-gui/ftp-anonymous.py",
+            "sc-gui/nmap-version-detection.py",
+            "sc-gui/sqli-xss-vuln.py"
         ]
 
         for exploit in exploits:
@@ -175,7 +181,7 @@ class SCFrameworkGUI:
 
         -! The exploits will timeout after 100 second.
 
-                       -* 14 exploits *-
+                       -* 17 exploits *-
         """
 
         help_label = tk.Label(help_frame, text=help_text, bg="#333333", fg="#FFFFFF", font=("Arial", 10), justify=tk.LEFT)

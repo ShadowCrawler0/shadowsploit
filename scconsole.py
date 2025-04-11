@@ -156,14 +156,31 @@ color.red + """
   0000""" + color.warning + """11""" + color.white + """00""" + color.warning + """1111111111111""" + color.white + """00""" + color.warning + """11""" + color.white + """000000000000
 00000""" + color.warning + """11""" + color.white + """000000""" + color.warning + """1111111""" + color.white + """000000""" + color.warning + """11""" + color.white + """000000
    00""" + color.warning + """1""" + color.white + """000000000000000000000""" + color.warning + """1""" + color.white + """000000000000000000
+""",
+color.warning + color.red + color.green + """
+                          (                                     
+                          )\ )   (                              
+                         (()/(   )\                             
+                          /(_))(((_)                            
+                         (_))  )\___                            
+                         / __|((/ __|                           
+                         \__ \ | (__                            
+ (     (                *|___/  \___|          )   (         )  
+ )\ )  )\ )    (      (  `         (  (     ( /(   )\ )   ( /(  
+(()/( (()/(    )\     )\))(   (    )\))(   ')\()) (()/(   )\()) 
+ /(_)) /(_))((((_)(  ((_)()\  )\  ((_)()\ )((_)\   /(_))|((_)\  
+(_))_|(_))   )\ _ )\ (_()((_)((_) _(())\_)() ((_) (_))  |_ ((_) 
+| |_  | _ \  (_)_\(_)|  \/  || __|\ \((_)/ // _ \ | _ \ | |/ /  
+| __| |   /   / _ \  | |\/| || _|  \ \/\/ /| (_) ||   /   ' <   
+|_|   |_|_\  /_/ \_\ |_|  |_||___|  \_/\_/  \___/ |_|_\  _|\_\                                                               
 """]
     random_banner = random.choice(list)
     print(random_banner)
     print()
     print()
     print()
-    print(color.white + "        +[ " + color.red + "sc_framework v1.7" + color.white + "                           ]+")
-    print("        -* 59 exploits - 24 auxiliary - 22 cve exploits *-")
+    print(color.white + "        +[ " + color.red + "sc_framework v1.8" + color.white + "                           ]+")
+    print("        -* 69 exploits - 29 auxiliary - 23 cve exploits *-")
     print("        -* 11 payloads *-")
     print()
     print("sc_framework tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
@@ -203,7 +220,7 @@ PLEASE CHOOSE AN EXPLOIT THEN TYPE THIS!
         print("""
 search [ exploits | exploit | windows | site | cve-exploits ]
        [ osx | linux | multi | server | dos | php           ]
-       [ auxiliary | sniffer                                ]
+       [ auxiliary | sniffer | scanner                      ]
 """)
     elif scconsole == "search exploits":
         print("""
@@ -266,6 +283,17 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """sniffer/SSLstrip""" + color.white + """                                    25/03/17 08:54       This module performs SSL stripping, which modifies HTTPS traffic to remove encryption and capture cleartext credentials.
 """ + color.red + """sniffer/tcpdump-sniffer""" + color.white + """                             25/03/18 11:34       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
 """ + color.red + """sniffer/ettercap-sniffer""" + color.white + """                            25/03/18 11:43       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+""" + color.red + """multi/nmap-version-detection""" + color.white + """                        25/04/04 10:35       uses nmap to detect version.
+""" + color.red + """sniffer/ble-scanner""" + color.white + """                                 25/04/04 11:01       scans bluetooths around you (sudo permission needed!).
+""" + color.red + """multi/ble-bypass""" + color.white + """                                    25/04/05 04:14       This is a vulnerability in the BLE protocol that allows attackers to bypass security measures and gain unauthorized access to a target system. The exploit involves exploiting a flaw in the encryption used in BLE connections.
+""" + color.red + """multi/ble-scanner""" + color.white + """                                   25/04/04 11:01       scans bluetooths around you (sudo permission needed!).
+""" + color.red + """dos/ble-dos""" + color.white + """                                         25/04/05 16:35       scans the bluetooths around you and then let you to choose target, trys to connect, then starts the attack.
+""" + color.red + """scanner/portscan-tcp""" + color.white + """                                25/04/08 09:28       scans for open ports.
+""" + color.red + """scanner/vnc-none-auth""" + color.white + """                               25/04/08 09:46       scans the VNC port to see if it is open or closed.
+""" + color.red + """scanner/ftp-anon""" + color.white + """                                    25/04/08 09:54       scans target port 21 to if anonymous access is enabled on port 21 (ftp port).
+""" + color.red + """scanner/portmap-amp""" + color.white + """                                 25/04/08 10:01       attempts to connect to a web server at the specified IP address and checks the response for indicators of an AMP stack (Apache, MySQL, PHP).
+""" + color.red + """scanner/subdomain-scan""" + color.white + """                              25/04/10 08:05       This scanner exploits the subdomain scanner to look for specific subdomains by using a wordlist.
+""" + color.red + """scanner/portscan""" + color.red + """                                      25/04/10 08:13       scans the port you specified to see they are open or closed.
 """)
     elif scconsole == "search exploit":
         print("""
@@ -332,10 +360,13 @@ search [ exploits | exploit | windows | site | cve-exploits ]
         print(color.red + "tools/Slammer_cve-2007-5391" + color.white + "                            07/05/23 01:12       Slammer is a worm-like exploit that targets vulnerable systems running the Windows operating system.")
         print(color.red + "tools/cve-2022-24521" + color.white + "                                   22/04/12 10:43       CVE-2022-24521 is a stack-based buffer overflow vulnerability in the login.cgi script of the Cisco Small Business 7000 Series IP Phones, which allows an unauthenticated attacker to execute arbitrary commands on the device.")
         print(color.red + "tools/cve-2010-2730" + color.white + "                                    10/06/12 07:11       Buffer overflow in Microsoft Internet Information Services (IIS) 7.5, when FastCGI is enabled, allows remote attackers to execute arbitrary code via crafted headers in a request.")
-        print(color.red + "cve-2025-0001" + color.white + "                                          25/01/01 04:07       Remote Code Execution in Apache HTTP Server 2.4.54.")
-        print(color.red + "cve-2025-0006" + color.white + "                                          25/01/01 04:27       SQL Injection in MySQL 8.0.28.")
+        print(color.red + "tools/cve-2025-0001" + color.white + "                                    25/01/01 04:07       Remote Code Execution in Apache HTTP Server 2.4.54.")
+        print(color.red + "tools/cve-2025-0006" + color.white + "                                    25/01/01 04:27       SQL Injection in MySQL 8.0.28.")
+        print(color.red + "tools/DocsGPT_0-12-0_RCE" + color.white + "                               25/04/09 11:34       DocsGPT 0.12.0 - Remote Code Execution")
         print()
         print("You can't run these exploits from here, you need to run them from ",os.getcwd(),"/tools/cve-exploits/")
+        print()
+        print("Before running them, see the code, besauce the exploits haves some variables needs t oassigns it!")
         print()
     elif scconsole == "search multi":
         print("""
@@ -347,6 +378,9 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """multi/os_detector""" + color.white + """                                   25/02/19 12:43       try to detect the target OS with the port you typed.
 """ + color.red + """multi/pop3-pass""" + color.white + """                                     25/02/20 11:57       exploits a buffer overflow vulnerability in a POP3 server.
 """ + color.red + """multi/pop3-brute-force""" + color.white + """                              25/02/21 01:44       brute-forcing the pop3 port.
+""" + color.red + """multi/nmap-version-detection""" + color.white + """                        25/04/04 10:35       uses nmap to detect version.
+""" + color.red + """multi/ble-bypass""" + color.white + """                                    25/04/05 04:14       This is a vulnerability in the BLE protocol that allows attackers to bypass security measures and gain unauthorized access to a target system. The exploit involves exploiting a flaw in the encryption used in BLE connections.
+""" + color.red + """multi/ble-scanner""" + color.white + """                                   25/04/04 11:01       scans bluetooths around you (sudo permission needed!).
 """)
     elif scconsole == "search osx":
         print("""
@@ -377,6 +411,7 @@ search [ exploits | exploit | windows | site | cve-exploits ]
     Exploits                                        When created?        Discrepstion 
 """ + color.red + """dos/ciscodos""" + color.white + """                                            03/07/22 10:07       Remote DoS against the recent Cisco IOS vuln.
 """ + color.red + """dos/DD_D_Attack""" + color.white + """                                         25/02/01 02:01       for DoS and DDoS Attack (If your Internet is slow, that's gonna works slowly!).
+""" + color.red + """dos/ble-dos""" + color.white + """                                             25/04/05 16:35       scans the bluetooths around you and then let you to choose target, trys to connect, then starts the attack.
 """)
     elif scconsole == "search php":
         print("""
@@ -413,6 +448,11 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """auxiliary/password_cracking/crack-windows-hash""" + color.white + """          25/03/17 06:20       This module can crack Windows password hashes using a dictionary attack or brute-force methods.
 """ + color.red + """auxiliary/pipe_auditor""" + color.white + """                                  25/03/18 12:06       This module audits named pipes on an SMB server. It can be used to identify potential vulnerabilities or access points.
 """ + color.red + """auxiliary/smb_enumshares""" + color.white + """                                25/03/18 12:16       This module enumerates shares on an SMB server. It can be used to identify potential vulnerabilities or access points.
+""" + color.red + """auxiliary/web-spider""" + color.white + """                                    25/02/20 05:05       This module allows you to crawl websites and collect URLs, files, and other resources. It can be used to gather information for reconnaissance and vulnerability assessment.
+""" + color.red + """auxiliary/apache_mod_status""" + color.white + """                             25/03/20 05:13       This module exploits Apache mod_status misconfiguration to obtain sensitive information about the server.
+""" + color.red + """auxiliary/coldfusion_rce""" + color.white + """                                25/03/20 05:30       This module exploits ColdFusion remote command execution vulnerabilities to execute arbitrary commands.
+""" + color.red + """auxiliary/http-form-brute""" + color.white + """                               25/03/21 11:19       This module attempts to brute-force HTTP form logins using a specified list of credentials.
+""" + color.red + """auxiliary/sqli-xss-vuln""" + color.white + """                                 25/04/10 08:33       This exploit is for WEB Vulnerabilitie test, to test teh target website to see if it is vulnerable to sqli or xss.
 """)
     elif scconsole == "search sniffer":
         print("""
@@ -424,6 +464,18 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """sniffer/tcpdump-sniffer""" + color.white + """                                 25/03/18 11:34       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
 """ + color.red + """sniffer/ettercap-sniffer""" + color.white + """                                25/03/18 11:43       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
 """ + color.red + """sniffer/tshark-sniffer""" + color.white + """                                  25/03/18 11:55       This module starts a tshark sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+""" + color.red + """sniffer/ble-scanner""" + color.white + """                                     25/04/04 11:01       scans bluetooths around you (sudo permission needed!).
+""")
+    elif scconsole == "search scanner":
+        print("""
+    Exploits                                        When created?        Discrepstion 
+""" + color.red + """scanner/portscan-tcp""" + color.white + """                                    25/04/08 09:28       scans for open ports.
+""" + color.red + """scanner/ble-scanner""" + color.white + """                                     25/04/04 11:01       scans bluetooths around you (sudo permission needed!).
+""" + color.red + """scanner/vnc-none-auth""" + color.white + """                                   25/04/08 09:46       scans the VNC port to see if it is open or closed.
+""" + color.red + """scanner/ftp-anon""" + color.white + """                                        25/04/08 09:54       scans target port 21 to if anonymous access is enabled on port 21 (ftp port).
+""" + color.red + """scanner/portmap-amp""" + color.white + """                                     25/04/08 10:01       attempts to connect to a web server at the specified IP address and checks the response for indicators of an AMP stack (Apache, MySQL, PHP).
+""" + color.red + """scanner/subdomain-scan""" + color.white + """                                  25/04/10 08:05       This scanner exploits the subdomain scanner to look for specific subdomains by using a wordlist.
+""" + color.red + """scanner/portscan""" + color.white + """                                        25/04/10 08:13       scans the port you specified to see they are open or closed.
 """)
     elif scconsole == "show payloads":
         print("""
@@ -872,11 +924,81 @@ sudo reqired!!
         time.sleep(0.5)
         print("using auxiliary/smb_enumshares.")
         aauxiliarysmbenumshares()
+    elif scconsole == "use auxiliary/web-spider":
+        time.sleep(0.5)
+        print("using auxiliary/web-spider.")
+        aauxiliarywebspider()
+    elif scconsole == "use auxiliary/apache_mod_status":
+        time.sleep(0.5)
+        print("using auxiliary/apache_mod_status.")
+        aauxiliaryapachemodstatus()
+    elif scconsole == "use auxiliary/coldfusion_rce":
+        time.sleep(0.5)
+        print("using auxiliary/coldfusion_rce.")
+        aauxiliarycoldfusionrce()
+    elif scconsole == "use auxiliary/http-form-brute":
+        time.sleep(0.5)
+        print("using auxiliary/http-form-brute.")
+        aauxiliaryhttpformbrute()
+    elif scconsole == "use multi/nmap-version-detection":
+        time.sleep(0.5)
+        print("using multi/nmap-version-detection.")
+        multinmapversiondetection()
+    elif scconsole == "use sniffer/ble-scanner":
+        time.sleep(0.5)
+        print("using sniffer/ble-scanner.")
+        snifferblescanner()
+    elif scconsole == "use multi/ble-bypass":
+        time.sleep(0.5)
+        print("using multi/ble-bypass.")
+        multiblebypass()
+    elif scconsole == "use multi/ble-scanner":
+        time.sleep(0.5)
+        print("using multi/ble-scanner.")
+        multiblescanner()
+    elif scconsole == "use dos/ble-dos":
+        time.sleep(0.5)
+        print("using dos/ble-dos.")
+        dosbledos()
+    elif scconsole == "use scanner/portscan-tcp":
+        time.sleep(0.5)
+        print("using scanner/portscan-tcp.")
+        scannerportscantcp()
+    elif scconsole == "use scanner/ble-scanner":
+        time.sleep(0.5)
+        print("using scanner/ble-scanner.")
+        scannerblescanner()
+    elif scconsole == "use scanner/vnc-none-auth":
+        time.sleep(0.5)
+        print("using scanner/vnc-none-auth.")
+        scannervncnoneauth()
+    elif scconsole == "use scanner/ftp-anon":
+        time.sleep(0.5)
+        print("using scanner/ftp-anon.")
+        scannerftpanon()
+    elif scconsole == "use scanner/portmap-amp":
+        time.sleep(0.5)
+        print("using scanner/portmap-amp.")
+        scannerportmapamp()
+    elif scconsole == "use scanner/subdomain-scan":
+        time.sleep(0.5)
+        print("using scanner/subdomain-scan.")
+        scannersubdomainscan()
+    elif scconsole == "use scanner/portscan":
+        time.sleep(0.5)
+        print("using scanner/portscan.")
+        scannerportscan()
+    elif scconsole == "use auxiliary/sqli-xss-vuln":
+        time.sleep(0.5)
+        print("using auxiliary/sqli-xss-vuln.")
+        aauxiliarysqlixssvuln()
     elif scconsole == "use system commands":
             OSconsole()
             OSconsole()
             OSconsole()
+            OSconsole()
     elif scconsole == "use system command":
+            OSconsole()
             OSconsole()
             OSconsole()
             OSconsole()
@@ -4547,7 +4669,7 @@ you will specifiy these options when you run or exploit it!
         os.system('python exploits/auxiliary/pipe_auditor.py')
         aauxiliarypipeauditor()
     elif scconsole102 == "unuse":
-        print("unusing exploits/auxiliary/pipe_auditor.")
+        print("unusing auxiliary/pipe_auditor.")
         time.sleep(0.5)
         Console()
     elif scconsole102 == "exit":
@@ -4585,10 +4707,670 @@ you will specifiy these options when you run or exploit it!
         os.system('python exploits/auxiliary/smb_enumshares.py')
         aauxiliarysmbenumshares()
     elif scconsole103 == "unuse":
-        print("unusing exploits/auxiliary/smb_enumshares.")
+        print("unusing auxiliary/smb_enumshares.")
         time.sleep(0.5)
         Console()
     elif scconsole103 == "exit":
+        exit()
+
+def aauxiliarywebspider():
+    scconsole104 = input("sc~" + color.red + "(auxiliary/web-spider)" + color.white + ">")
+    if scconsole104 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarywebspider()
+    elif scconsole104 == "clear":
+        os.system('clear')
+        aauxiliarywebspider()
+    elif scconsole104 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify the target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarywebspider()
+    elif scconsole104 == "run":
+        os.system('python exploits/auxiliary/web-spider.py')
+        aauxiliarywebspider()
+    elif scconsole104 == "exploit":
+        os.system('python exploits/auxiliary/web-spider.py')
+        aauxiliarywebspider()
+    elif scconsole104 == "unuse":
+        print("unusing auxiliary/web-spider.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole104 == "exit":
+        exit()
+
+def aauxiliaryapachemodstatus():
+    scconsole105 = input("sc~" + color.red + "(auxiliary/apache_mod_status)" + color.white + ">")
+    if scconsole105 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliaryapachemodstatus()
+    elif scconsole105 == "clear":
+        os.system('clear')
+        aauxiliaryapachemodstatus()
+    elif scconsole105 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify the target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliaryapachemodstatus()
+    elif scconsole105 == "run":
+        os.system('python exploits/auxiliary/apache_mod_status.py')
+        aauxiliaryapachemodstatus()
+    elif scconsole105 == "exploit":
+        os.system('python exploits/auxiliary/apache_mod_status.py')
+        aauxiliaryapachemodstatus()
+    elif scconsole105 == "unuse":
+        print("unusing auxiliary/apache_mod_status.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole105 == "exit":
+        exit()
+
+def aauxiliarycoldfusionrce():
+    scconsole106 = input("sc~" + color.red + "(auxiliary/coldfusion_rce)" + color.white + ">")
+    if scconsole106 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliarycoldfusionrce()
+    elif scconsole106 == "clear":
+        os.system('clear')
+        aauxiliarycoldfusionrce()
+    elif scconsole106 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify the target url.
+PAYLOAD       | specify the payload you want.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliarycoldfusionrce()
+    elif scconsole106 == "run":
+        urltarget111 = input("Enter target URL: ")
+        payloadtarget111 = input("Enter the PAYLOAD: ")
+        os.system(f'python exploits/auxiliary/coldfusion_rce.py {urltarget111} {payloadtarget111}')
+        aauxiliarycoldfusionrce()
+    elif scconsole106 == "exploit":
+        urltarget112 = input("Enter target URL: ")
+        payloadtarget112 = input("Enter the PAYLOAD: ")
+        os.system(f'python exploits/auxiliary/coldfusion_rce.py {urltarget112} {payloadtarget112}')
+        aauxiliarycoldfusionrce()
+    elif scconsole106 == "unuse":
+        print("unusing auxiliary/coldfusion_rce.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole106 == "exit":
+        exit()
+
+def aauxiliaryhttpformbrute():
+    scconsole107 = input("sc~" + color.red + "(auxiliary/http-form-brute)" + color.white + ">")
+    if scconsole107 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        aauxiliaryhttpformbrute()
+    elif scconsole107 == "clear":
+        os.system('clear')
+        aauxiliaryhttpformbrute()
+    elif scconsole107 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify the target url.
+USERNAMEFIELD | specify the username field.
+PASSWORDFIELD | specify the password field.
+USERNAMELIST  | specify the username list.
+PASSWORDLIST  | specify the password list.
+
+you will specifiy these options when you run or exploit it!
+""")
+        aauxiliaryhttpformbrute()
+    elif scconsole107 == "run":
+        urltarget113 = input("Enter target URL: ")
+        usernamefield1 = input("USERNAMEFIELD: ")
+        passwordfield1 = input("PASSWORDFIELD: ")
+        usernamelist123 = input("USERNAMELIST: ")
+        passwordlist123 = input("PASSWORDLIST: ")
+        os.system(f'python exploits/auxiliary/http-form-brute.py {urltarget113} {usernamefield1} {passwordfield1} {usernamelist123} {passwordlist123}')
+        aauxiliaryhttpformbrute()
+    elif scconsole107 == "exploit":
+        urltarget114 = input("Enter target URL: ")
+        usernamefield2 = input("USERNAMEFIELD: ")
+        passwordfield2 = input("PASSWORDFIELD: ")
+        usernamelist122 = input("USERNAMELIST: ")
+        passwordlist122 = input("PASSWORDLIST: ")
+        os.system(f'python exploits/auxiliary/http-form-brute.py {urltarget114} {usernamefield2} {passwordfield2} {usernamelist122} {passwordlist122}')
+        aauxiliaryhttpformbrute()
+    elif scconsole107 == "unuse":
+        print("unusing auxiliary/http-form-brute.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole107 == "exit":
+        exit()
+
+def multinmapversiondetection():
+    scconsole108 = input("sc~" + color.red + "(multi/nmap-version-detection)" + color.white + ">")
+    if scconsole108 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        multinmapversiondetection()
+    elif scconsole108 == "clear":
+        os.system('clear')
+        multinmapversiondetection()
+    elif scconsole108 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify target ip address.
+
+you will specifiy these options when you run or exploit it!
+""")
+        multinmapversiondetection()
+    elif scconsole108 == "run":
+        os.system('python exploits/multi/nmap-version-detection.py')
+        multinmapversiondetection()
+    elif scconsole108 == "exploit":
+        os.system('python exploits/multi/nmap-version-detection.py')
+        multinmapversiondetection()
+    elif scconsole108 == "unuse":
+        print("unusing multi/nmap-version-detection.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole108 == "exit":
+        exit()
+
+def snifferblescanner():
+    scconsole109 = input("sc~" + color.red + "(sniffer/ble-scanner)" + color.white + ">")
+    if scconsole109 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        snifferblescanner()
+    elif scconsole109 == "clear":
+        os.system('clear')
+        snifferblescanner()
+    elif scconsole109 == "show options":
+        print("""
+NO OPTION OR DISCREPTIONS HERE!
+""")
+        snifferblescanner()
+    elif scconsole109 == "run":
+        os.system('sudo python exploits/sniffer/ble-scanner.py')
+        snifferblescanner()
+    elif scconsole109 == "exploit":
+        os.system('sudo python exploits/sniffer/ble-scanner.py')
+        snifferblescanner()
+    elif scconsole109 == "unuse":
+        print("unusing sniffer/ble-scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole109 == "exit":
+        exit()
+
+def multiblebypass():
+    scconsole110 = input("sc~" + color.red + "(multi/ble-bypass)" + color.white + ">")
+    if scconsole110 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        multiblebypass()
+    elif scconsole110 == "clear":
+        os.system('clear')
+        multiblebypass()
+    elif scconsole110 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+BLE_ADDRESS   | specify target bluetooth address of target device.
+
+you will specifiy these options when you run or exploit it!
+""")
+        multiblebypass()
+    elif scconsole110 == "run":
+        os.system('sudo python exploits/multi/ble-bypass.py')
+        multiblebypass()
+    elif scconsole110 == "exploit":
+        os.system('sudo python exploits/multi/ble-bypass.py')
+        multiblebypass()
+    elif scconsole110 == "unuse":
+        print("unusing multi/ble-bypass.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole110 == "exit":
+        exit()
+
+def multiblescanner():
+    scconsole111 = input("sc~" + color.red + "(multi/ble-scanner)" + color.white + ">")
+    if scconsole111 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        multiblescanner()
+    elif scconsole111 == "clear":
+        os.system('clear')
+        multiblescanner()
+    elif scconsole111 == "show options":
+        print("""
+NO OPTION OR DISCREPTIONS HERE!
+""")
+        multiblescanner()
+    elif scconsole111 == "run":
+        os.system('sudo python exploits/multi/ble-scanner.py')
+        multiblescanner()
+    elif scconsole111 == "exploit":
+        os.system('sudo python exploits/multi/ble-scanner.py')
+        multiblescanner()
+    elif scconsole111 == "unuse":
+        print("unusing multi/ble-scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole111 == "exit":
+        exit()
+
+def dosbledos():
+    scconsole112 = input("sc~" + color.red + "(dos/ble-dos)" + color.white + ">")
+    if scconsole112 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        dosbledos()
+    elif scconsole112 == "clear":
+        os.system('clear')
+        dosbledos()
+    elif scconsole112 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+BLE_ADDRESS   | specify target bluetooth address of target device.
+
+you will specifiy these options when you run or exploit it!
+""")
+        dosbledos()
+    elif scconsole112 == "run":
+        os.system('sudo python exploits/dos/ble-dos.py')
+        dosbledos()
+    elif scconsole112 == "exploit":
+        os.system('sudo python exploits/dos/ble-dos.py')
+        dosbledos()
+    elif scconsole112 == "unuse":
+        print("unusing dos/ble-dos.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole112 == "exit":
+        exit()
+
+def scannerportscantcp():
+    scconsole113 = input("sc~" + color.red + "(scanner/portscan-tcp)" + color.white + ">")
+    if scconsole113 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerportscantcp()
+    elif scconsole113 == "clear":
+        os.system('clear')
+        scannerportscantcp()
+    elif scconsole113 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify target ip address or website.
+START_PORT    | specify the starting port.
+END_PORT      | specify the ending port.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerportscantcp()
+    elif scconsole113 == "run":
+        os.system('python exploits/scanner/portscan-tcp.py')
+        scannerportscantcp()
+    elif scconsole113 == "exploit":
+        os.system('python exploits/scanner/portscan-tcp.py')
+        scannerportscantcp()
+    elif scconsole113 == "unuse":
+        print("unusing scanner/portscan-tcp.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole113 == "exit":
+        exit()
+
+def scannerblescanner():
+    scconsole114 = input("sc~" + color.red + "(scanner/ble-scanner)" + color.white + ">")
+    if scconsole114 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerblescanner()
+    elif scconsole114 == "clear":
+        os.system('clear')
+        scannerblescanner()
+    elif scconsole114 == "show options":
+        print("""
+NO OPTION OR DISCREPTIONS HERE!
+""")
+        scannerblescanner()
+    elif scconsole114 == "run":
+        os.system('sudo python exploits/scanner/ble-scanner.py')
+        scannerblescanner()
+    elif scconsole114 == "exploit":
+        os.system('sudo python exploits/scanner/ble-scanner.py')
+        scannerblescanner()
+    elif scconsole114 == "unuse":
+        print("unusing scanner/ble-scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole114 == "exit":
+        exit()
+
+def scannervncnoneauth():
+    scconsole115 = input("sc~" + color.red + "(scanner/vnc-none-auth)" + color.white + ">")
+    if scconsole115 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannervncnoneauth()
+    elif scconsole115 == "clear":
+        os.system('clear')
+        scannervncnoneauth()
+    elif scconsole115 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify target ip address.
+RPORT         | specifed as 5900 (VNC port).
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannervncnoneauth()
+    elif scconsole115 == "run":
+        os.system('python exploits/scanner/vnc-none-auth.py')
+        scannervncnoneauth()
+    elif scconsole115 == "exploit":
+        os.system('python exploits/scanner/vnc-none-auth.py')
+        scannervncnoneauth()
+    elif scconsole115 == "unuse":
+        print("unusing scanner/vnc-none-auth.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole115 == "exit":
+        exit()
+
+def scannerftpanon():
+    scconsole116 = input("sc~" + color.red + "(scanner/ftp-anon)" + color.white + ">")
+    if scconsole116 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerftpanon()
+    elif scconsole116 == "clear":
+        os.system('clear')
+        scannerftpanon()
+    elif scconsole116 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify target ip address.
+RPORT         | specifed as 21 (ftp port).
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerftpanon()
+    elif scconsole116 == "run":
+        os.system('python exploits/scanner/ftp-anon.py')
+        scannerftpanon()
+    elif scconsole116 == "exploit":
+        os.system('python exploits/scanner/ftp-anon.py')
+        scannerftpanon()
+    elif scconsole116 == "unuse":
+        print("unusing scanner/ftp-anon.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole116 == "exit":
+        exit()
+
+def scannerportmapamp():
+    scconsole117 = input("sc~" + color.red + "(scanner/portmap-amp)" + color.white + ">")
+    if scconsole117 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerportmapamp()
+    elif scconsole117 == "clear":
+        os.system('clear')
+        scannerportmapamp()
+    elif scconsole117 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify target ip address.
+RPORT         | specifed as 80 (HTTP port).
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerportmapamp()
+    elif scconsole117 == "run":
+        os.system('python exploits/scanner/portmap-amp.py')
+        scannerportmapamp()
+    elif scconsole117 == "exploit":
+        os.system('python exploits/scanner/portmap-amp.py')
+        scannerportmapamp()
+    elif scconsole117 == "unuse":
+        print("unusing scanner/portmap-amp.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole117 == "exit":
+        exit()
+
+def scannersubdomainscan():
+    scconsole118 = input("sc~" + color.red + "(scanner/subdomain-scan)" + color.white + ">")
+    if scconsole118 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannersubdomainscan()
+    elif scconsole118 == "clear":
+        os.system('clear')
+        scannersubdomainscan()
+    elif scconsole118 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+WEBSITE       | specify target website.
+WORDLIST      | specify the wordlist to use for scan.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannersubdomainscan()
+    elif scconsole118 == "run":
+        os.system('python exploits/scanner/subdomain-scan.py')
+        scannersubdomainscan()
+    elif scconsole118 == "exploit":
+        os.system('python exploits/scanner/subdomain-scan.py')
+        scannersubdomainscan()
+    elif scconsole118 == "unuse":
+        print("unusing scanner/subdomain-scan.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole118 == "exit":
+        exit()
+
+def scannerportscan():
+    scconsole119 = input("sc~" + color.red + "(scanner/portscan)" + color.white + ">")
+    if scconsole119 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerportscan()
+    elif scconsole119 == "clear":
+        os.system('clear')
+        scannerportscan()
+    elif scconsole119 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify target ip address or website.
+RPORTS        | specify ports to start scan them.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerportscan()
+    elif scconsole119 == "run":
+        os.system('python exploits/scanner/portscan.py')
+        scannerportscan()
+    elif scconsole119 == "exploit":
+        os.system('python exploits/scanner/portscan.py')
+        scannerportscan()
+    elif scconsole119 == "unuse":
+        print("unusing scanner/portscan.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole119 == "exit":
+        exit()
+
+def auxiliarysqlixssvuln():
+    scconsole120 = input("sc~" + color.red + "(auxiliary/sqli-xss-vuln)" + color.white + ">")
+    if scconsole120 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliarysqlixssvuln()
+    elif scconsole120 == "clear":
+        os.system('clear')
+        auxiliarysqlixssvuln()
+    elif scconsole120 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliarysqlixssvuln()
+    elif scconsole120 == "run":
+        os.system('python exploits/auxiliary/sqli-xss-vuln.py')
+        auxiliarysqlixssvuln()
+    elif scconsole120 == "exploit":
+        os.system('python exploits/auxiliary/sqli-xss-vuln.py')
+        auxiliarysqlixssvuln()
+    elif scconsole120 == "unuse":
+        print("unusing auxiliary/sqli-xss-vuln.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole120 == "exit":
         exit()
 
 def OSconsole():
