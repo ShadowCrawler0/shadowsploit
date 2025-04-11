@@ -192,14 +192,6 @@ Eth: `0x055aa3c526ad33caec2d1ffbf686ca60071dfe81`
 
 FLO: `FIO6CkKECn61WFE8vbhfQFzuHrk7K9g23NmC8g45nG4kisrbypBHi`
 
--------------------------------------------------------------------------
-
-Our Telegram Channel
--
-
-https://t.me/its_Single_Core
-
-join us and use our `tools` and `exploit` our see our new `updates` from `telegram`.
 
 --------------------------------------------------------------------------
 
