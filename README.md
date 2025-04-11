@@ -5,19 +5,21 @@ see the older versions in our old github : https://github.com/singlecore06483/sc
 UPDATES
 -
 
-new updates and features in sc_framework v1.7:
+new updates and features in sc_framework v1.8:
 
-- added 8 new exploits.
+- added 10 new exploits.
 - added 7 auxiliary exploits.
-- added 2 cve exploits.
+- added 1 cve exploits.
+- added sniffer modules.
+- fixed some exploits.
 - fixed the bugs and error.
 
 
 SC FRAMEWORK
 -
 
-this tool uses 59 exploits and 22 cve exploits and 11 payloads and 22 auxiliary exploits.
-which some of the exploit like `ssh-loign-test, PDF-exploit, and more 57 exploits`.
+this tool uses 69 exploits and 23 cve exploits and 11 payloads and 29 auxiliary exploits.
+which some of the exploit like `ssh-loign-test, PDF-exploit, and more 67 exploits`.
 
 How this tool works?
 -
@@ -71,27 +73,7 @@ search ---> to see the options of search.
 exit ---> to exit from sc-console.
 show payloads ---> to see avalable payloads in sc-framework.
 use system commands ---> to use system tools and commands 3 times, to come back here use (back to sc-console).
-```
-when using an exploit:
-```
-help ---> to see this help menu.
-clear ---> to clear the screen.
-unuse ---> to unuse this exploit.
-exit ---> to exit from scconsole.
-run ---> to run the exploit you selected.
-exploit ---> to run the exploit you selected.
-show options ---> to see the options.
-```
-when using an exploit that's have a payload:
-```
-help ---> to see this help menu.
-clear ---> to clear the screen.
-unuse ---> to unuse this exploit.
-exit ---> to exit from scconsole.
-run ---> to run the exploit you selected.
-exploit ---> to run the exploit you selected.
-show options ---> to see the options.
-show payloads ---> to see avalable payloads in sc-framework.
+db_scscanner ---> scconsole scanner.
 ```
 
 -------------------------------------------------------------------------
@@ -116,7 +98,7 @@ SC FRAMEWORK GUI
 -
 
 
-The `GUI` version of scconsole, that created with python, the `GUI` version haves `14 exploits`.
+The `GUI` version of scconsole, that created with python, the `GUI` version haves `20 exploits`.
 
 to run the tool, you need to run it as root with sudo, here is the command :
 
