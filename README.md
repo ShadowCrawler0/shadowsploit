@@ -5,12 +5,13 @@ see the older versions in our old github : https://github.com/singlecore06483/sc
 UPDATES
 -
 
-new updates and features in sc_framework v1.8:
+new updates and features in sc_framework v1.9:
 
-- added 10 new exploits.
-- added 7 auxiliary exploits.
-- added 1 cve exploits.
-- added sniffer modules.
+- added 12 exploits
+- added 8 payloads
+- added 1 cve-exploit
+- added 2 auxiliary exploits
+- added 2 wordlists
 - fixed some exploits.
 - fixed the bugs and error.
 
@@ -18,8 +19,8 @@ new updates and features in sc_framework v1.8:
 SC FRAMEWORK
 -
 
-this tool uses 69 exploits and 23 cve exploits and 11 payloads and 29 auxiliary exploits.
-which some of the exploit like `ssh-loign-test, PDF-exploit, and more 67 exploits`.
+this tool uses 81 exploits and 24 cve exploits and 19 payloads and 31 auxiliary exploits.
+which some of the exploit like `ssh-loign-test, PDF-exploit, and more 79 exploits`.
 
 How this tool works?
 -
