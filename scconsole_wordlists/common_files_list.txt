@@ -1,0 +1,27 @@
+# this is just a few example, you can add more
+/config/database.yml
+/config/master.key
+/secrets/credentials.txt
+/secrets/ssh_keys.pem
+/secrets/api_keys.txt
+/secrets/encryption_key.pem
+/secrets/vpn_config.ovpn
+/secrets/backup_keys.txt
+/secrets/auth_tokens.txt
+/secrets/server_certs.pem
+/private/ssh_keys.pem
+/private/api_keys.txt
+/private/encryption_key.pem
+/private/backup_keys.txt
+/private/auth_tokens.txt
+/private/server_certs.pem
+/backup/database.sql
+/backup/config.yml
+/backup/secrets.txt
+/backup/ssh_keys.pem
+/backup/api_keys.txt
+/backup/encryption_key.pem
+/backup/vpn_config.ovpn
+/backup/backup_keys.txt
+/backup/auth_tokens.txt
+/backup/server_certs.pem

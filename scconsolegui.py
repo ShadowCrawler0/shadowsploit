@@ -181,7 +181,7 @@ class SCFrameworkGUI:
 
         -! The exploits will timeout after 100 second.
 
-                       -* 20 exploits *-
+                       -* 17 exploits *-
         """
 
         help_label = tk.Label(help_frame, text=help_text, bg="#333333", fg="#FFFFFF", font=("Arial", 10), justify=tk.LEFT)

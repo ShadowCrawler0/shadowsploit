@@ -108,6 +108,28 @@ def scan_ports(host, ports):
 def scan_website(website):
     # Placeholder for website scanning
     print(f"Scanning {website}")
+    print("starting to scan ...")
+    import socket
+
+def scan_website(website):
+    try:
+        # Get the IP address of the website
+        ip_address = socket.gethostbyname(website)
+        # Scan for open ports
+        for port in range(1, 65536):
+            try:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                sock.settimeout(1)
+                result = sock.connect_ex((ip_address, port))
+                if result == 0:
+                    print(f"Port {port} on {website} is open")
+                else:
+                    print(f"Port {port} on {website} is closed")
+                sock.close()
+            except socket.gaierror:
+                print(f"Port {port} on {website} is closed")
+    except socket.gaierror:
+        print(f"Unable to resolve {website}")
     save_result(f"Scanning {website}\n")
 
 def save_result(result):
@@ -120,7 +142,7 @@ def print_help():
     print("  -h, --help           Display this help message")
     print("  -p, --port           Scan specific ports on a host")
     print("  -o, --os             Scan for the operating system of a host")
-    print("  -w, --website        Scan a website for good information")
+    print("  -w, --website        Scan a website for open ports from 1 to 65536")
     print("Arguments:")
     print("  [host]               Single host IP address or range (e.g., 10.11.1.0 or 10.11.1.1-254)")
     print("  [port]               Single port number or comma-separated list of ports (e.g., 80 or 7,22,80,8080)")
