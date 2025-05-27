@@ -16,6 +16,7 @@ new updates and features in sc_framework v2.0:
 - fixed the bugs and error.
 - maked the UI better.
 - fixed the scshellcodegenerator.
+- added history.
 
 
 SC FRAMEWORK
