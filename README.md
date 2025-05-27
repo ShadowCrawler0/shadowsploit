@@ -5,22 +5,24 @@ see the older versions in our old github : https://github.com/singlecore06483/sc
 UPDATES
 -
 
-new updates and features in sc_framework v1.9:
+new updates and features in sc_framework v2.0:
 
-- added 12 exploits
-- added 8 payloads
+- added 3 exploits
+- added 12 payloads
 - added 1 cve-exploit
-- added 2 auxiliary exploits
+- added 10 auxiliary exploits
 - added 2 wordlists
 - fixed some exploits.
 - fixed the bugs and error.
+- maked the UI better.
+- fixed the scshellcodegenerator.
 
 
 SC FRAMEWORK
 -
 
-this tool uses 81 exploits and 24 cve exploits and 19 payloads and 31 auxiliary exploits.
-which some of the exploit like `ssh-loign-test, PDF-exploit, and more 79 exploits`.
+this tool uses 84 exploits and 25 cve exploits and 31 payloads and 41 auxiliary exploits.
+which some of the exploit like `ssh-loign-test, PDF-exploit, and more 82 exploits`.
 
 How this tool works?
 -
@@ -203,4 +205,5 @@ consuming every digital defence mechanism In Darkness,
 Alone.
 No system is safe.
 --single core--
+--Shadow Crawler--
 ```
