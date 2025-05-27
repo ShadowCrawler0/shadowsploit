@@ -2,7 +2,7 @@ import requests
 from tqdm import tqdm
 import time
 
-url = "https://github.com/singlecore06483/sc_framework"
+url = "https://github.com/SingleCore-06483/sc_framework"
 
 response = requests.get(url)
 
