@@ -5,21 +5,12 @@ see the older versions in our old github : https://github.com/singlecore06483/sc
 UPDATES
 -
 
-new updates and features in sc_framework v2.0:
+Changed from sc_framework to ----> shadowsploit
 
-- added 3 exploits
-- added 12 payloads
-- added 1 cve-exploit
-- added 10 auxiliary exploits
-- added 2 wordlists
-- fixed some exploits.
-- fixed the bugs and error.
-- maked the UI better.
-- fixed the scshellcodegenerator.
-- added history.
+new updates and features in ShadowSploit v2.1:
 
 
-SC FRAMEWORK
+ShadowSploit
 -
 
 this tool uses 84 exploits and 25 cve exploits and 31 payloads and 41 auxiliary exploits.
@@ -45,41 +36,6 @@ or
 python3 scconsole.py
 ```
 
-Can we install this tool on system ?
--
-
-yes, we can install the tool by typing :
-
-```
-./install
-```
-or
-```
-bash install
-```
-
-What OS this tool support ?
--
-
-This tool just support linux and macOS.
-
-Commands
--
-
-here the commands of this tool :
-
-in Menu:
-```
-help ---> to see this help menu.
-clear ---> to clear the screen.
-use <exploit> ---> to use the exploit.
-search ---> to see the options of search.
-exit ---> to exit from sc-console.
-show payloads ---> to see avalable payloads in sc-framework.
-use system commands ---> to use system tools and commands 3 times, to come back here use (back to sc-console).
-db_scscanner ---> scconsole scanner.
-```
-
 -------------------------------------------------------------------------
 
 SC PAYLOAD GENERATOR
@@ -98,7 +54,7 @@ python scgenrate.py -t reverse_tcp -lh <listener_host> -lp <listener_port> -o <o
 
 -------------------------------------------------------------------------
 
-SC FRAMEWORK GUI
+ShadowSploit GUI
 -
 
 
@@ -112,18 +68,6 @@ sudo python scconsolegui.py
 
 and pop up a new window that you can use scconsole as GUI version.
 
-to run an exploit, click on `Tools` bar, then choose type of exploit or attack, then choose an exploit.
-
-and in your terminal that shows you an input to enter your option, so if you look at the `Tools ---> <exploit>`, what does the exploit needs, there is just two : (LHOST and URL)
-
-you need to click on `Tagret` bar to enter your tagret.
-
-and when you typed and clicked on ENTER, and clicked on `start` button or bar, the exploit will runs and shows you the result in the `GUI`.
-
-after you done with your tagret, you can save the results or logs in a path you need as .txt format. here is how :
-
-click on `save logs as...` then the new window pops up, in there you will choose your path and file name to save the result or logs.
-
 -------------------------------------------------------------------------
 
 SC SHELLCODE GENERATOR
@@ -132,14 +76,6 @@ SC SHELLCODE GENERATOR
 This tool generates a shellcodes for linux, macos and windows systems.
 
 use this tool to generate a shellcode.
-
--------------------------------------------------------------------------
-
-What is DataBase in SC Framework ?
--
-So sometimes you see the exploits works bad or slow.
-
-so you can use `db_scconsole.py` to make the files and exploits ready to use.
 
 -------------------------------------------------------------------------
 
@@ -205,6 +141,5 @@ Malevolent code crawled through cybernetic veins,
 consuming every digital defence mechanism In Darkness,
 Alone.
 No system is safe.
---single core--
 --Shadow Crawler--
 ```
