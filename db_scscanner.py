@@ -173,7 +173,7 @@ if __name__ == "__main__":
             scan_ports(host, ports)
         elif args[0] in ['-o', '--os']:
             host = args[1]
-            ports = [7, 21, 22, 80, 8080]  # Specify the ports to scan
+            ports = [7, 21, 22, 25, 80, 443, 8080]  # Specify the ports to scan
             scan_os(host, ports)
         elif args[0] in ['-w', '--website']:
             scan_website(args[1])

@@ -17,12 +17,12 @@ global logs_input
 class SCFrameworkGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("SC Framework")
+        self.root.title("ShadowSploit - GUI")
         self.root.geometry("500x600")
         self.root.configure(bg="#333333")
 
         try:
-            image = Image.open("images/SCframework-icon.png")
+            image = Image.open("images/shadowsploit_icon.png")
             photo = ImageTk.PhotoImage(image)
             self.root.iconphoto(False, photo)
         except FileNotFoundError:
@@ -47,6 +47,50 @@ class SCFrameworkGUI:
         self.selected_exploit = None
         self.target = None
         global logs_input
+
+        # Dictionary mapping exploits to descriptions
+        self.exploit_descriptions = {
+            "site/vuln-curl-website": "Exploit targeting vulnerable curl implementations on websites.",
+            "exploit/ssh-version": "Checks SSH server versions for known vulnerabilities.",
+            "linux/vulnerability-find": "Scans Linux systems for common vulnerabilities.",
+            "site/reverse_http": "Sets up a reverse HTTP shell for remote access.",
+            "osx/kernal_xnu_ip_fragment_privesc": "Privilege escalation exploit targeting OSX kernel XNU IP fragment vulnerability.",
+            "osx/kernal_xnu_ip_fragment_privesc_2": "Alternative OSX kernel privilege escalation exploit variant.",
+            "multi/pop3-pass": "Extracts POP3 passwords from vulnerable servers.",
+            "site/information-gather": "Gathers information from target websites.",
+            "server/extract_table_db_column": "Extracts database table columns from vulnerable servers.",
+            "auxiliary/robots_txt": "Scans for sensitive files listed in robots.txt.",
+            "auxiliary/wordpress-scan": "Scans WordPress sites for common vulnerabilities.",
+            "auxiliary/title": "Retrieves the title of a web page for reconnaissance.",
+            "auxiliary/apache_mod_status": "Checks Apache mod_status for server info exposure.",
+            "scanner/vnc-none-auth": "Scans for VNC servers with no authentication.",
+            "auxiliary/web-spider": "Crawls websites to map their structure.",
+            "auxiliary/ftp-anonymous": "Checks FTP servers for anonymous login access.",
+            "multi/nmap-version-detection": "Uses Nmap to detect service versions on the target.",
+            "auxiliary/sqli-xss-vuln": "Detects SQL Injection and XSS vulnerabilities.",
+            "auxiliary/find-login-fields": "Finds login fields on web pages.",
+            "auxiliary/hashdetect": "Detects hash types in collected data.",
+            "sniffer/SSLstrip": "Performs SSL stripping attacks on network traffic.",
+            "dos/ble-dos": "Denial of Service attack targeting BLE devices.",
+            "auxiliary/webdav_scanner": "Scans for WebDAV enabled servers.",
+            "auxiliary/base64_decrypt": "Decodes Base64 encoded data.",
+            "auxiliary/dnsenum": "Enumerates DNS records for the target domain.",
+            "auxiliary/findns": "Finds nameservers for domains.",
+            "auxiliary/lbdetect": "Detects load balancers in front of web servers.",
+            "auxiliary/http-version": "Checks HTTP version supported by the server.",
+            "scanner/WAF_Checker": "Checks for presence of Web Application Firewalls.",
+            "scanner/ping_ip_site": "Pings IP or site to check availability.",
+            "sniffer/inspect_traffic": "Inspects network traffic for analysis.",
+            "auxiliary/drupal-scan": "Scans target to see if it is running on Drupal.",
+            "auxiliary/ping-mssql": "Try to detect MSSQL version.",
+            "auxiliary/smtp-version": "Try to detect SMTP vulnerabilities.",
+            "php/POST-request": "it trys to upload exploit.php to target site and give a command execution.",
+            "php/WordPress_Core_6-2_Directory_Traversal": "WordPress Core 6.2 - Directory Traversal.",
+            "scanner/server-scanner": "This module trys to get target server and php version.",
+            "scanner/vnc-none-auth": "This module try to detect if VNC server is running on target.",
+            "multi/nmap-version-detection": "Try detect target version using Nmap.",
+            "scanner/csrf_token_detect": "This module will find csrf token on tagret form."
+        }
 
         self.create_main_window()
 
@@ -98,7 +142,7 @@ class SCFrameworkGUI:
 
     def target_action(self):
         # Ask the user for the target IP or URL
-        target = simpledialog.askstring("Target", "Enter target IP or URL:")
+        target = simpledialog.askstring("Target", "Enter target IP/URL/HASH/INTERFACE:")
         if target:
             self.target = target
             self.logs_input.insert(tk.END, f"Target set: {target}\n")
@@ -106,56 +150,74 @@ class SCFrameworkGUI:
 
     def tools_action(self):
         self.root.withdraw()
-
         self.create_tools_window()
 
     def create_tools_window(self):
         tools_window = tk.Toplevel(self.root)
         tools_window.title("Select Exploit")
         tools_window.configure(bg="#333333")
+        tools_window.geometry("400x350")  # Slightly taller to fit description
 
-        # Main Frame
-        tools_frame = tk.Frame(tools_window, bg="#333333")
-        tools_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True, padx=5, pady=5)
+        # Frame for listbox and scrollbar
+        list_frame = tk.Frame(tools_window, bg="#333333")
+        list_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True, padx=5, pady=5)
+
+        # Scrollbar
+        scrollbar = tk.Scrollbar(list_frame, orient=tk.VERTICAL)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        # Listbox with exploits
+        self.exploit_listbox = tk.Listbox(list_frame, bg="#444444", fg="#FFFFFF",
+                                          font=("Arial", 10), selectmode=tk.SINGLE,
+                                          yscrollcommand=scrollbar.set)
+        self.exploit_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Attach scrollbar to listbox
+        scrollbar.config(command=self.exploit_listbox.yview)
 
         # List of exploits
-        exploits = [
-            "sc-gui/vuln-curl-website.py",
-            "sc-gui/ssh-version.py",
-            "sc-gui/vulnerability-find.py",
-            "sc-gui/os_detector.py",
-            "sc-gui/port-scan.py",
-            "sc-gui/reverse_http.py",
-            "sc-gui/kernal_xnu_ip_fragment_privesc.py",
-            "sc-gui/kernal_xnu_ip_fragment_privesc_2.py",
-            "sc-gui/pop3-pass.py",
-            "sc-gui/information-gather.py",
-            "sc-gui/extract_table_db_column.py",
-            "sc-gui/robots_txt.py",
-            "sc-gui/wordpress-scan.py",
-            "sc-gui/title.py",
-            "sc-gui/apache_mod_status.py",
-            "sc-gui/vnc-none-auth.py",
-            "sc-gui/web-spider.py",
-            "sc-gui/ftp-anonymous.py",
-            "sc-gui/nmap-version-detection.py",
-            "sc-gui/sqli-xss-vuln.py"
-        ]
+        exploits = list(self.exploit_descriptions.keys())
 
         for exploit in exploits:
-            exploit_button = tk.Button(tools_frame, text=exploit, command=lambda ex=exploit: self.select_exploit(ex, tools_window), **self.button_style)
-            exploit_button.pack(side=tk.TOP, fill=tk.X, padx=2, pady=2)
+            self.exploit_listbox.insert(tk.END, exploit)
 
+        # Description label below the listbox
+        self.description_label = tk.Label(tools_window, text="Select an exploit to see its description.",
+                                          bg="#333333", fg="#FFFFFF", wraplength=380, justify=tk.LEFT)
+        self.description_label.pack(side=tk.TOP, fill=tk.X, padx=5, pady=(0, 10))
+
+        # Bind selection event to update description
+        def on_exploit_select(event):
+            selection = self.exploit_listbox.curselection()
+            if selection:
+                exploit_name = self.exploit_listbox.get(selection)
+                desc = self.exploit_descriptions.get(exploit_name, "No description available.")
+                self.description_label.config(text=desc)
+
+        self.exploit_listbox.bind('<<ListboxSelect>>', on_exploit_select)
+
+        # Select button to confirm selection
+        select_button = tk.Button(tools_window, text="Select", command=lambda: self.select_exploit_from_list(tools_window), **self.button_style)
+        select_button.pack(side=tk.BOTTOM, fill=tk.X, padx=5, pady=5)
+
+        # Back button to return without selection
         back_button = tk.Button(tools_window, text="Back", command=lambda: self.back_to_main(tools_window), **self.button_style)
-        back_button.pack(side=tk.BOTTOM, fill=tk.X, padx=5, pady=5)
+        back_button.pack(side=tk.BOTTOM, fill=tk.X, padx=5, pady=(0,5))
 
-    def select_exploit(self, exploit, tools_window):
-        self.selected_exploit = exploit
-        self.logs_input.insert(tk.END, f"Selected exploit: {exploit}\n")
-        self.logs_input.see(tk.END)
-        tools_window.destroy()
-        self.root.deiconify()
-
+    def select_exploit_from_list(self, tools_window):
+        try:
+            selection_index = self.exploit_listbox.curselection()
+            if not selection_index:
+                messagebox.showwarning("Selection Error", "Please select an exploit from the list.")
+                return
+            exploit = self.exploit_listbox.get(selection_index)
+            self.selected_exploit = exploit
+            self.logs_input.insert(tk.END, f"Selected exploit: {exploit}\n")
+            self.logs_input.see(tk.END)
+            tools_window.destroy()
+            self.root.deiconify()
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred: {e}")
 
     def help_action(self):
         for widget in self.root.winfo_children():
@@ -170,7 +232,7 @@ class SCFrameworkGUI:
         help_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True, padx=5, pady=5)
 
         help_text = """
-        Help Menu of SC Framework - GUI
+        Help Menu of ShadowSploit - GUI
         -----------------------------------
         - Select "Target" to enter the target IP or URL.
         - Select "Tools" to choose an exploit from the list.
@@ -181,7 +243,7 @@ class SCFrameworkGUI:
 
         -! The exploits will timeout after 100 second.
 
-                       -* 17 exploits *-
+                       -* 40 exploits *-
         """
 
         help_label = tk.Label(help_frame, text=help_text, bg="#333333", fg="#FFFFFF", font=("Arial", 10), justify=tk.LEFT)
@@ -198,7 +260,7 @@ class SCFrameworkGUI:
         self.selected_exploit = exploit_path
         timeout = 100
 
-        command = ["sudo", "python3", f"exploits/{self.selected_exploit}"]
+        command = ["sudo", "python3", f"exploits/{self.selected_exploit}.py"]
 
         try:
             process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -247,7 +309,7 @@ class SCFrameworkGUI:
             self.logs_input.insert(tk.END, f"Exploit timed out after {timeout} seconds.\n")
             self.logs_input.see(tk.END)
             if process.poll() is None:
-               process.kill()
+                process.kill()
         except Exception as e:
             self.logs_input.insert(tk.END, f"An error occurred while running the exploit: {e}\n")
             self.logs_input.see(tk.END)
@@ -283,9 +345,5 @@ class SCFrameworkGUI:
 global logs_input
 
 root = tk.Tk()
-# Initialize logs_input before creating the GUI
-# logs_input = tk.Text(root, bg="#444444", fg="#FFFFFF", height=25, width=80, relief=tk.FLAT, borderwidth=0)
-
 app = SCFrameworkGUI(root)
-# Start the main event loop
 root.mainloop()
