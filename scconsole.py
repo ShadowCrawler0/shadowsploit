@@ -165,7 +165,7 @@ o.`Y8b 888888  dP__Yb   8I  dY Yb   dP   YbdPYbdP   o.`Y8b 88'''  88  .o Yb   dP
     print()
     print()
     print(color.white + "        *[ " + color.red + "ShadowSploit v2.1" + color.white + "                             ]*")
-    print("        *[ 102 exploits - 47 auxiliary - 27 cve exploits ]*")
+    print("        *[ 99 exploits - 47 auxiliary - 27 cve exploits  ]*")
     print("        *[ 53 payloads - 5 buffer overflow               ]*")
     print()
     print("shadowsploit tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
@@ -201,7 +201,7 @@ PLEASE CHOOSE AN EXPLOIT THEN TYPE THIS!
     elif scconsole == "search" or scconsole == "search ":
         print("""
 search [ exploits | exploit | windows | site | cve-exploits ]
-       [ osx | linux | multi | server | dos | php | android ]
+       [ osx | linux | multi | server | dos | php           ]
        [ auxiliary | sniffer | scanner | buffer_overflow    ]
 """)
     elif scconsole == "search exploits":
@@ -291,9 +291,6 @@ _______|
 |- """ + color.red + """site/Bludit""" + color.white + """                                         20/10/23       Bludit 3.9.2 - Auth Bruteforce Bypass.
 |- """ + color.red + """windows/ShellSend""" + color.white + """                                   25/05/21       Sends a buffer overflow to your tagret and then gives you a reverse shell access.
 |- """ + color.red + """site/shell_inject""" + color.white + """                                   25/05/26       Try some OS Command Injection payloads to see of there is any OS Command Injection in the web application, and gives you the shell.
-|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                          25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
-|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
-|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
 |- """ + color.red + """site/os_finder""" + color.white + """                                      25/06/29       Trys to find the target website OS from header and robots.txt .
 |- """ + color.red + """site/dir_enum""" + color.white + """                                       25/06/29       Trys to brute-force directorys and shows you with status code.
 |- """ + color.red + """site/sql_injector""" + color.white + """                                   25/06/29       This module will try to find a sql injection after that if trys to extract the tables and after that trys to extract columns.
@@ -571,15 +568,6 @@ _______|
 |- """ + color.red + """scanner/server-scanner""" + color.white + """                              25/05/01       It sends an HTTP GET request to the target URL and retrieves the server headers. If the server header indicates PHP, it extracts the PHP version and returns it.
 |- """ + color.red + """scanner/WAF_Checker""" + color.white + """                                 25/07/09       This module will try some payloads and other thinks to find the target WAF(Web Application Firewall) type and version.
 |- """ + color.red + """scanner/csrf_token_detect""" + color.white + """                           25/07/12       This module will detect if target using csrf token.
-""")
-    elif scconsole == "search android":
-        print("""
-    Exploits                                        When created?        Discrepstion 
-       |
-_______|
-|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                         25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
-|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
-|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
 """)
     elif scconsole == "search buffer_overflow":
         print("""
@@ -1271,22 +1259,10 @@ sudo reqired!!
         time.sleep(0.5)
         print("using site/shell_inject")
         siteshellinject()
-    elif scconsole == "use android/android_reverse_tcp":
-        time.sleep(0.5)
-        print("using android/android_reverse_tcp")
-        androidandroidreversetcp()
     elif scconsole == "use auxiliary/xss_scanner":
         time.sleep(0.5)
         print("using auxiliary/xss_scanner")
         auxiliaryxssscanner()
-    elif scconsole == "use android/GetShell":
-        time.sleep(0.5)
-        print("using android/GetShell")
-        androidGetShell()
-    elif scconsole == "use android/BuildShell":
-        time.sleep(0.5)
-        print("using android/BuildShell")
-        androidBuildShell()
     elif scconsole == "use auxiliary/sql-injection-db-tbl-c":
         time.sleep(0.5)
         print("using auxiliary/sql-injection-db-tbl-c")
@@ -7393,52 +7369,6 @@ the exploit is using these and other payloads.
         time.sleep(0.5)
         Console()
 
-def androidandroidreversetcp():
-    scconsole147 = input("sc~" + color.red + "(android/android_reverse_tcp)" + color.white + ">")
-    if scconsole147 == "help":
-        print("""
-help ---> to see this help menu.
-clear ---> to clear the screen.
-unuse ---> to unuse this exploit.
-exit ---> to exit from scconsole.
-run ---> to run the exploit you selected.
-exploit ---> to run the exploit you selected.
-show options ---> to see the options.
-""")
-        androidandroidreversetcp()
-    elif scconsole147 == "clear":
-        os.system('clear')
-        androidandroidreversetcp()
-    elif scconsole147 == "show options":
-        print("""
-OPTIONS          | DISCREPTIONS
------------------|----------------------
-LHOST            | specify the listener host for RAT file.
-LPORT            | specify the listener port for RAT file and listener.
-OUTPUT           | specify the output name (with .apk).
-
-Uses scRAT tool to generate!
-
-you will specifiy these options when you run or exploit it!
-""")
-        androidandroidreversetcp()
-    elif scconsole147 == "run":
-        os.system('python exploits/android/android_reverse_tcp.py')
-        androidandroidreversetcp()
-    elif scconsole147 == "exploit":
-        os.system('python exploits/android/android_reverse_tcp.py')
-        androidandroidreversetcp()
-    elif scconsole147 == "unuse":
-        print("unusing android/android_reverse_tcp.")
-        time.sleep(0.5)
-        Console()
-    elif scconsole147 == "exit":
-        exit()
-    else:
-        print("There is no command or option like that!\nunusing ...")
-        time.sleep(0.5)
-        Console()
-
 def auxiliaryxssscanner():
     scconsole148 = input("sc~" + color.red + "(auxiliary/xss_scanner)" + color.white + ">")
     if scconsole148 == "help":
@@ -7476,96 +7406,6 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole148 == "exit":
-        exit()
-    else:
-        print("There is no command or option like that!\nunusing ...")
-        time.sleep(0.5)
-        Console()
-
-def androidGetShell():
-    scconsole149 = input("sc~" + color.red + "(android/GetShell)" + color.white + ">")
-    if scconsole149 == "help":
-        print("""
-help ---> to see this help menu.
-clear ---> to clear the screen.
-unuse ---> to unuse this exploit.
-exit ---> to exit from scconsole.
-run ---> to run the exploit you selected.
-exploit ---> to run the exploit you selected.
-show options ---> to see the options.
-""")
-        androidGetShell()
-    elif scconsole149 == "clear":
-        os.system('clear')
-        androidGetShell()
-    elif scconsole149 == "show options":
-        print("""
-OPTIONS          | DISCREPTIONS
------------------|----------------------
-LPORT            | specify the listener port.
-
-Uses scRAT tool!
-
-you will specifiy these options when you run or exploit it!
-""")
-        androidGetShell()
-    elif scconsole149 == "run":
-        os.system('python exploits/android/GetShell.py')
-        androidGetShell()
-    elif scconsole149 == "exploit":
-        os.system('python exploits/android/GetShell.py')
-        androidGetShell()
-    elif scconsole149 == "unuse":
-        print("unusing android/GetShell.")
-        time.sleep(0.5)
-        Console()
-    elif scconsole149 == "exit":
-        exit()
-    else:
-        print("There is no command or option like that!\nunusing ...")
-        time.sleep(0.5)
-        Console()
-        
-def androidBuildShell():
-    scconsole150 = input("sc~" + color.red + "(android/BuildShell)" + color.white + ">")
-    if scconsole150 == "help":
-        print("""
-help ---> to see this help menu.
-clear ---> to clear the screen.
-unuse ---> to unuse this exploit.
-exit ---> to exit from scconsole.
-run ---> to run the exploit you selected.
-exploit ---> to run the exploit you selected.
-show options ---> to see the options.
-""")
-        androidBuildShell()
-    elif scconsole150 == "clear":
-        os.system('clear')
-        androidBuildShell()
-    elif scconsole150 == "show options":
-        print("""
-OPTIONS          | DISCREPTIONS
------------------|----------------------
-LHOST            | specify the listener host.
-LPORT            | specify the listener port.
-OUTPUT           | specify the output name (with .apk).
-
-Uses scRAT tool to generate!
-
-you will specifiy these options when you run or exploit it!
-""")
-        androidBuildShell()
-    elif scconsole150 == "run":
-        os.system('python exploits/android/BuildShell.py')
-        androidBuildShell()
-    elif scconsole150 == "exploit":
-        os.system('python exploits/android/BuildShell.py')
-        androidBuildShell()
-    elif scconsole150 == "unuse":
-        print("unusing android/BuildShell.")
-        time.sleep(0.5)
-        Console()
-    elif scconsole150 == "exit":
         exit()
     else:
         print("There is no command or option like that!\nunusing ...")
