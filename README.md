@@ -1,3 +1,5 @@
+![ShadowSploit Icon](/images/shadowsploit_icon.png)
+
 see the older versions in our old github : https://github.com/singlecore06483/sc_framework
 
 UPDATES
