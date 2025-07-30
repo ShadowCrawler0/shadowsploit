@@ -1,5 +1,3 @@
-![SC Framework Banner](images/scbanner.jpg)
-
 see the older versions in our old github : https://github.com/singlecore06483/sc_framework
 
 UPDATES
