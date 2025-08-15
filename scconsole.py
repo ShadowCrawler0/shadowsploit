@@ -46,18 +46,12 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 def start():
-    os.system('clear')
-    print("Starting scconsole...")
-    time.sleep(0.3)
-    os.system('clear')
-    print("Starting scconsole*..")
-    time.sleep(0.3)
-    os.system('clear')
-    print("Starting scconsole**.")
-    time.sleep(0.3)
-    os.system('clear')
-    print("Starting scconsole***")
-    time.sleep(0.3)
+    timelist = [1, 2, 3]
+    for dots in ["", "*", "**", "***"]:
+        os.system('clear')
+        print(f"Starting scconsole{dots}")
+        time.sleep(random.choice(timelist))
+
 
 
 def Menu():
@@ -139,11 +133,11 @@ o.`Y8b 888888  dP__Yb   8I  dY Yb   dP   YbdPYbdP   o.`Y8b 88'''  88  .o Yb   dP
                                             \ """ + color.white + """
                                        ShadowSploit
                                              
-                                         ,~'''~.
+                                   """ + color.red + """      ,~'''~.
                                       ,-/       \-.
                                     .' '`._____.'` `. 
-                                    `-._         _,-'
-                                      _|`--...--'|_     
+                                    `-._         _,-'""" + color.white + """
+                                      _|""" + color.red + """`--...--'""" + color.white + """|_     
                                   ___/\|         |/\___
                                 """ + color.green + """ /     \\\_______//     \\
                                 /       \       /       \\""" + color.white + """
@@ -164,9 +158,9 @@ o.`Y8b 888888  dP__Yb   8I  dY Yb   dP   YbdPYbdP   o.`Y8b 88'''  88  .o Yb   dP
     print()
     print()
     print()
-    print(color.white + "        *[ " + color.red + "ShadowSploit v2.1" + color.white + "                             ]*")
-    print("        *[ 99 exploits - 47 auxiliary - 27 cve exploits  ]*")
-    print("        *[ 53 payloads - 5 buffer overflow               ]*")
+    print(color.white + "        *[ " + color.red + "ShadowSploit v2.2" + color.white + "                             ]*")
+    print("        *[ 110 exploits - 48 auxiliary - 27 cve exploits ]*")
+    print("        *[ 53 payloads - 5 buffer overflow - 2 phishing  ]*")
     print()
     print("shadowsploit tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
     print()
@@ -190,19 +184,21 @@ exit ---> to exit from sc-console.
 show payloads ---> to see avalable payloads in shadowsploit.
 use system commands ---> to use system tools and commands 3 times, to come back here use (back to sc-console).
 db_scscanner ---> normal scanner of scconsole, type 'db_scscanner -h' to see help menu of db_scscanner.
-gui ---> runs the scconsole GUI version (in GUI, you can't use all exploits!).
+enable monitor mode ---> it will turn your interface from managed mode to monitor mode.
+disable monitor mode ---> it will turn your interface from monitor mode to managed mode.
 """)
     elif scconsole == "show options":
         print("""
-PLEASE CHOOSE AN EXPLOIT THEN TYPE THIS!
+PLEASE USE AN EXPLOIT THEN TYPE THIS!
 """)
     elif scconsole == "clear":
         os.system('clear')
     elif scconsole == "search" or scconsole == "search ":
         print("""
 search [ exploits | exploit | windows | site | cve-exploits ]
-       [ osx | linux | multi | server | dos | php           ]
+       [ osx | linux | multi | server | dos | php | android ]
        [ auxiliary | sniffer | scanner | buffer_overflow    ]
+       [ wifi_exp                                           ]
 """)
     elif scconsole == "search exploits":
         print("""
@@ -291,6 +287,9 @@ _______|
 |- """ + color.red + """site/Bludit""" + color.white + """                                         20/10/23       Bludit 3.9.2 - Auth Bruteforce Bypass.
 |- """ + color.red + """windows/ShellSend""" + color.white + """                                   25/05/21       Sends a buffer overflow to your tagret and then gives you a reverse shell access.
 |- """ + color.red + """site/shell_inject""" + color.white + """                                   25/05/26       Try some OS Command Injection payloads to see of there is any OS Command Injection in the web application, and gives you the shell.
+|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                          25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
+|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
+|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
 |- """ + color.red + """site/os_finder""" + color.white + """                                      25/06/29       Trys to find the target website OS from header and robots.txt .
 |- """ + color.red + """site/dir_enum""" + color.white + """                                       25/06/29       Trys to brute-force directorys and shows you with status code.
 |- """ + color.red + """site/sql_injector""" + color.white + """                                   25/06/29       This module will try to find a sql injection after that if trys to extract the tables and after that trys to extract columns.
@@ -308,6 +307,7 @@ _______|
 |- """ + color.red + """site/cve_2021_42013_apache_bypass_rce""" + color.white + """               25/09/20       This module taregts (rce) vulnerability in Apache HTTP Server version 2.4.49 and 2.4.50, triggered via path traversal and command injection. it is a bypass and upgrade of the cve_2021_41773 vulnerability.
 |- """ + color.red + """site/file_list_wordpress_pligun_4-2-2""" + color.white + """               25/07/22       Simple File List WordPress Plugin 4.2.2 - File Upload to RCE.
 |- """ + color.red + """windows/smbghost""" + color.white + """                                    25/07/23       A critical pre-auth (RCE) vulnerability in the SMBv3.1.1 protocol on Windows 10/2019.
+|- """ + color.red + """dos/wp_xmlrpc_dos""" + color.white + """                                   25/08/09       This module checks if the xmlrpc.php file on a target website is accessible and then sends multiple pingback.ping XML-RPC multicall requests to it.
 """)
     elif scconsole == "search exploit":
         print("""
@@ -471,6 +471,7 @@ _______|
 |- """ + color.red + """dos/DD_D_Attack""" + color.white + """                                     25/02/01       for DoS and DDoS Attack (If your Internet is slow, that's gonna works slowly!).
 |- """ + color.red + """dos/ble-dos""" + color.white + """                                         25/04/05       scans the bluetooths around you and then let you to choose target, trys to connect, then starts the attack.
 |- """ + color.red + """dos/Apache_Commons_FileUpload_and_Apache_Tomcat_DoS""" + color.white + """ 25/04/27       Apache Commons FileUpload and Apache Tomcat DoS.
+|- """ + color.red + """dos/wp_xmlrpc_dos""" + color.white + """                                   25/08/09       This module checks if the xmlrpc.php file on a target website is accessible and then sends multiple pingback.ping XML-RPC multicall requests to it.
 """)
     elif scconsole == "search php":
         print("""
@@ -535,6 +536,7 @@ _______|
 |- """ + color.red + """auxiliary/ftp_brute_force""" + color.white + """                           25/07/05       This module trys to brute force ftp with the username and password list you specified.
 |- """ + color.red + """auxiliary/https_brute_force""" + color.white + """                         25/07/12       This module will try to brute force https login page.
 |- """ + color.red + """auxiliary/mikrotik-routeros-7-19-1-xss""" + color.white + """              25/07/16       MikroTik RouterOS 7.19.1 - Reflected XSS.
+|- """ + color.red + """auxiliary/wp_ghost_scanner""" + color.white + """                          25/08/09       This module is wordpress scanner, It performs multiple checks that are relevant for identifying common WordPress weaknesses, including version disclosure, plugin vulnerabilities, sensitive file exposures, directory browsing, command injection risks, weak login credentials, and more.
 """)
     elif scconsole == "search sniffer":
         print("""
@@ -569,6 +571,15 @@ _______|
 |- """ + color.red + """scanner/WAF_Checker""" + color.white + """                                 25/07/09       This module will try some payloads and other thinks to find the target WAF(Web Application Firewall) type and version.
 |- """ + color.red + """scanner/csrf_token_detect""" + color.white + """                           25/07/12       This module will detect if target using csrf token.
 """)
+    elif scconsole == "search android":
+        print("""
+    Exploits                                        When created?        Discrepstion 
+       |
+_______|
+|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                         25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
+|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
+|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
+""")
     elif scconsole == "search buffer_overflow":
         print("""
     Exploits                                        When created?        Discrepstion
@@ -580,6 +591,26 @@ _______|
 |- """ + color.red + """buffer_overflow/buffer_overflow_exploit_builder""" + color.white + """     25/07/11       Try to exploit target with crash-byte, offsec you found and your shellcode(generate shellcode with 'scshellcodegenerator' and start a listener to get a shell).
 |- """ + color.red + """buffer_overflow/fuzzer""" + color.white + """                              25/07/11       Try some bytes and finds a crash. (you need to config it from : exploits/buffer_overflow/fuzzer.py , line 12 to your target ip and port).
 """)
+    elif scconsole == "search phishing":
+        print("""
+    Exploits                                        When created?        Discrepstion
+       |
+_______|
+|- """ + color.red + """phishing/phish_server""" + color.white + """                               25/08/03       This module will starts a locoalhost using flask, and runs a phishing login page and saves the logs that target entered (you can edit the page from 'exploits/phishing/phish_server.py').
+|- """ + color.red + """phishing/phish_2FA_server""" + color.white + """                   25/08/03          This module will starts a localhost using flask, it runs a 2FA phishing pages and saves logs that target entered (you can edit the pages from 'exploits/phishing/phish_2FA_server.py').
+""")
+    elif scconsole == "search wifi_exp":
+        print("""
+Exploits                                        When created?        Discrepstion
+   |
+___|
+|- """ + color.red + "wifi-exp/wifi_scanner" + color.white + "                               25/08/05       This module uses wlan interface to scan the WIFIs around you (sudo require).\n"
+"|- " + color.red + "wifi-exp/wifi_deauth" + color.white + "                                25/08/05       This module will send a deauth packets to that target you choose to disconnect the clients of that wifi (sudo require).\n"
+"|- " + color.red + "wifi-exp/wpa_handshake_capturer" + color.white + "                     25/08/05       This module will try to capture a handshake and save it into a .cap or .pcap file (sudo require).\n"
+"|- " + color.red + "wifi-exp/pmkid_capturer" + color.white + "                             25/08/05       This module will try to capture a PMKID handshake and save it into a .cap or .pcap file (sudo require).\n"
+"|- " + color.red + "wifi-exp/wpa_cracker" + color.white + "                                25/08/05       This module will try to crack that handshake that you captured with that wordlist you give (uses aircrack-ng, sudo require).\n"
+"|- " + color.red + "wifi-exp/cap_hash_extractor" + color.white + "                         25/08/05       This module will extract the hash of that handshake you captured and save it to a file (uses hcxpcapngtool, sudo require).\n"
+"|- " + color.red + "wifi-exp/wpa3_cracker" + color.white + "                               25/08/05       This module will crack the hash that you extract with hashcat (sudo require!).\n")
     elif scconsole == "show payloads":
         print("""
 """ + color.green + """' OR 1=1--""" + color.white + """   ---> SQL Injection payload.
@@ -732,13 +763,62 @@ sudo reqired!!
         os.system(f'sudo python db_scscanner.py -w {targeturl441}')
     elif scconsole == "db_scscanner results":
         os.system(f'python db_scscanner.py results')
-    elif scconsole == "gui" or scconsole == "GUI":
-        print("Starting gui ...")
-        time.sleep(1)
-        print("Started!")
-        os.system('sudo python scconsolegui.py')
-        print("Exiting from scconsole gui ...")
-        time.sleep(1)
+    elif scconsole == "enable monitor mode" or scconsole == "monitor mode":
+        print("\nChoose how to turn to monitor mode:\n")
+        print("1. airmon-ng\n")
+        print("2. iwconfig\n")
+        print("3. quit\n")
+        chooseoption = input("sc~? ")
+        if chooseoption == "1" or chooseoption == "airmon-ng":
+            print("[!] Sudo Require ")
+            chooseinterface = input("Please Enter the interface you want to use: ")
+            os.system(f'sudo airmon-ng start {chooseinterface}')
+            print("[+] Done")
+        elif chooseoption == "2" or chooseoption == "iwconfig":
+            print("[!] Sudo Require ")
+            os.system('iwconfig')
+            chooseinterface2 = input("Please Enter teh interface you want to use: ")
+            print("[+] Bringing the InterFace Down")
+            os.system(f'sudo ip link set {chooseinterface2} down')
+            print("[+] Enabling the Monitor Mode")
+            os.system(f'sudo iw dev {chooseinterface2} set type monitor')
+            print("[+] Bringing the InterFace Up")
+            os.system(f'sudo ip link set {chooseinterface2} up')
+            print("[+] Done")
+        elif chooseoption == "3" or chooseoption == "quit":
+            print("[+] Quiting ...")
+            time.sleep(1)
+            Console()
+        else:
+           print("[-] There is no option like that!")
+    elif scconsole == "disable monitor mode" or scconsole == "dis monitor mode":
+        print("\nChoose how to turn to managed mode:\n")
+        print("1. airmon-ng\n")
+        print("2. iwconfig\n")
+        print("3. quit\n")
+        chooseoption2 = input("sc~? ")
+        if chooseoption2 == "1" or chooseoption2 == "airmon-ng":
+            print("[!] Sudo Require ")
+            chooseinterface3 = input("Please Enter the interface you want to use: ")
+            os.system(f'sudo airmon-ng stop {chooseinterface3}')
+            print("[+] Done")
+        elif chooseoption2 == "2" or chooseoption2 == "iwconfig":
+            print("[!] Sudo Require ")
+            os.system('iwconfig')
+            chooseinterface4 = input("Please Enter teh interface you want to use: ")
+            print("[+] Bringing the InterFace Down")
+            os.system(f'sudo ip link set {chooseinterface4} down')
+            print("[+] Enabling the Managed Mode")
+            os.system(f'sudo iw dev {chooseinterface4} set type managed')
+            print("[+] Bringing the InterFace Up")
+            os.system(f'sudo ip link set {chooseinterface4} up')
+            print("[+] Done")
+        elif chooseoption2 == "3" or chooseoption2 == "quit":
+            print("[+] Quiting ...")
+            time.sleep(1)
+            Console()
+        else:
+           print("[-] There is no option like that!")
     elif scconsole == "use exploit/bypassuac-eventvwr":
         time.sleep(0.5)
         print("using exploit/bypassuac-eventvwr.")
@@ -1259,10 +1339,22 @@ sudo reqired!!
         time.sleep(0.5)
         print("using site/shell_inject")
         siteshellinject()
+    elif scconsole == "use android/android_reverse_tcp":
+        time.sleep(0.5)
+        print("using android/android_reverse_tcp")
+        androidandroidreversetcp()
     elif scconsole == "use auxiliary/xss_scanner":
         time.sleep(0.5)
         print("using auxiliary/xss_scanner")
         auxiliaryxssscanner()
+    elif scconsole == "use android/GetShell":
+        time.sleep(0.5)
+        print("using android/GetShell")
+        androidGetShell()
+    elif scconsole == "use android/BuildShell":
+        time.sleep(0.5)
+        print("using android/BuildShell")
+        androidBuildShell()
     elif scconsole == "use auxiliary/sql-injection-db-tbl-c":
         time.sleep(0.5)
         print("using auxiliary/sql-injection-db-tbl-c")
@@ -1367,6 +1459,50 @@ sudo reqired!!
         time.sleep(0.5)
         print("using windows/smbghost")
         windowssmbghost()
+    elif scconsole == "use phishing/phish_server":
+        time.sleep(0.5)
+        print("using phishing/phish_server")
+        phishingphishserver()
+    elif scconsole == "use phishing/phish_2FA_server":
+        time.sleep(0.5)
+        print("using phishing/phish_2FA_server")
+        phishingphish2FAserver()
+    elif scconsole == "use wifi-exp/wifi_scanner":
+        time.sleep(0.5)
+        print("using wifi-exp/wifi_scanner")
+        wifiexpwifiscanner()
+    elif scconsole == "use wifi-exp/wifi_deauth":
+        time.sleep(0.5)
+        print("using wifi-exp/wifi_deauth")
+        wifiexpwifideauth()
+    elif scconsole == "use wifi-exp/wpa_handshake_capturer":
+        time.sleep(0.5)
+        print("using wifi-exp/wpa_handshake_capturer")
+        wifiexpwpahandshakecapturer()
+    elif scconsole == "use wifi-exp/pmkid_capturer":
+        time.sleep(0.5)
+        print("using wifi-exp/pmkid_capturer")
+        wifiexppmkidcapturer()
+    elif scconsole == "use wifi-exp/wpa_cracker":
+        time.sleep(0.5)
+        print("using wifi-exp/wpa_cracker")
+        wifiexpwpacracker()
+    elif scconsole == "use wifi-exp/cap_hash_extractor":
+        time.sleep(0.5)
+        print("using wifi-exp/cap_hash_extractor")
+        wifiexpcaphashextractor()
+    elif scconsole == "use wifi-exp/wpa3_cracker":
+        time.sleep(0.5)
+        print("using wifi-exp/wpa3_cracker")
+        wifiexpwpa3cracker()
+    elif scconsole == "use auxiliary/wp_ghost_scanner":
+        time.sleep(0.5)
+        print("using auxiliary/wp_ghost_scanner")
+        auxiliarywpghostscanner()
+    elif scconsole == "use dos/wp_xmlrpc_dos":
+        time.sleep(0.5)
+        print("using dos/wp_xmlrpc_dos")
+        doswpxmlrpcdos()
     elif scconsole == "use system commands":
             OSconsole()
             OSconsole()
@@ -7369,6 +7505,52 @@ the exploit is using these and other payloads.
         time.sleep(0.5)
         Console()
 
+def androidandroidreversetcp():
+    scconsole147 = input("sc~" + color.red + "(android/android_reverse_tcp)" + color.white + ">")
+    if scconsole147 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidandroidreversetcp()
+    elif scconsole147 == "clear":
+        os.system('clear')
+        androidandroidreversetcp()
+    elif scconsole147 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LHOST            | specify the listener host for RAT file.
+LPORT            | specify the listener port for RAT file and listener.
+OUTPUT           | specify the output name (with .apk).
+
+Uses scRAT tool to generate!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidandroidreversetcp()
+    elif scconsole147 == "run":
+        os.system('python exploits/android/android_reverse_tcp.py')
+        androidandroidreversetcp()
+    elif scconsole147 == "exploit":
+        os.system('python exploits/android/android_reverse_tcp.py')
+        androidandroidreversetcp()
+    elif scconsole147 == "unuse":
+        print("unusing android/android_reverse_tcp.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole147 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
 def auxiliaryxssscanner():
     scconsole148 = input("sc~" + color.red + "(auxiliary/xss_scanner)" + color.white + ">")
     if scconsole148 == "help":
@@ -7406,6 +7588,96 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole148 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def androidGetShell():
+    scconsole149 = input("sc~" + color.red + "(android/GetShell)" + color.white + ">")
+    if scconsole149 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidGetShell()
+    elif scconsole149 == "clear":
+        os.system('clear')
+        androidGetShell()
+    elif scconsole149 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LPORT            | specify the listener port.
+
+Uses scRAT tool!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidGetShell()
+    elif scconsole149 == "run":
+        os.system('python exploits/android/GetShell.py')
+        androidGetShell()
+    elif scconsole149 == "exploit":
+        os.system('python exploits/android/GetShell.py')
+        androidGetShell()
+    elif scconsole149 == "unuse":
+        print("unusing android/GetShell.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole149 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def androidBuildShell():
+    scconsole150 = input("sc~" + color.red + "(android/BuildShell)" + color.white + ">")
+    if scconsole150 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidBuildShell()
+    elif scconsole150 == "clear":
+        os.system('clear')
+        androidBuildShell()
+    elif scconsole150 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LHOST            | specify the listener host.
+LPORT            | specify the listener port.
+OUTPUT           | specify the output name (with .apk).
+
+Uses scRAT tool to generate!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidBuildShell()
+    elif scconsole150 == "run":
+        os.system('python exploits/android/BuildShell.py')
+        androidBuildShell()
+    elif scconsole150 == "exploit":
+        os.system('python exploits/android/BuildShell.py')
+        androidBuildShell()
+    elif scconsole150 == "unuse":
+        print("unusing android/BuildShell.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole150 == "exit":
         exit()
     else:
         print("There is no command or option like that!\nunusing ...")
@@ -8572,6 +8844,454 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole176 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def phishingphishserver():
+    scconsole177 = input("sc~" + color.red + "(phishing/phish_server)" + color.white + ">")
+    if scconsole177 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        phishingphishserver()
+    elif scconsole177 == "clear":
+        os.system('clear')
+        phishingphishserver()
+    elif scconsole177 == "show options":
+        print("""
+NO OPTION HERE!
+
+DISCREPTIONS
+--------------
+you can change the login code if you want from 'exploits/phishing/phish_server.py'.
+""")
+        phishingphishserver()
+    elif scconsole177 == "run" or scconsole177 == "exploit":
+        os.system('python exploits/phishing/phish_server.py')
+        phishingphishserver()
+    elif scconsole177 == "unuse":
+        print("unusing phishing/phish_server.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole177 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def phishingphish2FAserver():
+    scconsole178 = input("sc~" + color.red + "(phishing/phish_2FA_server)" + color.white + ">")
+    if scconsole178 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        phishingphish2FAserver()
+    elif scconsole178 == "clear":
+        os.system('clear')
+        phishingphish2FAserver()
+    elif scconsole178 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+TARGET_EMAIL     | specify target email.
+SENDER_GMAIL     | specify sender (attacker) gmail.
+GMAIL_PASS       | specify your gmail password to use your gmail to send the 2FA code.
+
+you can change the pages code if you want from 'exploits/phishing/phish_2FA_server.py'.
+""")
+        phishingphish2FAserver()
+    elif scconsole178 == "run" or scconsole178 == "exploit":
+        os.system('python exploits/phishing/phish_2FA_server.py')
+        phishingphish2FAserver()
+    elif scconsole178 == "unuse":
+        print("unusing phishing/phish_2FA_server.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole178 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def wifiexpwifiscanner():
+    scconsole179 = input("sc~" + color.red + "(wifi-exp/wifi_scanner)" + color.white + ">")
+    if scconsole179 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        wifiexpwifiscanner()
+    elif scconsole179 == "clear":
+        os.system('clear')
+        wifiexpwifiscanner()
+    elif scconsole179 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+MONITOR_INTERFACE  | specify the monitor interface.
+
+you will specifiy these options when you run or exploit it!
+""")
+        wifiexpwifiscanner()
+    elif scconsole179 == "run" or scconsole179 == "exploit":
+        os.system('sudo python exploits/wifi-exp/wifi_scanner.py')
+        wifiexpwifiscanner()
+    elif scconsole179 == "unuse":
+        print("unusing wifi-exp/wifi_scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole179 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def wifiexpwifideauth():
+    scconsole180 = input("sc~" + color.red + "(wifi-exp/wifi_deauth)" + color.white + ">")
+    if scconsole180 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        wifiexpwifideauth()
+    elif scconsole180 == "clear":
+        os.system('clear')
+        wifiexpwifideauth()
+    elif scconsole180 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+MONITOR_INTERFACE  | specify the monitor interface.
+ACCESS_POINT       | specify target Access-Point mac address.
+CLIENT_MAC         | specify target client mac address (ff:ff:ff:ff:ff:ff for broadcast).
+DELAY_TIME         | specify the delay between packets in seconds.
+
+you will specifiy these options when you run or exploit it!
+""")
+        wifiexpwifideauth()
+    elif scconsole180 == "run" or scconsole180 == "exploit":
+        os.system('sudo python exploits/wifi-exp/wifi_deauth.py')
+        wifiexpwifideauth()
+    elif scconsole180 == "unuse":
+        print("unusing wifi-exp/wifi_deauth.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole180 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def wifiexpwpahandshakecapturer():
+    scconsole181 = input("sc~" + color.red + "(wifi-exp/wpa_handshake_capturer)" + color.white + ">")
+    if scconsole181 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        wifiexpwpahandshakecapturer()
+    elif scconsole181 == "clear":
+        os.system('clear')
+        wifiexpwpahandshakecapturer()
+    elif scconsole181 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+MONITOR_INTERFACE  | specify the monitor interface.
+ACCESS_POINT       | specify target Access-Point mac address.
+
+you will specifiy these options when you run or exploit it!
+""")
+        wifiexpwpahandshakecapturer()
+    elif scconsole181 == "run" or scconsole181 == "exploit":
+        os.system('sudo python exploits/wifi-exp/wpa_handshake_capturer.py')
+        wifiexpwpahandshakecapturer()
+    elif scconsole181 == "unuse":
+        print("unusing wifi-exp/wpa_handshake_capturer.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole181 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def wifiexppmkidcapturer():
+    scconsole182 = input("sc~" + color.red + "(wifi-exp/pmkid_capturer)" + color.white + ">")
+    if scconsole182 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        wifiexppmkidcapturer()
+    elif scconsole182 == "clear":
+        os.system('clear')
+        wifiexppmkidcapturer()
+    elif scconsole182 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+MONITOR_INTERFACE  | specify the monitor interface.
+ACCESS_POINT       | specify target Access-Point mac address.
+CHANNEL            | specify the Access-Point channel.
+
+you will specifiy these options when you run or exploit it!
+""")
+        wifiexppmkidcapturer()
+    elif scconsole182 == "run" or scconsole182 == "exploit":
+        os.system('sudo python exploits/wifi-exp/pmkid_capturer.py')
+        wifiexppmkidcapturer()
+    elif scconsole182 == "unuse":
+        print("unusing wifi-exp/pmkid_capturer.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole182 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def wifiexpwpacracker():
+    scconsole183 = input("sc~" + color.red + "(wifi-exp/wpa_cracker)" + color.white + ">")
+    if scconsole183 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        wifiexpwpacracker()
+    elif scconsole183 == "clear":
+        os.system('clear')
+        wifiexpwpacracker()
+    elif scconsole183 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+CAP_FILE           | specify the cap file that you captured.
+WORDLIST           | specify the wordlist.
+
+aircrack-ng require.
+
+you will specifiy these options when you run or exploit it!
+""")
+        wifiexpwpacracker()
+    elif scconsole183 == "run" or scconsole183 == "exploit":
+        os.system('sudo python exploits/wifi-exp/wpa_cracker.py')
+        wifiexpwpacracker()
+    elif scconsole183 == "unuse":
+        print("unusing wifi-exp/wpa_cracker.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole183 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def wifiexpcaphashextractor():
+    scconsole184 = input("sc~" + color.red + "(wifi-exp/cap_hash_extractor)" + color.white + ">")
+    if scconsole184 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        wifiexpcaphashextractor()
+    elif scconsole184 == "clear":
+        os.system('clear')
+        wifiexpcaphashextractor()
+    elif scconsole184 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+CAP_FILE           | specify the cap file that you captured.
+OUTPUT_HASH_FILE   | specify output hash file (example: hash.16800).
+
+hcxpcapngtool require.
+
+you will specifiy these options when you run or exploit it!
+""")
+        wifiexpcaphashextractor()
+    elif scconsole184 == "run" or scconsole184 == "exploit":
+        os.system('sudo python exploits/wifi-exp/cap_hash_extractor.py')
+        wifiexpcaphashextractor()
+    elif scconsole184 == "unuse":
+        print("unusing wifi-exp/cap_hash_extractor.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole184 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def wifiexpwpa3cracker():
+    scconsole185 = input("sc~" + color.red + "(wifi-exp/wpa3_cracker)" + color.white + ">")
+    if scconsole185 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        wifiexpwpa3cracker()
+    elif scconsole185 == "clear":
+        os.system('clear')
+        wifiexpwpa3cracker()
+    elif scconsole185 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+HASH_FILE          | specify the hash file that you extracted.
+WORDLIST           | specify the wordlist.
+
+hashcat require.
+
+you will specifiy these options when you run or exploit it!
+""")
+        wifiexpwpa3cracker()
+    elif scconsole185 == "run" or scconsole185 == "exploit":
+        os.system('sudo python exploits/wifi-exp/wpa3_cracker.py')
+        wifiexpwpa3cracker()
+    elif scconsole185 == "unuse":
+        print("unusing wifi-exp/wpa3_cracker.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole185 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def auxiliarywpghostscanner():
+    scconsole186 = input("sc~" + color.red + "(auxiliary/wp_ghost_scanner)" + color.white + ">")
+    if scconsole186 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliarywpghostscanner()
+    elif scconsole186 == "clear":
+        os.system('clear')
+        auxiliarywpghostscanner()
+    elif scconsole186 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+URL                | specify target url to scan.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliarywpghostscanner()
+    elif scconsole186 == "run" or scconsole186 == "exploit":
+        targeturltest = input("Enter target url to scan: ")
+        os.system(f'python exploits/auxiliary/wp_ghost_scanner.py {targeturltest}')
+        auxiliarywpghostscanner()
+    elif scconsole186 == "unuse":
+        print("unusing auxiliary/wp_ghost_scanner.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole186 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def doswpxmlrpcdos():
+    scconsole187 = input("sc~" + color.red + "(dos/wp_xmlrpc_dos)" + color.white + ">")
+    if scconsole187 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        doswpxmlrpcdos()
+    elif scconsole187 == "clear":
+        os.system('clear')
+        doswpxmlrpcdos()
+    elif scconsole187 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+URL                | specify target url to scan.
+NUMBER_PINGBACK    | specify the number of pingbacks (example: 500).
+
+you will specifiy these options when you run or exploit it!
+""")
+        doswpxmlrpcdos()
+    elif scconsole187 == "run" or scconsole187 == "exploit":
+        os.system('python exploits/dos/wp_xmlrpc_dos.py')
+        doswpxmlrpcdos()
+    elif scconsole187 == "unuse":
+        print("unusing dos/wp_xmlrpc_dos.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole187 == "exit":
         exit()
     else:
         print("There is no command or option like that!\nunusing ...")
