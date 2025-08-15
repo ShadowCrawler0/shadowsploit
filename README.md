@@ -40,7 +40,7 @@ SCVenom – Payload & Shellcode Generator
 
 - Create custom reverse/bind shell payloads
 - Generate raw shellcode for advanced operators
-- Supports multiple formats (exe, elf, bin, raw, py)
+- Supports multiple formats (bin, raw, py, php)
 
 🚀 Get CLI (Free)
 
