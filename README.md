@@ -19,6 +19,7 @@ GUI Highlights:
 - Auto vulnerability detection
 - Exportable recon reports
 - Linux & Windows support
+- Supports 3 languages English, Russian, Spanish
 
 📸 Preview:
 
