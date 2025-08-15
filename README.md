@@ -23,7 +23,9 @@ GUI Highlights:
 
 📸 Preview:
 
-![ShadowSploit gif](/images/shadowsploit.gif)
+![ShadowSploit_menu](/images/shadowsploit_menu.png)
+![ShadowSploit_russian_menu](/images/shadowsploit_russian_menu.png)
+![ShadowSploit_spanish_menu](/images/shadowsploit_spanish_menu.png)
 
 🛠 Free CLI Components
 
