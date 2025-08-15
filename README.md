@@ -22,7 +22,7 @@ GUI Highlights:
 
 📸 Preview:
 
-
+![ShadowSploit gif](/images/shadowsploit.mp4)
 
 🛠 Free CLI Components
 
