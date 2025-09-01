@@ -158,7 +158,7 @@ o.`Y8b 888888  dP__Yb   8I  dY Yb   dP   YbdPYbdP   o.`Y8b 88'''  88  .o Yb   dP
     print()
     print()
     print()
-    print(color.white + "        *[ " + color.red + "ShadowSploit v2.2" + color.white + "                             ]*")
+    print(color.white + "        *[ " + color.red + "ShadowSploit v2.3" + color.white + "                             ]*")
     print("        *[ 107 exploits - 48 auxiliary - 27 cve exploits ]*")
     print("        *[ 53 payloads - 5 buffer overflow - 2 phishing  ]*")
     print()
