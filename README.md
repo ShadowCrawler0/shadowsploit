@@ -1,6 +1,6 @@
 ![ShadowSploit Icon](/images/shadowsploit_icon.png)
 
-💀 ShadowSploit Arsenal – Free CLI, Premium GUI
+💀 ShadowSploit V2.3 Arsenal – Free CLI, Premium GUI
 -
 
 > Recon. Exploit. Vanish.  
