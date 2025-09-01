@@ -14,12 +14,15 @@ Point. Click. Hunt.
 
 GUI Highlights:
 
-- 39 high-speed recon & vulnerability scan modules
+- 45 high-speed recon & vulnerability scan modules
 - Live network mapping
 - Auto vulnerability detection
 - Exportable recon reports
 - Linux & Windows support
 - Supports 3 languages English, Russian, Spanish
+- Brute Forcing modules (SSH, FTP, POP3, etc)
+- Payload generator (generates reverse shell payloads, etc)
+- Multi handler/listener
 
 📸 Preview:
 
@@ -49,18 +52,17 @@ SCVenom – Payload & Shellcode Generator
 
 ```
 git clone https://github.com/ShadowCrawler0/ShadowSploit
-cd ShadowSploit
+cd ShadowSploit-main
 python3 scconsole.py
 ```
 
 💎 Access Premium GUI
 -
 
-The SCConsoleGUI is not public.
+The SCConsoleGUI (ShadowSPloit GUI) is not public.
 Distributed only via secure Telegram.
 
-📩 Telegram: @SingleCore_SC
-💰 Price: $3 (Crypto accepted)
+📩 Telegram: https://t.me/Zero_Strike_SC
 
 Disclaimer
 The author is not responsible for any illegal activities performed with this software.
