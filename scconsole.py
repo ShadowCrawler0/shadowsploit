@@ -13,6 +13,7 @@ import readline
 from exploits import *
 from payloads import *
 from tools import *
+from corelistener import session_handler, listener
 
 logs = []  # Store your logs here
 
@@ -46,7 +47,7 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 def start():
-    timelist = [1, 2, 3]
+    timelist = [1, 2]
     for dots in ["", "*", "**", "***"]:
         os.system('clear')
         print(f"Starting scconsole{dots}")
@@ -158,9 +159,10 @@ o.`Y8b 888888  dP__Yb   8I  dY Yb   dP   YbdPYbdP   o.`Y8b 88'''  88  .o Yb   dP
     print()
     print()
     print()
-    print(color.white + "        *[ " + color.red + "ShadowSploit v2.3" + color.white + "                             ]*")
-    print("        *[ 107 exploits - 48 auxiliary - 27 cve exploits ]*")
+    print(color.white + "        *[ " + color.red + "ShadowSploit v2.4" + color.white + "                             ]*")
+    print("        *[ 110 exploits - 50 auxiliary - 27 cve exploits ]*")
     print("        *[ 53 payloads - 5 buffer overflow - 2 phishing  ]*")
+    print("        *[ 3 post_expl                                   ]*")
     print()
     print("shadowsploit tip: type '" + color.blue + "help" + color.white + "' to see the " + color.underline + color.green + "scconsole" + color.white + " commands.")
     print()
@@ -186,6 +188,11 @@ use system commands ---> to use system tools and commands 3 times, to come back 
 db_scscanner ---> normal scanner of scconsole, type 'db_scscanner -h' to see help menu of db_scscanner.
 enable monitor mode ---> it will turn your interface from managed mode to monitor mode.
 disable monitor mode ---> it will turn your interface from monitor mode to managed mode.
+listen <LHOST> <LPORT> ---> starts listener on port and host you entered.
+sessions ---> shows sessions.
+go <session_id> ---> goes to the session that you selected.
+kill <session_id> ---> kills the session.
+stop_listener ---> stops the listener.
 """)
     elif scconsole == "show options":
         print("""
@@ -196,9 +203,9 @@ PLEASE USE AN EXPLOIT THEN TYPE THIS!
     elif scconsole == "search" or scconsole == "search ":
         print("""
 search [ exploits | exploit | windows | site | cve-exploits ]
-       [ osx | linux | multi | server | dos | php |         ]
+       [ osx | linux | multi | server | dos | php | android ]
        [ auxiliary | sniffer | scanner | buffer_overflow    ]
-       [ wifi_exp                                           ]
+       [ wifi_exp  | post_expl                              ]
 """)
     elif scconsole == "search exploits":
         print("""
@@ -287,6 +294,9 @@ _______|
 |- """ + color.red + """site/Bludit""" + color.white + """                                         20/10/23       Bludit 3.9.2 - Auth Bruteforce Bypass.
 |- """ + color.red + """windows/ShellSend""" + color.white + """                                   25/05/21       Sends a buffer overflow to your tagret and then gives you a reverse shell access.
 |- """ + color.red + """site/shell_inject""" + color.white + """                                   25/05/26       Try some OS Command Injection payloads to see of there is any OS Command Injection in the web application, and gives you the shell.
+|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                          25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
+|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
+|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
 |- """ + color.red + """site/os_finder""" + color.white + """                                      25/06/29       Trys to find the target website OS from header and robots.txt .
 |- """ + color.red + """site/dir_enum""" + color.white + """                                       25/06/29       Trys to brute-force directorys and shows you with status code.
 |- """ + color.red + """site/sql_injector""" + color.white + """                                   25/06/29       This module will try to find a sql injection after that if trys to extract the tables and after that trys to extract columns.
@@ -534,6 +544,8 @@ _______|
 |- """ + color.red + """auxiliary/https_brute_force""" + color.white + """                         25/07/12       This module will try to brute force https login page.
 |- """ + color.red + """auxiliary/mikrotik-routeros-7-19-1-xss""" + color.white + """              25/07/16       MikroTik RouterOS 7.19.1 - Reflected XSS.
 |- """ + color.red + """auxiliary/wp_ghost_scanner""" + color.white + """                          25/08/09       This module is wordpress scanner, It performs multiple checks that are relevant for identifying common WordPress weaknesses, including version disclosure, plugin vulnerabilities, sensitive file exposures, directory browsing, command injection risks, weak login credentials, and more.
+|- """ + color.red + """auxiliary/uploader""" + color.white + """                                  25/08/24       This module will try to uplaod the payload you generated to the target to that directory that you selected.
+|- """ + color.red + """auxiliary/request""" + color.white + """                                   25/08/24       This will send a request to that payload you uploaded to the target machine to get a shell.
 """)
     elif scconsole == "search sniffer":
         print("""
@@ -568,6 +580,15 @@ _______|
 |- """ + color.red + """scanner/WAF_Checker""" + color.white + """                                 25/07/09       This module will try some payloads and other thinks to find the target WAF(Web Application Firewall) type and version.
 |- """ + color.red + """scanner/csrf_token_detect""" + color.white + """                           25/07/12       This module will detect if target using csrf token.
 """)
+    elif scconsole == "search android":
+        print("""
+    Exploits                                        When created?        Discrepstion 
+       |
+_______|
+|- """ + color.red + """android/android_reverse_tcp""" + color.white + """                         25/06/02       Creates a RAT file with scRAT tool for an andorid device, then start a listener(but just you need to do is to send the RAT to your target!).
+|- """ + color.red + """android/GetShell""" + color.white + """                                    25/06/15       runs a listener with scRAT to get a shell from an android device.
+|- """ + color.red + """android/BuildShell""" + color.white + """                                  25/06/15       Creates a apk file to get a shell from an android.
+""")
     elif scconsole == "search buffer_overflow":
         print("""
     Exploits                                        When created?        Discrepstion
@@ -599,6 +620,15 @@ ___|
 "|- " + color.red + "wifi-exp/wpa_cracker" + color.white + "                                25/08/05       This module will try to crack that handshake that you captured with that wordlist you give (uses aircrack-ng, sudo require).\n"
 "|- " + color.red + "wifi-exp/cap_hash_extractor" + color.white + "                         25/08/05       This module will extract the hash of that handshake you captured and save it to a file (uses hcxpcapngtool, sudo require).\n"
 "|- " + color.red + "wifi-exp/wpa3_cracker" + color.white + "                               25/08/05       This module will crack the hash that you extract with hashcat (sudo require!).\n")
+    elif scconsole == "search post_expl" or scconsole == "post_exploitation":
+        print("""
+    Exploits                                        When created?        Discrepstion
+       |
+_______|
+|- """ + color.red + """post_expl/hashdump""" + color.white + """                                  25/08/24       This will try to take out the password hashes from target machine.
+|- """ + color.red + """post_expl/enum_system""" + color.white + """                               25/08/24       This module try to take out the informations of the system.
+|- """ + color.red + """post_expl/cred_extractor""" + color.white + """                            25/08/24       This module will try to take out some credentials from target machine.
+""")
     elif scconsole == "show payloads":
         print("""
 """ + color.green + """' OR 1=1--""" + color.white + """   ---> SQL Injection payload.
@@ -807,6 +837,29 @@ sudo reqired!!
             Console()
         else:
            print("[-] There is no option like that!")
+    elif scconsole == "sessions":
+        session_handler.list_sessions()
+    elif scconsole.startswith("go ") or scconsole.startswith("go"):
+        try:
+            sid = int(scconsole.split()[1])
+            session_handler.interact_session(sid)
+        except (IndexError, ValueError):
+            print("[-] Usage: go <session_id>")
+    elif scconsole.startswith("kill ") or scconsole.startswith("kill"):
+        try:
+            sid = int(scconsole.split()[1])
+            session_handler.kill_session(sid)
+        except (IndexError, ValueError):
+            print("[-] Usage: kill <session_id>")
+    elif scconsole.startswith("listen ") or scconsole.startswith("listen"):
+        try:
+            parts = scconsole.split()
+            lhost, lport = parts[1], int(parts[2])
+            listener.start_listener(lhost, lport)
+        except (IndexError, ValueError):
+            print("[-] Usage: listen <LHOST> <LPORT>")
+    elif scconsole == "stop_listener":
+        listener.stop_listener()
     elif scconsole == "use exploit/bypassuac-eventvwr":
         time.sleep(0.5)
         print("using exploit/bypassuac-eventvwr.")
@@ -1327,10 +1380,22 @@ sudo reqired!!
         time.sleep(0.5)
         print("using site/shell_inject")
         siteshellinject()
+    elif scconsole == "use android/android_reverse_tcp":
+        time.sleep(0.5)
+        print("using android/android_reverse_tcp")
+        androidandroidreversetcp()
     elif scconsole == "use auxiliary/xss_scanner":
         time.sleep(0.5)
         print("using auxiliary/xss_scanner")
         auxiliaryxssscanner()
+    elif scconsole == "use android/GetShell":
+        time.sleep(0.5)
+        print("using android/GetShell")
+        androidGetShell()
+    elif scconsole == "use android/BuildShell":
+        time.sleep(0.5)
+        print("using android/BuildShell")
+        androidBuildShell()
     elif scconsole == "use auxiliary/sql-injection-db-tbl-c":
         time.sleep(0.5)
         print("using auxiliary/sql-injection-db-tbl-c")
@@ -1479,6 +1544,26 @@ sudo reqired!!
         time.sleep(0.5)
         print("using dos/wp_xmlrpc_dos")
         doswpxmlrpcdos()
+    elif scconsole == "use auxiliary/uploader":
+        time.sleep(0.5)
+        print("using auxiliary/uploader.")
+        auxiliaryuploader()
+    elif scconsole == "use auxiliary/request":
+        time.sleep(0.5)
+        print("using auxiliary/request.")
+        auxiliaryrequest()
+    elif scconsole == "use post_expl/hashdump":
+        time.sleep(0.5)
+        print("using post_expl/hashdump.")
+        postexplhashdump()
+    elif scconsole == "use post_expl/cred_extractor":
+        time.sleep(0.5)
+        print("using post_expl/cred_extractor.")
+        postexplcredextractor()
+    elif scconsole == "use post_expl/enum_system":
+        time.sleep(0.5)
+        print("using post_expl/enum_system.")
+        postexplenumsystem()
     elif scconsole == "use system commands":
             OSconsole()
             OSconsole()
@@ -7481,6 +7566,52 @@ the exploit is using these and other payloads.
         time.sleep(0.5)
         Console()
 
+def androidandroidreversetcp():
+    scconsole147 = input("sc~" + color.red + "(android/android_reverse_tcp)" + color.white + ">")
+    if scconsole147 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidandroidreversetcp()
+    elif scconsole147 == "clear":
+        os.system('clear')
+        androidandroidreversetcp()
+    elif scconsole147 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LHOST            | specify the listener host for RAT file.
+LPORT            | specify the listener port for RAT file and listener.
+OUTPUT           | specify the output name (with .apk).
+
+Uses scRAT tool to generate!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidandroidreversetcp()
+    elif scconsole147 == "run":
+        os.system('python exploits/android/android_reverse_tcp.py')
+        androidandroidreversetcp()
+    elif scconsole147 == "exploit":
+        os.system('python exploits/android/android_reverse_tcp.py')
+        androidandroidreversetcp()
+    elif scconsole147 == "unuse":
+        print("unusing android/android_reverse_tcp.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole147 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
 def auxiliaryxssscanner():
     scconsole148 = input("sc~" + color.red + "(auxiliary/xss_scanner)" + color.white + ">")
     if scconsole148 == "help":
@@ -7518,6 +7649,96 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole148 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def androidGetShell():
+    scconsole149 = input("sc~" + color.red + "(android/GetShell)" + color.white + ">")
+    if scconsole149 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidGetShell()
+    elif scconsole149 == "clear":
+        os.system('clear')
+        androidGetShell()
+    elif scconsole149 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LPORT            | specify the listener port.
+
+Uses scRAT tool!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidGetShell()
+    elif scconsole149 == "run":
+        os.system('python exploits/android/GetShell.py')
+        androidGetShell()
+    elif scconsole149 == "exploit":
+        os.system('python exploits/android/GetShell.py')
+        androidGetShell()
+    elif scconsole149 == "unuse":
+        print("unusing android/GetShell.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole149 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def androidBuildShell():
+    scconsole150 = input("sc~" + color.red + "(android/BuildShell)" + color.white + ">")
+    if scconsole150 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        androidBuildShell()
+    elif scconsole150 == "clear":
+        os.system('clear')
+        androidBuildShell()
+    elif scconsole150 == "show options":
+        print("""
+OPTIONS          | DISCREPTIONS
+-----------------|----------------------
+LHOST            | specify the listener host.
+LPORT            | specify the listener port.
+OUTPUT           | specify the output name (with .apk).
+
+Uses scRAT tool to generate!
+
+you will specifiy these options when you run or exploit it!
+""")
+        androidBuildShell()
+    elif scconsole150 == "run":
+        os.system('python exploits/android/BuildShell.py')
+        androidBuildShell()
+    elif scconsole150 == "exploit":
+        os.system('python exploits/android/BuildShell.py')
+        androidBuildShell()
+    elif scconsole150 == "unuse":
+        print("unusing android/BuildShell.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole150 == "exit":
         exit()
     else:
         print("There is no command or option like that!\nunusing ...")
@@ -9132,6 +9353,215 @@ you will specifiy these options when you run or exploit it!
         time.sleep(0.5)
         Console()
     elif scconsole187 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+
+def auxiliaryuploader():
+    scconsole188 = input("sc~" + color.red + "(auxiliary/uploader)" + color.white + ">")
+    if scconsole188 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliaryuploader()
+    elif scconsole188 == "clear":
+        os.system('clear')
+        auxiliaryuploader()
+    elif scconsole188 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+PROTOCOL           | specify the protocol you want to use to upload.
+RHOST              | specify target ip address.
+PORT               | specify the protocol port.
+LOCAL_FILE         | specify the path of local file you want to upload to target system.
+USERNAME           | specify the username.
+PASSWORD           | specify the password.
+REMOTE_PATH        | specify where does your local file needs to upload.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliaryuploader()
+    elif scconsole188 == "run" or scconsole188 == "exploit":
+        os.system('python exploits/auxiliary/uploader.py')
+        auxiliaryuploader()
+    elif scconsole188 == "unuse":
+        print("unusing auxiliary/uploader.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole188 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def auxiliaryrequest():
+    scconsole189 = input("sc~" + color.red + "(auxiliary/request)" + color.white + ">")
+    if scconsole189 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        auxiliaryrequest()
+    elif scconsole189 == "clear":
+        os.system('clear')
+        auxiliaryrequest()
+    elif scconsole189 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+PROTOCOL           | specify the protocol you want to use to upload.
+RHOST              | specify target ip address.
+PORT               | specify the protocol port.
+URL                | if you specified the protocol 'http(s)', you need to specify the url that you uploaded the file (mostly http(s) used).
+METHOD             | specify http(s) method.
+USERNAME           | specify the username (if you choosed other protocols).
+PASSWORD           | specify the password (if you choosed other protocols).
+DATA               | if your method is POST, specify the post data.
+HEADER             | if you want you can add headers.
+
+you will specifiy these options when you run or exploit it!
+""")
+        auxiliaryrequest()
+    elif scconsole189 == "run" or scconsole189 == "exploit":
+        os.system('python exploits/auxiliary/request.py')
+        auxiliaryrequest()
+    elif scconsole189 == "unuse":
+        print("unusing auxiliary/request.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole189 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def postexplhashdump():
+    scconsole190 = input("sc~" + color.red + "(post_expl/hashdump)" + color.white + ">")
+    if scconsole190 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        postexplhashdump()
+    elif scconsole190 == "clear":
+        os.system('clear')
+        postexplhashdump()
+    elif scconsole190 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+SESSION_ID         | specify the session id.
+
+you will specifiy these options when you run or exploit it!
+""")
+        postexplhashdump()
+    elif scconsole190 == "run" or scconsole190 == "exploit":
+        os.system('python exploits/post_expl/hashdump.py')
+        postexplhashdump()
+    elif scconsole190 == "unuse":
+        print("unusing post_expl/hashdump.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole190 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def postexplcredextractor():
+    scconsole191 = input("sc~" + color.red + "(post_expl/cred_extractor)" + color.white + ">")
+    if scconsole191 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        postexplcredextractor()
+    elif scconsole191 == "clear":
+        os.system('clear')
+        postexplcredextractor()
+    elif scconsole191 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+SESSION_ID         | specify the session id.
+
+you will specifiy these options when you run or exploit it!
+""")
+        postexplcredextractor()
+    elif scconsole191 == "run" or scconsole191 == "exploit":
+        os.system('python exploits/post_expl/cred_extractor.py')
+        postexplcredextractor()
+    elif scconsole191 == "unuse":
+        print("unusing post_expl/cred_extractor.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole191 == "exit":
+        exit()
+    else:
+        print("There is no command or option like that!\nunusing ...")
+        time.sleep(0.5)
+        Console()
+        
+def postexplenumsystem():
+    scconsole192 = input("sc~" + color.red + "(post_expl/enum_system)" + color.white + ">")
+    if scconsole192 == "help":
+        print("""
+help ---> to see this help menu.
+clear ---> to clear the screen.
+unuse ---> to unuse this exploit.
+exit ---> to exit from scconsole.
+run ---> to run the exploit you selected.
+exploit ---> to run the exploit you selected.
+show options ---> to see the options.
+""")
+        postexplenumsystem()
+    elif scconsole192 == "clear":
+        os.system('clear')
+        postexplenumsystem()
+    elif scconsole192 == "show options":
+        print("""
+OPTIONS            | DISCREPTIONS
+-------------------|----------------------
+SESSION_ID         | specify the session id.
+
+you will specifiy these options when you run or exploit it!
+""")
+        postexplenumsystem()
+    elif scconsole192 == "run" or scconsole192 == "exploit":
+        os.system('python exploits/post_expl/enum_system.py')
+        postexplenumsystem()
+    elif scconsole192 == "unuse":
+        print("unusing post_expl/enum_system.")
+        time.sleep(0.5)
+        Console()
+    elif scconsole192 == "exit":
         exit()
     else:
         print("There is no command or option like that!\nunusing ...")
