@@ -1,4 +1,4 @@
-![ShadowSploit Icon](/images/shadowsploit_icon.png)
+![ShadowSploit Icon](/images/shadowsploit_icon.jpg)
 
 💀 ShadowSploit V2.4 Arsenal – Free CLI, Premium GUI
 -
