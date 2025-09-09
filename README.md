@@ -1,6 +1,6 @@
 ![ShadowSploit Icon](/images/shadowsploit_icon.png)
 
-💀 ShadowSploit V2.3 Arsenal – Free CLI, Premium GUI
+💀 ShadowSploit V2.4 Arsenal – Free CLI, Premium GUI
 -
 
 > Recon. Exploit. Vanish.  
@@ -23,6 +23,7 @@ GUI Highlights:
 - Brute Forcing modules (SSH, FTP, POP3, etc)
 - Payload generator (generates reverse shell payloads, etc)
 - Multi handler/listener
+- Post-Exploitation modules
 
 📸 Preview:
 
@@ -34,12 +35,13 @@ GUI Highlights:
 
 SCConsole – Main Offensive Engine
 
-- 107 exploits – Network, Web, Service, Wi-Fi, Custom  
-- 48 auxiliary modules – Recon, Enumeration, Info-Gathering
+- 108 exploits – Network, Web, Service, Wi-Fi, Custom  
+- 50 auxiliary modules – Recon, Enumeration, Info-Gathering
 - 27 cve exploits - exploit CVEs  
 - 53 payloads – Reverse shells, bind shells, custom builds  
 - 2 phishing modules
-- 5 buffer overflow templates  
+- 5 buffer overflow templates
+- 3 post-exploitation modules  
 - Stealth-optimized execution
 
 SCVenom – Payload & Shellcode Generator
@@ -52,7 +54,7 @@ SCVenom – Payload & Shellcode Generator
 
 ```
 git clone https://github.com/ShadowCrawler0/ShadowSploit
-cd ShadowSploit-main
+cd shadowsploit-main
 python3 scconsole.py
 ```
 
