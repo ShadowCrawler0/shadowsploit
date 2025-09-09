@@ -35,7 +35,7 @@ GUI Highlights:
 
 SCConsole – Main Offensive Engine
 
-- 108 exploits – Network, Web, Service, Wi-Fi, Custom  
+- 107 exploits – Network, Web, Service, Wi-Fi, Custom  
 - 50 auxiliary modules – Recon, Enumeration, Info-Gathering
 - 27 cve exploits - exploit CVEs  
 - 53 payloads – Reverse shells, bind shells, custom builds  
